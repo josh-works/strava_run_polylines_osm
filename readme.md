@@ -79,3 +79,13 @@ Ahh, reading the blog post more clearly, I can see part of what he's getting at.
 > pip install requests
 $ python -m pip install requests
 ```
+
+- how to run basic python app on heroku?
+
+```
+pip install gunicorn
+pip freeze > requirements.txt
+```
+
+https://medium.com/the-andela-way/deploying-a-python-flask-app-to-heroku-41250bda27d0
+
