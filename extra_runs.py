@@ -3,7 +3,7 @@ import os
 import sys
 import csv
 
-token = os.environ["TOKEN"]
+token = os.environ["STRAVA_TOKEN"]
 headers = {'Authorization': "Bearer {0}".format(token)}
 
 with open("runs.csv", "w") as runs_file:
