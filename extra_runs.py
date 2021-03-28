@@ -19,6 +19,7 @@ with open("runs.csv", "w") as runs_file:
             break
         else:
             for activity in response:
+                breakpoint()
                 r = requests.get("https://www.strava.com/api/v3/activities/{0}?include_all_efforts=true".format(activity["id"]), headers = headers)
                 polyline = r.json()["map"]["polyline"]
                 writer.writerow([activity["id"], polyline])
