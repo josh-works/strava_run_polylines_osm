@@ -89,3 +89,10 @@ pip freeze > requirements.txt
 
 https://medium.com/the-andela-way/deploying-a-python-flask-app-to-heroku-41250bda27d0
 
+
+```
+https://devcenter.heroku.com/articles/buildpacks
+```
+https://dashboard.heroku.com/apps/b0a05afc-05aa-4d23-973b-0d664a39ecfc/activity/builds/1e866a44-9dcc-4825-a016-8d0f715b286b
+https://devcenter.heroku.com/articles/buildpacks#setting-a-buildpack-on-an-application
+
