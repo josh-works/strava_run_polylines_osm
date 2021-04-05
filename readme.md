@@ -57,16 +57,207 @@ add it right before the error, and:
 (Pdb)
 ```
 
-
 Ahh, reading the blog post more clearly, I can see part of what he's getting at. I copied-pasted a different (earlier) document in, I can see what he's working on.
 
+## Strava API Basics
 
+OK, I've never interacted w/the Strava API before. I was hoping it was as easy as getting a private key from Strava, saving it as an environment variable, and running the script, so I tried all that.
+
+No dice. Getting a 401 from the strava API. I don't know python, and don't yet _fully_ understand API calls well enough to know just by reading this python code, I can debug it in Python, so I'm going to rebuild the request in Postman.
+
+In postman, I'm going to try a simple `get` for:
+
+```
+https://www.strava.com/api/v3/athlete/activities
+```
+
+Ah, Authorization problems. Here's the response: 
+
+```javascript
+{
+    "message": "Authorization Error",
+    "errors": [
+        {
+            "resource": "Athlete",
+            "field": "access_token",
+            "code": "invalid"
+        }
+    ]
+}
+```
+
+It's expecting me to authorize even what seems like it should be "public" data. Surely some of the Strava API is public to hit w/o authorization? Oh well.
+
+I've been lucky enough to have some passing familiarity with what's going on here, because of some painful past experiences. 
+
+Let's get authorized w/the Strava API.
+
+I think we need to create an app w/in Strava.
+
+I googled things like `authorize strava api` and `how to generate strava api key` and found a few sorta haphazard guides. It's still not screamingly clear what to do here. Maybe it is to you?
+
+- [https://developers.strava.com/docs/authentication/](https://developers.strava.com/docs/authentication/)
+- [https://yizeng.me/2017/01/11/get-a-strava-api-access-token-with-write-permission/](https://yizeng.me/2017/01/11/get-a-strava-api-access-token-with-write-permission/)
+- [https://developers.strava.com/](https://developers.strava.com/)
+- [https://developers.strava.com/playground/](https://developers.strava.com/playground/)
+
+It seems like I need API keys, so I created an app, and tried making the public and private keys. Meh, I need to go get an access token from the Strava oAuth server (I suppose?)
+
+Reading through https://yizeng.me/2017/01/11/get-a-strava-api-access-token-with-write-permission/
+
+----------
+
+## POSTing to strava.com/oauth/token
+
+OK, here was my second API call attempt:
+
+![strava 2nd call](/images/2021-03-28 at 2.11 PM-strava-api-2nd-call.jpg)
+
+Third attempt, more closely reading the yizeng.me piece:
+
+
+
+## Strava API 
+
+---------------
+
+Two weeks have elapsed since I wrote the above...
+
+Onward. 
+
+I need to authenticate against Strava. No idea how to do it in Python, so I'm firing up Postman and seeing if I can recreate this series of calls there.
+
+Working through [this guide](https://developers.strava.com/docs/getting-started/#oauth)
+
+### Step 1: `Go to https://www.strava.com/settings/api and copy your Client ID`
+
+Easy. Mine is: `63764`
+
+### Step 2: `Paste your Client ID into this URL: http://www.strava.com/oauth/authorize?client_id=[REPLACE_WITH_YOUR_CLIENT_ID]&response_type=code&redirect_uri=http://localhost/exchange_token&approval_prompt=force&scope=read`
+
+OK, slightly reformatted:
+
+Go to: [http://www.strava.com/oauth/authorize](http://www.strava.com/oauth/authorize) and include the following query params:
+
+```
+client_id=[REPLACE_WITH_YOUR_CLIENT_ID]
+response_type=code
+redirect_uri=http://localhost/exchange_token
+approval_prompt=force
+scope=read
+```
+
+This is... extremely not intuitive. Let's do it in Postman anyway:
+
+Sigh, didn't work in postman, may have made a typo.
+
+Sure enough, when I visit in the browser:
+
+[https://www.strava.com/oauth/authorize?client_id=63764&response_type=code&redirect_uri=http://localhost/exchange_token&approval_prompt=force&scope=read](https://www.strava.com/oauth/authorize?client_id=63764&response_type=code&redirect_uri=http://localhost/exchange_token&approval_prompt=force&scope=read)
+
+I get what's expected. 
+
+### Step 5 or 6: `Make a cURL request to exchange the authorization code and scope for a refresh token, access token, and access token expiration date (step 7a from the graph). Replace the client_secret and code. `
+
+They include a suggestion to use Postman, and I did. Success:
+
+![success](/images/2021-04-04 at 11.41 PM-talked-to-strava.jpg)
+
+
+
+This is unreal.
+
+Next, to use Swagger, have to auth their app to this odd "strava app" i have, so I got to `https://www.strava.com/settings/api` and set the `authorized callback domain` value to developers.strava.com
+
+### Step 8: Pick rightly (but you have to figure it out) the scopes to authorize the swagger API
+
+I wanted it to have all read access, so I checked too many boxes. Turns out you keep getting errors from the API if you have anything but the first box checked.
+
+The errors are cryptic, took me 4 attempts. 
+
+
+![ugg](/images/2021-04-04 at 11.49 PM bad request.jpg)
+
+### Step 11: Find a taste of success with Swagger
+
+Check it out! 
+
+I finally authorized Swagger to my account, and:
+
+![it works](/images/Screenshot_2021-04-04 Swagger UI.jpg)
+
+I can see my athlete stats! I'm going to retry this python script now...
+
+Feels like we might be getting close to it working.
+
+Damnit. `response` still throws an authorization error.
+
+I'll work towards the API call from this script in swagger
+
+Here's the relevant code, to recap:
+
+```python
+token = os.environ["STRAVA_TOKEN"]
+headers = {'Authorization': "Bearer {0}".format(token)}
+
+with open("runs.csv", "w") as runs_file:
+    writer = csv.writer(runs_file, delimiter=",")
+    writer.writerow(["id", "polyline"])
+
+    page = 1
+    while True:
+        r = requests.get("https://www.strava.com/api/v3/athlete/activities?page={0}".format(page), headers = headers)
+        response = r.json()
+```
+
+
+AAAAAGH THIS IS SO NON-INTUITIVE!!!
+
+I re-ran the script, but got the same error as before:
+
+> {'message': 'Authorization Error', 'errors': [{'resource': 'AccessToken', 'field': 'activity:read_permission', 'code': 'missing'}]}
+
+Not super helpful.
+
+I tried re-exporting my `STRAVA_TOKEN` environment variable to different values gathered from `https://www.strava.com/settings/api`, but no dice.
+
+Then remembered that I got this access token in the Postman `POST` request to `https://www.strava.com/oauth/token`
+
+So, opened that up, checked the output, thought "yeah, lets try that":
+
+![nailed it](/images/2021-04-05 at 12.01 AM-finding-the-right-environment-variable.jpg)
+
+This has been _shockingly_ difficult.
+
+Anyway, how do I know this is the right value?
+
+simply because I got a different error message. Behold, the obvious difference!
+
+![isn't it obvious? an inscrutable Strava API response](/images/2021-04-05 at 12.03 AM-self-documenting.jpg)
+
+so, lets fix this. I'm going to rebuild it in Postman first.
+
+![got it](/images/2021-04-05 at 12.06 AM-activity_read_permission_missing.jpg)
+
+Finally, it seems like the response tells us the problem. The `api` seems to want a parameter/key-value pair submitted 
+
+### Step 27, reauthorize Strava app, update `scope`, get "privileged" token:
+
+[https://www.strava.com/oauth/authorize?client_id=63764&response_type=code&redirect_uri=http://localhost/exchange_token&approval_prompt=force&scope=read_all](https://www.strava.com/oauth/authorize?client_id=63764&response_type=code&redirect_uri=http://localhost/exchange_token&approval_prompt=force&scope=read_all)
+
+See that last query param, `scope=read_all`? I'm trying that. It was `read` before.
+
+Big difference. ¯\\\_(ツ)_/¯ 
+
+Ugh. No dice.
 
 ## References
 
 - [Leaflet: Mapping Strava runs/polylines on Open Street Map](https://markhneedham.com/blog/2017/04/29/leaflet-strava-polylines-osm/)
 - [Above author's gist w/the code (python, flask, leaflet)](https://gist.github.com/mneedham/34b923beb7fd72f8fe6ee433c2b27d73)
-- [](https://stackoverflow.com/questions/44913898/modulenotfounderror-no-module-named-requests)
+- [module not found error](https://stackoverflow.com/questions/44913898/modulenotfounderror-no-module-named-requests)
+- [https://www.reddit.com/r/learnpython/comments/g135yz/strava_api_code_missing/](https://www.reddit.com/r/learnpython/comments/g135yz/strava_api_code_missing/)
+
 
 ## TILs
 
@@ -78,6 +269,8 @@ Ahh, reading the blog post more clearly, I can see part of what he's getting at.
 > python -m pip --version
 > pip install requests
 $ python -m pip install requests
+
+environment til
 ```
 
 - how to run basic python app on heroku?
