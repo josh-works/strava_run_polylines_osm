@@ -251,6 +251,36 @@ Big difference. ¯\\\_(ツ)_/¯
 
 Ugh. No dice.
 
+## Step 56, pull your hair out, pivot
+
+Reading [https://markhneedham.com/blog/2020/12/20/strava-export-all-activities-json/](https://markhneedham.com/blog/2020/12/20/strava-export-all-activities-json/)
+
+Maybe I can make this work, and learn the minimum Strava API stuff I need for the rest.
+
+```
+pip install stravalib fastapi uvicorn jsonlines
+export CLIENT_ID="63764"
+export CLIENT_SECRET="client_secret"
+```
+
+Copy/paste what he recommends into `authenticate.py` and per his instructions, in my terminal I run:
+
+```
+uvicorn authenticate:app --reload
+```
+
+And we've got a web server running.
+
+Feels like the Sinatra of Python.
+
+Following his instructions, note that you'll have to `mkdir data && touch data/activites-all.json` for the script to run.
+
+Kept running into errors, realized the file open mode wasn't `open or create` it was just `open`. 
+
+Great success! I've got data!
+
+
+
 ## References
 
 - [Leaflet: Mapping Strava runs/polylines on Open Street Map](https://markhneedham.com/blog/2017/04/29/leaflet-strava-polylines-osm/)
