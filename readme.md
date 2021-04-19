@@ -111,7 +111,7 @@ Reading through https://yizeng.me/2017/01/11/get-a-strava-api-access-token-with-
 
 OK, here was my second API call attempt:
 
-![strava 2nd call](/images/2021-03-28 at 2.11 PM-strava-api-2nd-call.jpg)
+![strava 2nd call](/images/2021-03-28-at-2.11-PM-strava-api-2nd-call.jpg)
 
 Third attempt, more closely reading the yizeng.me piece:
 
@@ -161,7 +161,9 @@ I get what's expected.
 
 They include a suggestion to use Postman, and I did. Success:
 
-![success](/images/2021-04-04 at 11.41 PM-talked-to-strava.jpg)
+![success](/images/2021-04-04-at-11.41-PM-talked-to-strava.jpg)
+
+
 
 
 
@@ -176,7 +178,7 @@ I wanted it to have all read access, so I checked too many boxes. Turns out you 
 The errors are cryptic, took me 4 attempts. 
 
 
-![ugg](/images/2021-04-04 at 11.49 PM bad request.jpg)
+![ugg](/images/2021-04-04-at-11.49-PM-bad-request.jpg)
 
 ### Step 11: Find a taste of success with Swagger
 
@@ -184,7 +186,7 @@ Check it out!
 
 I finally authorized Swagger to my account, and:
 
-![it works](/images/Screenshot_2021-04-04 Swagger UI.jpg)
+![it works](images/Screenshot_2021-04-04-Swagger-UI.jpg)
 
 I can see my athlete stats! I'm going to retry this python script now...
 
@@ -225,7 +227,7 @@ Then remembered that I got this access token in the Postman `POST` request to `h
 
 So, opened that up, checked the output, thought "yeah, lets try that":
 
-![nailed it](/images/2021-04-05 at 12.01 AM-finding-the-right-environment-variable.jpg)
+![nailed it](/images/2021-04-05-at-12.01-AM-finding-the-right-environment-variable.jpg)
 
 This has been _shockingly_ difficult.
 
@@ -233,11 +235,11 @@ Anyway, how do I know this is the right value?
 
 simply because I got a different error message. Behold, the obvious difference!
 
-![isn't it obvious? an inscrutable Strava API response](/images/2021-04-05 at 12.03 AM-self-documenting.jpg)
+![isn't it obvious? an inscrutable Strava API response](/images/2021-04-05-at-12.03-AM-self-documenting.jpg)
 
 so, lets fix this. I'm going to rebuild it in Postman first.
 
-![got it](/images/2021-04-05 at 12.06 AM-activity_read_permission_missing.jpg)
+![got it](/images/2021-04-05-at-12.06-AM-activity_read_permission_missing.jpg)
 
 Finally, it seems like the response tells us the problem. The `api` seems to want a parameter/key-value pair submitted 
 
