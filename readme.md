@@ -8,6 +8,8 @@ I want to duplicate the functionality visible in [https://www.markhneedham.com/b
 
 I'd like to know how to deploy it to Heroku, so it's publically visible. I've deployed Rails apps before, not Flask/Python apps.
 
+Decided to make it a Sinatra app: [https://vast-meadow-00701.herokuapp.com/](https://vast-meadow-00701.herokuapp.com/)
+
 
 # Starting from scratch, Early April:
 
