@@ -2,8 +2,17 @@
 
 To render my nephew's currently-being-tracked bike route (via my GPS watch and my bike) on an OSM map layer so he can pan/drag/zoom/explore in a way very similar to google maps. 
 
+## Most current goal:
 
-OK, copied-and-pasted. It's been a while since I've written Python, and I've never actually made a Flask app, so I'm hoping it all runs without some hidden, subtled dependencing problem that's really obvious to experts but not me.
+I want to duplicate the functionality visible in [https://www.markhneedham.com/blog/2017/04/29/leaflet-strava-polylines-osm/](https://www.markhneedham.com/blog/2017/04/29/leaflet-strava-polylines-osm/).
+
+I'd like to know how to deploy it to Heroku, so it's publically visible. I've deployed Rails apps before, not Flask/Python apps.
+
+
+# Starting from scratch, Early April:
+
+
+OK, copied-and-pasted. It's been a while since I've written Python, and I've never actually made a Flask app, so I'm hoping it all runs without some hidden, subtle dependency problem that's really obvious to experts but not me.
 
 here's how this sounds in Ruby:
 
