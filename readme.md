@@ -4,12 +4,57 @@ To render my nephew's currently-being-tracked bike route (via my GPS watch and m
 
 ## Most current goal:
 
+### Get what little I currently have visible on Heroku
+
 I want to duplicate the functionality visible in [https://www.markhneedham.com/blog/2017/04/29/leaflet-strava-polylines-osm/](https://www.markhneedham.com/blog/2017/04/29/leaflet-strava-polylines-osm/).
 
 I'd like to know how to deploy it to Heroku, so it's publically visible. I've deployed Rails apps before, not Flask/Python apps.
 
 Decided to make it a Sinatra app: [https://vast-meadow-00701.herokuapp.com/](https://vast-meadow-00701.herokuapp.com/)
 
+It's working locally, but not on Heroko:
+
+![what to do](/images/2021-05-23 at 11.04 PM.jpg)
+
+### Translate the Python over to Ruby
+
+```python
+# app.py
+from flask import Flask
+from flask import render_template
+import csv
+import json
+
+app = Flask(__name__)
+
+@app.route('/')
+def my_runs():
+    runs = []
+    with open("runs.csv", "r") as runs_file:
+        reader = csv.DictReader(runs_file)
+
+        for row in reader:
+            runs.append(row["polyline"])
+
+    return render_template("leaflet.html", runs = json.dumps(runs))
+
+if __name__ == "__main__":
+    app.run(port = 5001)
+```
+
+I need to bring this over to Sinatra and Ruby. Seems... doable, though not straight forward.
+
+How about:
+
+```ruby
+# app.rb
+require 'sinatra'
+
+get '/' do
+  @runs = []
+  erb :index, locals: { runs: @runts }
+end
+```
 
 # Starting from scratch, Early April:
 

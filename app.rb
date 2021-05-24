@@ -1,6 +1,7 @@
 require 'sinatra'
-
+  
 get '/' do
-  File.read('public/index.html')
+  @runs = []
+  File.read('index.html')
 end
 
