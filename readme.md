@@ -52,9 +52,20 @@ require 'sinatra'
 
 get '/' do
   @runs = []
-  erb :index, locals: { runs: @runts }
+  erb :index, locals: { runs: @runs }
 end
 ```
+
+Ended up with:
+
+```ruby
+get '/' do
+  @runs = []
+  File.read('index.html')
+end
+```
+
+OK, now I need to get runs....
 
 # Starting from scratch, Early April:
 
