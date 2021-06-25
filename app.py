@@ -14,7 +14,7 @@ def my_runs():
         for row in reader:
             runs.append(row["polyline"])
 
-    return render_template("leaflet.html", runs = json.dumps(runs))
+    return render_template("templates/leaflet.html", runs = json.dumps(runs))
 
 if __name__ == "__main__":
     app.run(port = 5001)
