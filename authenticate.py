@@ -20,6 +20,9 @@ def save_object(obj, filename):
 
 @app.get("/")
 def read_root():
+    print("Printing client ID")
+    print(CLIENT_ID)
+    print(CLIENT_SECRET)
     authorize_url = client.authorization_url(client_id=CLIENT_ID, redirect_uri=REDIRECT_URL)
     return RedirectResponse(authorize_url)
 

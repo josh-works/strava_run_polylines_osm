@@ -4,11 +4,13 @@ To render my nephew's currently-being-tracked bike route (via my GPS watch and m
 
 ## Most current goal:
 
+Get all of my Strava run polylines, render them to a map.
+
 ### Get what little I currently have visible on Heroku
 
 I want to duplicate the functionality visible in [https://www.markhneedham.com/blog/2017/04/29/leaflet-strava-polylines-osm/](https://www.markhneedham.com/blog/2017/04/29/leaflet-strava-polylines-osm/).
 
-I'd like to know how to deploy it to Heroku, so it's publically visible. I've deployed Rails apps before, not Flask/Python apps.
+I'd like to know how to deploy it to Heroku, so it's publicly visible. I've deployed Rails apps before, not Flask/Python apps.
 
 Decided to make it a Sinatra app: [https://vast-meadow-00701.herokuapp.com/](https://vast-meadow-00701.herokuapp.com/)
 
