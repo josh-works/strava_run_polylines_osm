@@ -5,8 +5,10 @@ from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
 from stravalib.client import Client
 
-CLIENT_ID = os.getenv("CLIENT_ID")
-CLIENT_SECRET = os.getenv("CLIENT_SECRET")
+# CLIENT_ID = os.getenv("CLIENT_ID")
+CLIENT_ID = "63764"
+CLIENT_SECRET = "2e6c5168e3b97a9c0975e5377041b8a416b4fbf8"
+# CLIENT_SECRET = os.getenv("CLIENT_SECRET")
 REDIRECT_URL = 'http://localhost:8000/authorized'
 
 app = FastAPI()
