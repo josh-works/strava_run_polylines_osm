@@ -1,3 +1,16 @@
+## 2021-12-05
+
+How to setup/run/use locally:
+
+1. install everything
+2. Run `download_activities.py` with `python download_activities.py`
+3. Get login/creds with `uvicorn authenticate:app --reload`, then visit localhost, grab the `code` attribute.
+3. run `$python extra_runs.py` // get polyline for each activity
+4. run webserver with `flask run`
+
+
+
+
 # Goal
 
 To render my nephew's currently-being-tracked bike route (via my GPS watch and my bike) on an OSM map layer so he can pan/drag/zoom/explore in a way very similar to google maps. 
