@@ -4,12 +4,22 @@ How to setup/run/use locally:
 
 1. install everything
 2. Run `download_activities.py` with `python download_activities.py`
-3. Get login/creds with `uvicorn authenticate:app --reload`, then visit localhost, grab the `code` attribute.
+3. Get login/creds with `uvicorn authenticate:app --reload` (more just below)
 3. run `$python extra_runs.py` // get polyline for each activity
 4. run webserver with `flask run`
 
 
+## Getting creds for `extra_runs.py`
 
+run `uvicorn authenticate:app --reload`
+
+Visit localhost:5000, take that code, and use it in a `POST` to `/oauth/token`, with `client_id`, `client_secret`, and `code`
+
+er, maybe [go here](https://www.strava.com/oauth/authorize?client_id=63764&response_type=code&redirect_uri=http://localhost/exchange_token&approval_prompt=force&scope=activity:read_all), approve it, grab the `code` param from the redirect after approving, and pop that into the above `POST` and use the returned `access_token` in `extra_runs.py`
+
+It's working! Huzzah for polylines. I've got a TON more data in Strava now, so this will be a cool map rendering.
+
+https://www.markhneedham.com/blog/2020/12/15/strava-authorization-error-missing-read-permission/
 
 # Goal
 

@@ -5,7 +5,7 @@ import time
 import jsonlines
 
 CLIENT_ID = os.getenv("CLIENT_ID")
-CLIENT_SECRET = os.getenv("CLIENT_SECRET")
+CLIENT_SECRET = os.getenv("dcf0821d4eb05da66d6ae7f9a0616593a501066c")
 
 
 def check_token():
@@ -34,8 +34,10 @@ try:
 
     with jsonlines.open('data/activities-all.json', mode='w') as writer:
         for activity in client.get_activities():
+            print(activity)
             writer.write({
                 "id": activity.id,
+                "name": activity.name,
                 "distance": activity.distance.get_num(),
                 "moving_time": activity.moving_time.seconds,
                 "elapsed_time": activity.elapsed_time.seconds,

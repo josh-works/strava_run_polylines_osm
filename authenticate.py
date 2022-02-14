@@ -32,6 +32,7 @@ def read_root():
 @app.get("/authorized/")
 def get_code(state=None, code=None, scope=None):
     token_response = client.exchange_code_for_token(client_id=CLIENT_ID, client_secret=CLIENT_SECRET, code=code)
+    print(token_response)
     access_token = token_response['access_token']
     refresh_token = token_response['refresh_token']
     expires_at = token_response['expires_at']
