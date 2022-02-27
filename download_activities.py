@@ -34,7 +34,9 @@ try:
 
     with jsonlines.open('data/activities-all.json', mode='w') as writer:
         for activity in client.get_activities():
+            
             print(activity)
+            print(activity.name)
             writer.write({
                 "id": activity.id,
                 "name": activity.name,

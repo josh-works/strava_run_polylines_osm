@@ -3,7 +3,7 @@ import os
 import sys
 import csv
 # 
-token = "88ca4de824e4d7f699ba0766fb97c77c58444fe6"
+token = "c503b4ce3c1aae5f42db98d9c9c3438ffc94c1ec"
 # token = os.environ["STRAVA_TOKEN"]
 headers = {'Authorization': "Bearer {0}".format(token)}
 
@@ -17,13 +17,16 @@ with open("runs.csv", "w") as runs_file:
     page = 1
     while True:
         r = requests.get("https://www.strava.com/api/v3/athlete/activities?page={0}".format(page), headers = headers)
+        print("it's true! We're on to the next page!")
+        print(page)
         response = r.json()
 
         if len(response) == 0:
             break
         else:
             for activity in response:
-                print(response)
+                print("activities!")
+                print(format(activity["id"]))
                 r = requests.get("https://www.strava.com/api/v3/activities/{0}?include_all_efforts=true".format(activity["id"]), headers = headers)
                 polyline = r.json()["map"]["polyline"]
                 writer.writerow([activity["id"], polyline])

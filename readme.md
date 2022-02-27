@@ -15,7 +15,26 @@ run `uvicorn authenticate:app --reload`
 
 Visit localhost:5000, take that code, and use it in a `POST` to `/oauth/token`, with `client_id`, `client_secret`, and `code`
 
-er, maybe [go here](https://www.strava.com/oauth/authorize?client_id=63764&response_type=code&redirect_uri=http://localhost/exchange_token&approval_prompt=force&scope=activity:read_all), approve it, grab the `code` param from the redirect after approving, and pop that into the above `POST` and use the returned `access_token` in `extra_runs.py`
+Here's what to do:
+
+### Get `code` param
+
+1. In a BROWSER (not Postman, because you need to follow the redirects...) go to:
+2. https://www.strava.com/oauth/authorize?client_id=63764&response_type=code&redirect_uri=http://localhost/exchange_token&approval_prompt=force&scope=activity:read_all
+3. approve it (I have a google account, am signed into Strava, etc)
+4. grab the `code` param from the redirect after approving
+
+### Use `code` to get `access_token`
+
+do a POST to Strava via Postman to get the access code:
+
+```curl
+POST https://www.strava.com/oauth/token?client_id=63764&client_secret=2e6c5168e3b97a9c0975e5377041b8a416b4fbf8&code=d0ef0b6e7f3b83330044e1463eae531af1095df2&grant_type=authorization_code
+```
+
+### Use returned `access_token` in `extra_runs.py`
+
+replace the variable, do `python extra_runs.py`
 
 It's working! Huzzah for polylines. I've got a TON more data in Strava now, so this will be a cool map rendering.
 
@@ -33,9 +52,7 @@ Get all of my Strava run polylines, render them to a map.
 
 I want to duplicate the functionality visible in [https://www.markhneedham.com/blog/2017/04/29/leaflet-strava-polylines-osm/](https://www.markhneedham.com/blog/2017/04/29/leaflet-strava-polylines-osm/).
 
-I'd like to know how to deploy it to Heroku, so it's publicly visible. I've deployed Rails apps before, not Flask/Python apps.
-
-Decided to make it a Sinatra app: [https://vast-meadow-00701.herokuapp.com/](https://vast-meadow-00701.herokuapp.com/)
+I'd like to know how to deploy it to Heroku, so it's publicly visible. I've deployed Rails apps before, not Flask/Python apps. (here's the working version on Heroku: https://josh-strava-heatmap.herokuapp.com/)
 
 It's working locally, but not on Heroko:
 

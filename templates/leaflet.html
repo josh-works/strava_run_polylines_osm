@@ -17,9 +17,13 @@
         }).addTo(map);
 
     var encodedRoutes = {{ runs|safe }}
+    // console.log(encodedRoutes);
+    
 
     for (let encoded of encodedRoutes) {
+      console.log(encoded);
       var coordinates = L.Polyline.fromEncoded(encoded).getLatLngs();
+      console.log(coordinates);
 
       L.polyline(
           coordinates,
