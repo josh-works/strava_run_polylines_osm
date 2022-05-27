@@ -2,8 +2,8 @@ import requests
 import os
 import sys
 import csv
-# 
-token = "a823efbb1baab4f0737bcc53291bc7b219cf6b30"
+#
+token = "ec9912e83201bef9c78642034bf54c8ad3d63130"
 # token = os.environ["STRAVA_TOKEN"]
 headers = {'Authorization': "Bearer {0}".format(token)}
 print(headers)
@@ -30,5 +30,5 @@ with open("runs.csv", "a") as runs_file:
                 polyline = r.json()["map"]["polyline"]
                 writer.writerow([activity["id"], polyline])
             page += 1
-            
+
     print("that's all, folks.")

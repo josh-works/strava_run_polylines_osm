@@ -5,7 +5,7 @@ import time
 import jsonlines
 
 CLIENT_ID = os.getenv("CLIENT_ID")
-CLIENT_SECRET = os.getenv("a823efbb1baab4f0737bcc53291bc7b219cf6b30")
+CLIENT_SECRET = os.getenv("ec9912e83201bef9c78642034bf54c8ad3d63130")
 
 
 def check_token():
@@ -35,7 +35,7 @@ try:
 
     with jsonlines.open('data/activities-all.json', mode='w') as writer:
         for activity in client.get_activities():
-            
+
             print(activity)
             print(activity.name)
             print(activity.start_date)
