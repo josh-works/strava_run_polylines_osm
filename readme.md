@@ -1,4 +1,5 @@
-## 2021-12-05
+
+
 
 How to setup/run/use locally:
 
@@ -8,6 +9,12 @@ How to setup/run/use locally:
 3. run `$python extra_runs.py` // get polyline for each activity
 4. run webserver with `flask run`
 
+
+## 2022-02-28
+
+I'm basically building https://metroview.strava.com/map/demo for myself! 
+
+## 2021-12-05
 
 ## Getting creds for `extra_runs.py`
 

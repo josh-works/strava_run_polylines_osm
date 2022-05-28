@@ -18,15 +18,12 @@ with open("runs.csv", "w") as runs_file:
     while True:
         r = requests.get("https://www.strava.com/api/v3/athlete/activities?page={0}".format(page), headers = headers)
         print("it's true! We're on to the next page!")
-        print(page)
         response = r.json()
 
         if len(response) == 0:
             break
         else:
             for activity in response:
-                print("activities!")
-                print(format(activity["id"]))
                 r = requests.get("https://www.strava.com/api/v3/activities/{0}?include_all_efforts=true".format(activity["id"]), headers = headers)
                 polyline = r.json()["map"]["polyline"]
                 writer.writerow([activity["id"], polyline])
