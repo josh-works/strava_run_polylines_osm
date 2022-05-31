@@ -5,7 +5,7 @@ import time
 import jsonlines
 
 CLIENT_ID = os.getenv("CLIENT_ID")
-CLIENT_SECRET = os.getenv("dcf0821d4eb05da66d6ae7f9a0616593a501066c")
+CLIENT_SECRET = os.getenv("a823efbb1baab4f0737bcc53291bc7b219cf6b30")
 
 
 def check_token():
@@ -28,6 +28,7 @@ def load_object(filename):
 
 try:
     client = load_object('auth/client.pkl')
+    print(client)
     check_token()
     athlete = client.get_athlete()
     print("For {id}, I now have an access token {token}".format(id=athlete.id, token=client.access_token))
@@ -37,6 +38,7 @@ try:
             
             print(activity)
             print(activity.name)
+            print(activity.start_date)
             writer.write({
                 "id": activity.id,
                 "name": activity.name,

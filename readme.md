@@ -3,6 +3,10 @@
 
 How to setup/run/use locally:
 
+# Get token to use in `download_activities.py`
+
+
+
 1. install everything
 2. Run `download_activities.py` with `python download_activities.py`
 3. Get login/creds with `uvicorn authenticate:app --reload` (more just below)
@@ -36,7 +40,7 @@ Here's what to do:
 do a POST to Strava via Postman to get the access code:
 
 ```curl
-POST https://www.strava.com/oauth/token?client_id=63764&client_secret=2e6c5168e3b97a9c0975e5377041b8a416b4fbf8&code=d0ef0b6e7f3b83330044e1463eae531af1095df2&grant_type=authorization_code
+POST https://www.strava.com/oauth/token?client_id=63764&client_secret=2e6c5168e3b97a9c0975e5377041b8a416b4fbf8&code=0a0f72c337dce3ad0f4efd2ff86928fdd471fff3&grant_type=authorization_code
 ```
 
 ### Use returned `access_token` in `extra_runs.py`
