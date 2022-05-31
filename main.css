@@ -1,1 +1,19 @@
-.
+.large-screens {
+  display: none;
+}
+
+p { 
+  boarder-thickness: 3;
+  border-color: coral;
+}
+
+p.dotted {border-style: dotted;}
+
+@media (min-width: 300px) {
+  .large-screens {
+    display: block;
+  }
+  .small-screens {
+    display: none;
+  }
+}

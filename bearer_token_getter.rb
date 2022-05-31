@@ -16,3 +16,8 @@ request["Cookie"] = "_strava4_session=vkml9ms5bqs89hgkfdf79ob12qp2gujg"
 response = https.request(request)
 puts JSON.format(response.read_body)
 
+
+# config for refresh token sometime
+# https://developers.strava.com/docs/authentication/#refreshingexpiredaccesstokens
+
+# https://www.postman.com/jokgopostman/workspace/postman-atomxplus-s-public-workspace/request/8343326-543e0ec1-9306-4314-ab89-a51428fe1297
