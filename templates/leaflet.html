@@ -9,10 +9,12 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" type="text/css" href="./index.css" />
     <div class="large-screens">
-      <p>hi there. This is a little project I'm working on, to get better with certain kinds of writing code.</p>
+      <p>hi there! This map thing is part of a project I'm working on, to get better with a few aspects of software/application development in an interesting-top-me way.</p>
       <p>I sometimes write about this project (or others like it) to email subscribers on my website:</p>
       <a href="https://josh.works">https://josh.works</a>
-      <p>I am also working on improving my skills with hand-rolling many aspects of this application. Please bear with me.</p>
+      <p>These blue lines are called 'polylines', and is a datatype kinda like an SVG. I followed someone's online instructions to query the Strava API (rather harder than I expected) and get activity data for a given athlete. I've done this for myself, so these lines represent any activity I've recorded in <a href="https://www.strava.com/"></a>Strava</p>.
+      <p>This data is far from all of my activity data, but it's interesting. (hint - zoom out really far)</p>
+      <p></p>
     </div>
     <div class="small-screens">
       <p>cell phone!</p>
@@ -28,7 +30,7 @@
 
     var encodedRoutes = {{ runs|safe }}
     // console.log(encodedRoutes);
-    
+
 
     for (let encoded of encodedRoutes) {
       console.log(encoded);
