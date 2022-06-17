@@ -10,23 +10,24 @@
     <link rel="stylesheet" type="text/css" href="./index.css" />
     <div class="large-screens">
       <p>hi there! This map thing is part of a project I'm working on, to get better with a few aspects of software/application development in an interesting-top-me way.</p>
-      <p>I sometimes write about this project (or others like it) to email subscribers on my website:</p>
-      <a href="https://josh.works">https://josh.works</a>
-      <p>These blue lines are called 'polylines', and is a datatype kinda like an SVG. I followed someone's online instructions to query the Strava API (rather harder than I expected) and get activity data for a given athlete. I've done this for myself, so these lines represent any activity I've recorded in <a href="https://www.strava.com/"></a>Strava</p>.
-      <p>This data is far from all of my activity data, but it's interesting. (hint - zoom out really far)</p>
-      <p></p>
-    </div>
-    <div class="small-screens">
-      <p>cell phone!</p>
+      <p>I sometimes write about this project (or others like it) to email subscribers on my website, <a href="https://josh.works">https://josh.works</a></p>
+      <p>These blue lines are called 'polylines', and is a datatype kinda like an SVG. I followed someone's online instructions to query the Strava API (rather harder than I expected) and get activity data for a given athlete. I've done this for myself, so these lines represent any activity I've recorded in <a href="https://www.strava.com/">Strava</a>.</p>
+      <p>This data is not even 10% of my activity data, but it's interesting. (hint - zoom out really far)</p>
     </div>
     <div id="map" style="width: 100%; height: 100%"></div>
 
     <script>
-    var map = L.map('map').setView([39.748733, -105.220105], 13);
-    L.tileLayer(
-        'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 18,
-        }).addTo(map);
+
+    var map = L.map('map').setView([39.755968, -105.221891], 16);
+          L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 22,
+            minZoom: 1,
+            id: 'mapbox/satellite-v9',
+            tileSize: 512,
+            zoomOffset: -1,
+            accessToken: 'pk.eyJ1Ijoiam9zaHdvcmtzIiwiYSI6ImNrcWk2NzUxeTJhbm8yem4weDFreTY5bjQifQ.Qja1F9B1-i7hK3KOvSYAvg'
+          }).addTo(map);
 
     var encodedRoutes = {{ runs|safe }}
     // console.log(encodedRoutes);
