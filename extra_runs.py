@@ -3,7 +3,7 @@ import os
 import sys
 import csv
 #
-token = "9de3c75de951a88afa2332c34d2dd8ba11314363"
+token = "e0693984fb85d159c11c0e694da48bafdcc605ef"
 # token = os.environ["STRAVA_TOKEN"]
 headers = {'Authorization': "Bearer {0}".format(token)}
 print(headers)
@@ -20,7 +20,7 @@ with open("runs.csv", "a") as runs_file:
     # page = 1
     while True:
         r = requests.get("https://www.strava.com/api/v3/athlete/activities?page={0}".format(page), headers = headers)
-        print("it's true! We're on to the next page!")
+        print("we got a response from https://www.strava.com/api/v3/athlete/activities?page={0}")
         print(r)
         response = r.json()
 
