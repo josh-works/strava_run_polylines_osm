@@ -3,7 +3,7 @@ import os
 import sys
 import csv
 #
-token = "e0693984fb85d159c11c0e694da48bafdcc605ef"
+token = "ea0a22f3cb4b7460fcbcfb6883750c2864f1318d"
 # token = os.environ["STRAVA_TOKEN"]
 headers = {'Authorization': "Bearer {0}".format(token)}
 print(headers)
