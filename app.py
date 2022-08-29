@@ -15,6 +15,8 @@ def my_runs():
             runs.append(row["polyline"])
 
     return render_template("leaflet.html", runs = json.dumps(runs))
-
+@app.route('/about')
+def about():
+    return render_template('about.html')
 if __name__ == "__main__":
     app.run(port = 5001)
