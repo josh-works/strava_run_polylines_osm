@@ -18,6 +18,7 @@ client = Client()
 def save_object(obj, filename):
     with open(filename, 'wb') as output:  # Overwrites any existing file.
         pickle.dump(obj, output, pickle.HIGHEST_PROTOCOL)
+        print("finished saving object")
 
 
 @app.get("/")
@@ -39,6 +40,7 @@ def get_code(state=None, code=None, scope=None):
     client.access_token = access_token
     client.refresh_token = refresh_token
     client.token_expires_at = expires_at
+    print("saving object")
     save_object(client, 'auth/client.pkl')
     return {"state": state, "code": code, "scope": scope}
     

@@ -13,6 +13,11 @@ How to setup/run/use locally:
 3. run `$python extra_runs.py` // get polyline for each activity
 4. run webserver with `flask run`
 
+## 2024-01-03
+
+If you're forgetful, and don't remember why the strava code is returning `invalid`:
+
+https://www.markhneedham.com/blog/2020/12/15/strava-authorization-error-missing-read-permission/
 
 ## 2022-02-28
 
