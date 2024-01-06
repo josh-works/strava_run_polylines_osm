@@ -27,13 +27,17 @@
           }).addTo(map);
 
     var encodedRoutes = {{ runs|safe }}
+    console.log("leaflet.html...")
+    var latlong = [ {{ latlng|safe }} ]
+    console.log("query paramz:")
+    console.log(latlong)
     // console.log(encodedRoutes);
 
 
     for (let encoded of encodedRoutes) {
-      console.log(encoded);
+      // console.log(encoded);
       var coordinates = L.Polyline.fromEncoded(encoded).getLatLngs();
-      console.log(coordinates);
+      // console.log(coordinates);
 
       L.polyline(
           coordinates,
@@ -45,6 +49,10 @@
           }
       ).addTo(map);
     }
+    // map.zoomIn(3)
+    map.setView(latlong, 15)
+    
+
     </script>
   </body>
 </html>
