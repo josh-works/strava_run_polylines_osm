@@ -1,6 +1,12 @@
 <html>
   <head>
     <title>Mapping my runs (in Python/Flask)</title>
+    <style>
+      button:hover {
+        color: blue;
+      }
+
+    </style>
   </head>
 
   <body>
@@ -11,9 +17,25 @@
     <div class="nav">
       <a href="/about">about</a>
     </div>
+    <button 
+      id="update_url_to_current_view" 
+      type="button"
+      onclick="placelatlnginurl()"
+      >click here to generate sharable URL of current latitude and longitude and zoom level</button> 
     <div id="map" style="width: 100%; height: 100%"></div>
 
     <script>
+
+    
+    function placelatlnginurl(cords){
+      console.log("oh shit replacelatlnginurl to " + cords)
+      window.history.replaceState('', '', '?latlng=' + cords);
+    }
+
+    function getCurrentCords(){
+      return [ 43.72927165246686, -105.00802723474892 ]
+    }
+
     var denverCords = [ 39.72927165246686, -105.00802723474892 ]
     var map = L.map('map').setView(denverCords, 13);
           L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -30,17 +52,7 @@
     console.log(denverCords)
     var encodedRoutes = {{ runs|safe }}
     var coords_param = [ {{ latlng }} ]
-    console.log("coords_params:")
-    console.log(coords_param)
-
-    
-    
-
-    // console.log(encodedRoutes);
-
-
     for (let encoded of encodedRoutes) {
-      // console.log(encoded);
       var coordinates = L.Polyline.fromEncoded(encoded).getLatLngs();
       console.log("got another encoded polyline...");
 
@@ -59,9 +71,20 @@
       console.log("true")
       map.setView(coords_param, 15)
     }
-    
 
- 
+    map.on('click', 
+					function(e){
+            console.log(e)
+            console.log(e.latlong)
+						var coord = e.latlng.toString().split(',');
+						var lat = coord[0].split('(');
+						var lng = coord[1].split(')');
+						console.log("You clicked the map at " + lat[1] + "," + lng[0]);
+            console.log("attempting to set URL to where clicked to: " + e.latlng.toString())
+            placelatlnginurl(lat[1] + "," + lng[0])
+					});
+
+          con
     
 
     </script>
