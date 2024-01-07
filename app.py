@@ -8,11 +8,14 @@ app = Flask(__name__)
 
 @app.route('/')
 def my_runs():
+    latlng_param = ""
     print("app.py>my_runs")
-    latlng_param = str(request.args.get('latlng'))
-    print(latlng_param)
-    print(type(latlng_param))
-    print(request.args)
+    if request.args.get('latlng'):
+        latlng_param = str(request.args.get('latlng'))
+        print(latlng_param)
+        print(type(latlng_param))
+        print(request.args)
+
     runs = []
     with open("runs.csv", "r") as runs_file:
         reader = csv.DictReader(runs_file)
