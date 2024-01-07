@@ -14,8 +14,8 @@
     <div id="map" style="width: 100%; height: 100%"></div>
 
     <script>
-
-    var map = L.map('map').setView([ 39.72927165246686, -105.00802723474892 ], 13);
+    var denverCords = [ 39.72927165246686, -105.00802723474892 ]
+    var map = L.map('map').setView(denverCords, 13);
           L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
             maxZoom: 22,
@@ -26,9 +26,15 @@
             accessToken: 'pk.eyJ1Ijoiam9zaHdvcmtzIiwiYSI6ImNrcWk2NzUxeTJhbm8yem4weDFreTY5bjQifQ.Qja1F9B1-i7hK3KOvSYAvg'
           }).addTo(map);
 
+    console.log("deverCords")
+    console.log(denverCords)
     var encodedRoutes = {{ runs|safe }}
-    var latlng = [  39.72927165246686, -105.00802723474892 ]
-    var latlong = [ {{ latlng|safe }} ]
+    var coords_param = [ {{ latlng }} ]
+    console.log("coords_params:")
+    console.log(coords_param)
+
+    
+    
 
     // console.log(encodedRoutes);
 
@@ -36,7 +42,7 @@
     for (let encoded of encodedRoutes) {
       // console.log(encoded);
       var coordinates = L.Polyline.fromEncoded(encoded).getLatLngs();
-      // console.log(coordinates);
+      console.log("got another encoded polyline...");
 
       L.polyline(
           coordinates,
@@ -48,8 +54,14 @@
           }
       ).addTo(map);
     }
-    // map.zoomIn(3)
-    map.setView(latlong, 15)
+    console.log("trying to use map.setView to: " + String(coords_param))
+    if(coords_param) {
+      console.log("true")
+      map.setView(coords_param, 15)
+    }
+    
+
+ 
     
 
     </script>
