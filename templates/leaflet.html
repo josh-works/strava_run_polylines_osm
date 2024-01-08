@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Mapping my runs (in Python/Flask)</title>
+    <title>Mapping Josh's Mobility Data</title>
     <style>
       button:hover {
         color: blue;
@@ -17,27 +17,23 @@
     <div class="nav">
       <a href="/about">about</a>
     </div>
-    <button 
-      id="update_url_to_current_view" 
-      type="button"
-      onclick="placelatlnginurl()"
-      >click here to generate sharable URL of current latitude and longitude and zoom level</button> 
+  
     <div id="map" style="width: 100%; height: 100%"></div>
 
     <script>
 
     
-    function placelatlnginurl(cords){
-      console.log("oh shit replacelatlnginurl to " + cords)
-      window.history.replaceState('', '', '?latlng=' + cords);
+    function placelatlngzoominurl(cords){
+      console.log("oh shit placelatlngzoominurl to " + cords)
+      zoom = map.getZoom()
+      console.log("and zoom to: " + zoom)
+      
+      window.history.replaceState('', '', '?zoom=' + zoom + '&latlng=' + cords);
     }
 
-    function getCurrentCords(){
-      return [ 43.72927165246686, -105.00802723474892 ]
-    }
-
+    var zoom_param = {{ zoom }}
     var denverCords = [ 39.72927165246686, -105.00802723474892 ]
-    var map = L.map('map').setView(denverCords, 13);
+    var map = L.map('map').setView(denverCords, zoom_param);
           L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
             maxZoom: 22,
@@ -48,13 +44,10 @@
             accessToken: 'pk.eyJ1Ijoiam9zaHdvcmtzIiwiYSI6ImNrcWk2NzUxeTJhbm8yem4weDFreTY5bjQifQ.Qja1F9B1-i7hK3KOvSYAvg'
           }).addTo(map);
 
-    console.log("deverCords")
-    console.log(denverCords)
     var encodedRoutes = {{ runs|safe }}
     var coords_param = [ {{ latlng }} ]
     for (let encoded of encodedRoutes) {
       var coordinates = L.Polyline.fromEncoded(encoded).getLatLngs();
-      console.log("got another encoded polyline...");
 
       L.polyline(
           coordinates,
@@ -66,10 +59,16 @@
           }
       ).addTo(map);
     }
-    console.log("trying to use map.setView to: " + String(coords_param))
     if(coords_param) {
-      console.log("true")
-      map.setView(coords_param, 15)
+      console.log("trying to use map.setView to: " + String(coords_param))
+      console.log("setting view...")
+      map.setView(coords_param)
+    }
+
+    if(zoom_param) {
+      console.log("trying to map.setZoom to: " + String(zoom_param))
+      console.log("setting zoom...")
+      map.setZoom(zoom_param)
     }
 
     map.on('click', 
@@ -81,7 +80,7 @@
 						var lng = coord[1].split(')');
 						console.log("You clicked the map at " + lat[1] + "," + lng[0]);
             console.log("attempting to set URL to where clicked to: " + e.latlng.toString())
-            placelatlnginurl(lat[1] + "," + lng[0])
+            placelatlngzoominurl(lat[1] + "," + lng[0])
 					});
 
           con
