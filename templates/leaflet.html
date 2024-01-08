@@ -38,6 +38,72 @@
             accessToken: 'pk.eyJ1Ijoiam9zaHdvcmtzIiwiYSI6ImNrcWk2NzUxeTJhbm8yem4weDFreTY5bjQifQ.Qja1F9B1-i7hK3KOvSYAvg'
           }).addTo(map);
 
+    // markers
+    var homebot_office = L.marker([39.74896, -104.999058]).addTo(map);
+    homebot_office.bindPopup("<b>Company Office</b><br>For about a year, I worked for a company that had an office available for any employee to use. I used it more than most, because I could park my scooter in the basement. Easy travel, effortless parking");
+
+    var baker_climbing_gym = L.marker([39.725278, -105.002571]).addTo(map);
+    baker_climbing_gym.bindPopup("<b>Climbing Gym</b><br>When in Denver, it's the most-frequently-frequented area climbing gym for me. Many, many tracked activities begin, end, or pass through this location.");
+
+    var night_1 = L.marker([43.392302, -108.161194]).addTo(map);
+    night_1.bindPopup("<b>Spent first night here</b></br>I'd picked out this campground as 'likely to have a nice spot to sleep', and it totally delivered. Covered pavilion, picnic table, easy hammock-hanging, quiet, etc.");
+
+    var night_2 = L.marker([44.616897, -110.418021]).addTo(map);
+    night_2.bindPopup("<b>Spent second night here</b></br>I'd not gotten as far as I'd hoped/planned today, and ran into rain. It was all NBD, and I had tons of downtime in Yellowstone, so had a great time.");
+
+    var night_3 = L.marker([48.391028, -116.496921]).addTo(map);
+    night_3.bindPopup("<b>Third night was super easy, stayed at friend's house</b></br> everyone had a restful morning in Sandpoint. Lots of food, a shower, coffee, etc. Felt very peaceful");
+
+    var night_4 = L.marker([50.316613, -119.191597]).addTo(map);
+    night_4.bindPopup("<b>4th night, arriving in Vernon, BC: </b></br> I arrived at the site of the training that was happening over the following week.");
+
+    var travel_1 = L.marker([50.571791, -120.434634]).addTo(map);
+    travel_1.bindPopup("<b>Travelling to Seattle, night 1</b></br> I left Vernon Friday afternoon, after wrapping up for the week, figured I could get a few hours of travel before the sun went down. I was right, I did, this was one of the most peaceful, beautiful, and alone nights I had on the entire trip. A story could be told about over-night site selection");
+
+    var travel_2 = L.marker([49.672404, -123.164833]).addTo(map);
+    travel_2.bindPopup("<b>2nd night of getting to Seattle, at a beautiful campground. I had no idea I was going to be riding through squamish</b></br> I could have spent days/weeks here, climbing and climbing and climbing. Next time?");
+    
+    var travel_3 = L.marker([47.464656, -122.539632]).addTo(map);
+    travel_3.bindPopup("<b>Normandy, Ross's house</b></br> friends, family, peacefulness. It was all lovely, i've spent a few total weeks here now");
+
+    var denver_1 = L.marker([45.788617, -118.222718]).addTo(map);
+    denver_1.bindPopup("<b>Seattle to Denver, night 1</b></br> a peaceful spot to spend the night, but the prior gas station was closed, so I was a bit concerned about gas. I had a half-tank in reserve, and expected to need at least some of it. It was also cold-ish.");
+
+    var denver_2 = L.marker([43.019022, -114.229758]).addTo(map);
+    denver_2.bindPopup("<b>returning to Denver, night 2</b></br> def my least favorite night out on the trip. It was late, I was tired, was having trouble even finding trees that could hold a hammock and were not right next to a possibly-in-use house");
+
+    var denver_3 = L.marker([43.481899, -110.767293]).addTo(map);
+    denver_3.bindPopup("<b>The city of Jackson Hole, WY</b></br> I hung out for the day, almost went climbing but was on a bit of a schedule for getting back to Denver. When I quested off on the trip, I had no idea I'd be passing through Jackson Hole.");
+
+    var denver_4 = L.marker([43.479022, -110.809468]).addTo(map);
+    denver_4.bindPopup("<b>this entire road, end-to-end, was stopped traffic</b></br> On my way out of town, for miles (maybe 12?) traffic was nearly completely stopped. I scooted past everyone at a cool 30 mph, was hardly affected. It was/still is the longest traffic jam I've ever passed by on my scooter");
+
+    var jackson_hole_1 = L.marker([43.587646, -110.822183]).addTo(map);
+    jackson_hole_1.bindPopup("<b>thai food + beautiful sunset views</b></br> learned that the road I was planning on taking next was closed. I ended up taking it (rode under/around the gate) and had a grand ol' time. The only 'issue' was that the road was sometimes dirt instead of pavement. I survived.");
+
+    var denver_5 = L.marker([43.278375, -109.110637]).addTo(map);
+    denver_5.bindPopup("<b>3rd night, returning to Denver</b></br> slimmer hammock camping pickings out here than I prefer. It was fine.");
+
+    var denver_6 = L.marker([39.903239, -105.777719]).addTo(map);
+    denver_6.bindPopup("<b>4th night/last night</b></br> almost back to Denver. These felt like big travel days at this point. Not undoable, but deff tiring");
+
+    // var jackson_hole_1 = L.marker([49.672404, -123.164833]).addTo(map);
+    // jackson_hole_1.bindPopup("<b>title</b></br> description");
+
+    // var jackson_hole_1 = L.marker([49.672404, -123.164833]).addTo(map);
+    // jackson_hole_1.bindPopup("<b>title</b></br> description");
+
+    // var jackson_hole_1 = L.marker([49.672404, -123.164833]).addTo(map);
+    // jackson_hole_1.bindPopup("<b>title</b></br> description");
+
+    // var jackson_hole_1 = L.marker([49.672404, -123.164833]).addTo(map);
+    // jackson_hole_1.bindPopup("<b>title</b></br> description");
+
+    // var jackson_hole_1 = L.marker([49.672404, -123.164833]).addTo(map);
+    // jackson_hole_1.bindPopup("<b>title</b></br> description");
+    
+    // end markers
+
     var encodedRoutes = {{ runs|safe }}
     var coords_param = [ {{ latlng }} ]
     for (let encoded of encodedRoutes) {
@@ -77,7 +143,9 @@
             placelatlngzoominurl(lat[1] + "," + lng[0])
 					});
 
-          con
+    // adding labels, will do this in a 'real' way sometime. store as another CSV, stream from python as [latlng|label title|detailed text]
+    // or something like that, same as the polylines?
+    
     
 
     </script>
