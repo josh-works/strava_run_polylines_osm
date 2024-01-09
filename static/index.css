@@ -65,7 +65,7 @@ p, h1, h2, h3, h4, h5, h6 {
   position: sticky;
   z-index: 9999;
   border: 3px solid black;
-  padding: 10px;
+  padding: 10px 10px 10px 20px;
   margin-right: 0px;
   margin-left: auto;
   float: right;
@@ -73,6 +73,7 @@ p, h1, h2, h3, h4, h5, h6 {
   background: yellow;
   background-color: yellow;
   opacity: 0.75;
+  border-radius: 0px 0px 0px 50px;
 }
 
 .nav:hover {opacity: 1}
