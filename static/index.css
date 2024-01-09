@@ -2,6 +2,7 @@
 
 /*
   1. Use a more-intuitive box-sizing model.
+  https://courses.joshwcomeau.com/css-for-js/treasure-trove/010-global-styles
 */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -61,10 +62,22 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .nav {
-  position: relative;
-  border: 3px solid #73AD21;
+  position: sticky;
+  z-index: 9999;
+  border: 3px solid black;
   padding: 10px;
   margin-right: 0px;
   margin-left: auto;
   float: right;
+  margin-bottom: -100%;
+  background: yellow;
+  background-color: yellow;
+  opacity: 0.75;
+}
+
+.nav:hover {opacity: 1}
+
+#map {
+  /* margin-top: -50px;
+  margin-left: 10px; */
 }
