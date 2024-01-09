@@ -9,7 +9,18 @@
     <script type="text/javascript" src="https://rawgit.com/jieter/Leaflet.encoded/master/Polyline.encoded.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <div class="nav">
+      <a href="/">home</a>
       <a href="/about">about</a>
+      <a href="#" onclick="return map.setView([39.72927165246686, -105.00802723474892])">Denver</a><br />
+      <a href="#" onclick="return map.setView([-8.506786197265994,115.26236578460734])">Ubud, Bali, Indonesia</a><br />
+      <a href="#" onclick="return map.setView([47.60172493284988,-122.33900705633255])">Seattle, WA</a><br />
+      <a href="#" onclick="return map.setView([19.36028774857446,98.44101216617672])">Pai, Thailand</a><br />
+      <a href="#" onclick="return map.setView([27.71477455315837,85.31205826372452])">Kathmandu, Nepal</a><br />
+      <a href="#" onclick="return map.setView([40.76448082008763,-73.97905681018185])">trip from DC -> NYC, USA</a><br />
+      <a href="#" onclick="return map.setView([22.615623090684668,-83.71015545648831])">Viñales, Cuba</a><br />
+      <a href="#" onclick="return map.setView([13.762002, 100.494141])">Bangkok, Thailand</a><br />
+      <a href="#" onclick="return map.setView([25.049695, 121.518558])">Taipei, Taiwan</a><br />
+      
     </div>
   
     <div id="map" style="width: 100%; height: 100%"></div>
@@ -156,14 +167,12 @@
 
     var encodedRoutes = {{ runs|safe }}
     var coords_param = [ {{ latlng }} ]
-    var counter = 0
     for (let encoded of encodedRoutes) {
       var coordinates = L.Polyline.fromEncoded(encoded).getLatLngs();
       var begin_latlong = coordinates[0]
       var end_latlong = coordinates[coordinates.length-1]
 
-      console.log(counter)
-      counter += 1
+      
       
       // too heavy duty on the web app rn to add the thousand+markers this would load
       L.marker(begin_latlong, {icon: greenIcon}).addTo(map);

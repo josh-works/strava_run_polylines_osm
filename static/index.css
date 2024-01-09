@@ -60,10 +60,11 @@ p, h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
-nav {
-  position: absolute;
-  right: 0px;
-  width: 300px;
+.nav {
+  position: relative;
   border: 3px solid #73AD21;
   padding: 10px;
+  margin-right: 0px;
+  margin-left: auto;
+  float: right;
 }
