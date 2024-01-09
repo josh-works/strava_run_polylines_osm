@@ -1,3 +1,5 @@
+.leaflet-fade-anim .leaflet-tile,.leaflet-zoom-anim .leaflet-zoom-animated { will-change:auto !important; }
+
 /*
   1. Use a more-intuitive box-sizing model.
 */
