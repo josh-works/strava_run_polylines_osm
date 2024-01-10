@@ -76,7 +76,30 @@ p, h1, h2, h3, h4, h5, h6 {
   border-radius: 0px 0px 0px 50px;
 }
 
-.nav:hover {opacity: 1}
+.nav:hover {
+  opacity: 1;
+  font-size: 20px;
+}
+
+
+.locations {
+  /* background-color: coral; */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.locations li {
+  padding-left: 1rem;
+  text-indent: -0.75rem;
+  /* background-color: coral; */
+}
+
+.locations li::before {
+  content: '📍 ';
+  /* background-color: coral; */
+
+}
 
 #map {
   /* margin-top: -50px;
