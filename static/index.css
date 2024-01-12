@@ -1,3 +1,4 @@
+/* https://github.com/Leaflet/Leaflet/issues/4686\#issuecomment-476738312 */
 .leaflet-fade-anim .leaflet-tile,.leaflet-zoom-anim .leaflet-zoom-animated { will-change:auto !important; }
 
 /*

@@ -13,6 +13,90 @@ How to setup/run/use locally:
 3. run `$python extra_runs.py` // get polyline for each activity
 4. run webserver with `flask run`
 
+## 2024-01-11
+
+I keep doing bits and bobs of work on this, and being pleased with the results, but not really writing down any of the work, so here it is, best I can remember it.
+
+I now have a functioning URL-parsing website. This works:
+
+https://joshs-mobility-data-54dab943ebba.herokuapp.com/?zoom=15&latlng=18.785264,%2098.992305#
+
+Look that the query perams:
+
+`zoom=15 latong=18.785264, 2098.992305`. So that lets me quickly snag any view I want.
+
+that took getting query params, passing them through to the rendered HTML as a variable (easier to do in Python/Flask than in Rails) and then... lets see, something like:
+
+IF there is a latlong param set, load the map to that view initially...
+
+... after all the other JS has happened, if there is a zoom param given, set the current zoom level to that.
+
+I cleaned up/debugged some broken Polylines that was causing some issues/persistent browser console warnings/errors.
+
+I futzed with a CSS rule to disable some other warning:
+
+per https://github.com/Leaflet/Leaflet/issues/4686\#issuecomment-476738312
+
+added colored start/end markers, the clusters are interesting to me. Would be cool to show directionality of the line. Color it from a spectrum, beginning to end? animate it to wiggle or glow in a pattern that gives it movement in a certain direction?
+
+I've done a bunch of other cool css stuff. Peep the file for more.
+
+### Today's big discovery: somewhere it IS possible to get photo lat/long in/out of strava
+
+What I wanna do now, and am super excited about, is to maybe add photo overlays on the map. 
+
+I would love love love to be able to add photos to activities, and have it fetchable via the API
+
+What I wanna do is explore the API response, in something that feels like a Ruby script or Rails console session:
+
+https://www.strava.com/activities/10381720567
+
+I'd long ago given up hope that this was possible. I'd imagined the feature as a once-was, but maybe no longer available.
+
+Here's the Strava user forum threads I found:
+
+https://communityhub.strava.com/t5/strava-features-chat/photos-no-longer-display-on-map-possible-to-adjust-settings/m-p/1984#M438
+
+(strava, I'm still having issues, and I think the photo URLs + latlng information IS NOT AVAILABLE VIA THE API!!!!!! I would gladly sign on as a contractor to finesse this feature into existance, and then wrap up my employment at Strava)
+
+Here's what I can see in the web UI:
+
+![webui](/images/2024-01-12 at 12.07 AM.png)
+
+BTW, here's the photo I want to render to this map. Cool photo, huh?
+
+https://dgtzuqphqg23d.cloudfront.net/QThlg8qH8Ci0kjAhbDXUOW0LAD1z_TTbvDs3lWNkM6Y-2048x1536.jpg
+
+It's got two photos, from my DRONE, I wonder if it matters. The drone includes geolocation data, I thought I'd told my phont to include all available photo geolocation in the files....
+
+So next, since I can confirm a RECENT activity, with attached photos, that are rendered to a map, I wanna do two things:
+
+1. with a given URL, render my own photo/pin equivalent to the map (already almost done)
+2. with a given activity, somehow find an attached photo? I'm going to re-explore via a Ruby REPL-type thing, the strava-ruby gem: https://github.com/dblock/strava-ruby-client
+
+Next, here's what I've got for my pop-up now:
+
+The blue one is clickable:
+
+![clickable]("/images/2024-01-12 at 12.11 AM.png")
+
+This is what happens on click:
+
+![drone photo visible]("images/2024-01-12 at 12.12 AM.png")
+
+I'd like it to open up into a full-screen photo on click, and i'm gonna see if I can make the marker load with the pop-up already opened...
+
+OK, here's something that sorta works, I just added the final `openPopup()` call:
+
+```javascript
+ var photoMarker = L.marker([39.728373, -104.940488], {
+      draggable: true,
+      title: "i'm a title! This is where this photo was taken",
+      style: "background-color:black;"
+    }).addTo(map);
+    photoMarker.bindPopup('<img src="https://dgtzuqphqg23d.cloudfront.net/QThlg8qH8Ci0kjAhbDXUOW0LAD1z_TTbvDs3lWNkM6Y-2048x1536.jpg" style="width:200px"><p>this photo came with geodata, as it was taken on a drone I was flying at the time.</p>').openPopup();
+```
+
 ## 2024-01-03
 
 If you're forgetful, and don't remember why the strava code is returning `invalid`:
