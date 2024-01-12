@@ -94,8 +94,52 @@ OK, here's something that sorta works, I just added the final `openPopup()` call
       title: "i'm a title! This is where this photo was taken",
       style: "background-color:black;"
     }).addTo(map);
-    photoMarker.bindPopup('<img src="https://dgtzuqphqg23d.cloudfront.net/QThlg8qH8Ci0kjAhbDXUOW0LAD1z_TTbvDs3lWNkM6Y-2048x1536.jpg" style="width:200px"><p>this photo came with geodata, as it was taken on a drone I was flying at the time.</p>').openPopup();
+    photoMarker.bindPopup('<img src="https://dgtzuqphqg23d.cloudfront.net/QThlg8qH8Ci0kjAhbDXUOW0LAD1z_TTbvDs3lWNkM6Y-2048x1536.jpg" style="width:200px"><p>this photo came with geodata, as it was taken on a drone I was flying at the time.</p> onclick="this.requestFullscreen()"').openPopup();
 ```
+
+gonna maybe write raw HTML that simply makes the image a clickable link, click to go straight to the img source?
+
+```javascript
+let images = document.querySelectorAll("img");
+.leaflet-popup-content > img:nth-child(1)
+
+addEventListener("click", (event) => {});
+
+img.addEventListener("click", (alert('hi')) => {});
+
+onclick="this.requestFullscreen()"
+
+```
+
+Good progress:
+
+![js alert](images/2024-01-12at12.42AM.jpg)
+
+I'm leaning into this being heavy iteration:
+
+```javascript
+let thumb = document.querySelectorAll(".leaflet-popup-content > img:nth-child(1)")[0];
+thumb.addEventListener('click', function() {
+  this.requestFullscreen();
+});
+```
+
+copy-paste friendly. Used the `ctrl-opt-i` element selector to click the image, find it in the html, right click the line of html, `copy css selector`, used that in the `document.querySelectorAll` to get the right img. when I was `querySelectorAll('img')`, I got thousands of results. the map seems to use a lot of img tags.
+
+Anyway, making progress. I think `requestFullscreen` isn't exactly the right method but close. Now that I have this easily copy-pastable, I can reload the page, clear the clobbering mess of event listeners I added all over that bit of the DOM...
+
+`onclick="window.open(this.src, '_blank');"`, I think. 
+
+Heck yeah, that works. 
+
+- https://stackoverflow.com/questions/67815853/how-do-i-make-an-image-full-screen-on-click#comment135891074_74505101
+- https://www.kirupa.com/html5/finding_elements_dom_using_querySelector.htm
+- https://stackoverflow.com/questions/2226953/how-to-attach-onclick-event-for-a-javascript-generated-textbox
+- https://www.w3schools.com/jsref/event_onclick.asp
+
+Lets work this back into the application...
+
+
 
 ## 2024-01-03
 

@@ -56,9 +56,24 @@
     var photoMarker = L.marker([39.728373, -104.940488], {
       draggable: true,
       title: "i'm a title! This is where this photo was taken",
-      style: "background-color:black;"
+      style: "background-color:black;",
+      class: 'marker-photo'
     }).addTo(map);
-    photoMarker.bindPopup('<img src="https://dgtzuqphqg23d.cloudfront.net/QThlg8qH8Ci0kjAhbDXUOW0LAD1z_TTbvDs3lWNkM6Y-2048x1536.jpg" style="width:200px"><p>this photo came with geodata, as it was taken on a drone I was flying at the time.</p>').openPopup();
+
+    photoMarker.addEventListener('click', function() {
+      console.log('trying to open photo...')
+      window.open(this.src, '_blank');
+    });
+
+
+    photoMarker.bindPopup('<img src="https://dgtzuqphqg23d.cloudfront.net/QThlg8qH8Ci0kjAhbDXUOW0LAD1z_TTbvDs3lWNkM6Y-2048x1536.jpg" style="width:200px"><p>this photo came with geodata, as it was taken on a drone I was flying at the time.</p> ').openPopup();
+
+    let thumb = document.querySelectorAll(".leaflet-popup-content > img:nth-child(1)")[0];
+    thumb.addEventListener('click', function() {
+      console.log("also trying here...")
+      window.open('https://dgtzuqphqg23d.cloudfront.net/QThlg8qH8Ci0kjAhbDXUOW0LAD1z_TTbvDs3lWNkM6Y-2048x1536.jpg', '_blank');
+    });
+  
 
     var homebot_office = L.marker([39.74896, -104.999058]).addTo(map);
     homebot_office.bindPopup("<b>Company Office</b><br>For about a year, I worked for a company that had an office available for any employee to use. I used it more than most, because I could park my scooter in the basement. Easy travel, effortless parking");
