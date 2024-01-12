@@ -61,7 +61,7 @@ https://communityhub.strava.com/t5/strava-features-chat/photos-no-longer-display
 
 Here's what I can see in the web UI:
 
-![webui](/images/2024-01-12 at 12.07 AM.png)
+![webui](/images/2024-01-12-at-12.07-AM.png)
 
 BTW, here's the photo I want to render to this map. Cool photo, huh?
 
@@ -78,11 +78,11 @@ Next, here's what I've got for my pop-up now:
 
 The blue one is clickable:
 
-![clickable]("/images/2024-01-12 at 12.11 AM.png")
+![clickable](/images/2024-01-12-at-12.11-AM.png)
 
 This is what happens on click:
 
-![drone photo visible]("images/2024-01-12 at 12.12 AM.png")
+![drone photo visible](images/2024-01-12-at-12.12-AM.png)
 
 I'd like it to open up into a full-screen photo on click, and i'm gonna see if I can make the marker load with the pop-up already opened...
 
@@ -156,7 +156,7 @@ I'd like to know how to deploy it to Heroku, so it's publicly visible. I've depl
 
 It's working locally, but not on Heroko:
 
-![what to do](/images/2021-05-23 at 11.04 PM.jpg)
+![what to do](/images/2021-05-23-at-11.04-PM.jpg)
 
 ### Translate the Python over to Ruby
 
