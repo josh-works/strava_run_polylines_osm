@@ -12,10 +12,19 @@ with open("runs.csv") as runs_file:
             print("appending " + str(row[0]))
             runs_ids.append(row[0])
 
+print("collected all ids to deduplicate...")
+
+with open("runs.csv") as runs_file:
+    csv_reader = csv.reader(runs_file, delimiter=',')
+    for row in csv_reader:
+        if row[0] not in runs_ids:
+            print("appending " + str(row[0]))
+            runs_ids.append(row[0])
+
 print("there are " + str(len(runs_ids)) + "rows of data")
 
 
-token = "1e9cec801c87624ca3de04c21627e3ba0e44af43"
+token = "34908d876f5249e9e0f3b558e861600c5afbed68"
 # token = os.environ["STRAVA_TOKEN"]
 headers = {'Authorization': "Bearer {0}".format(token)}
 print(headers)
