@@ -13,6 +13,16 @@ How to setup/run/use locally:
 3. run `$python extra_runs.py` // get polyline for each activity
 4. run webserver with `flask run`
 
+## 2024-01-12
+
+I'm not embarrassed, but I'd be tempted to be, that I only recently got Postman API calls working consistently around strava's oauth flow.
+
+POST https://www.strava.com/oauth/token?client_id=111&client_secret=2e68a222416b4fbf8&refresh_token=333&grant_type=refresh_token
+
+That's it. Take the `refresh_token` from the initial token request, with `grant_type` `read, read_all`, or whatever. I've got the exact call below. 
+
+
+
 ## 2024-01-11
 
 I keep doing bits and bobs of work on this, and being pleased with the results, but not really writing down any of the work, so here it is, best I can remember it.
@@ -139,6 +149,282 @@ Heck yeah, that works.
 
 Lets work this back into the application...
 
+ok, partial success. A little issue getting the query selector just right. It's so janky on the front end, but it works.
+
+I'm now going to take a break from the thumb nails and see if I can remember how to quickly access the strava API calls that'll let me inspect this activity blob. 
+
+I think it'll be quick. I've got an oAuth key of some sort...
+
+https://www.strava.com/api/v3/athlete/activities, with an authorization header of `Authorization: Bearer asdkljfaksldjf`
+
+Returns a big JSON blob. Here's the first of I suspect 30:
+
+```json
+   {
+        "resource_state": 2,
+        "athlete": {
+            "id": 38072598,
+            "resource_state": 1
+        },
+        "name": "📸 12 pitches, mostly. And delicious food",
+        "distance": 13523.5,
+        "moving_time": 3389,
+        "elapsed_time": 23729,
+        "total_elevation_gain": 68.3,
+        "type": "Velomobile",
+        "sport_type": "Velomobile",
+        "id": 10541779662,
+        "start_date": "2024-01-12T00:11:31Z",
+        "start_date_local": "2024-01-11T17:11:31Z",
+        "timezone": "(GMT-07:00) America/Denver",
+        "utc_offset": -25200.0,
+        "location_city": null,
+        "location_state": null,
+        "location_country": null,
+        "achievement_count": 0,
+        "kudos_count": 0,
+        "comment_count": 0,
+        "athlete_count": 1,
+        "photo_count": 0,
+        "map": {
+            "id": "a10541779662",
+            "summary_polyline": "eloqFhxp_SFIB@?GCHAEA@DIEf@@L@I@HCPJUAIGFD@KTAEGF@C]A[BIDCV?`AJNd@LrBKrDC~FH~GCNBBFClNDbLFbB?rAGdTBvABNBt@CvLDfLAbCD`h@CdHD^X`BU\\ERGr@Ar@DzGAdEFjKGbC?dGG|EB~CCxC?HDEBDBl@@jGCzA@~C@xADDCzA?nIA\\MDElCDF?HEf@@vAb@jFExEF`DAvCHJBVErDFN@v@DThGIfI?NF^@rFGZ@JDDHF~CAjMBp@CzFCXIZLdAEpHCZIRwAbAg@ZUDy@GIFBBCEBABNCAGkAFAFTCDKADn@DE?g@@KB@MAAFEGDCH@EB@FEMCJG?BMGMNJDJB??EEDCABC?FEIFBGCAHAGDHBIEF?OICDBBNDG?D@EAFEMBJCBDG@FEK@FIDJA?G?J?Q?DECDJ?G?L?M?J?K?J?K?H?I?DGCFEA\\ABACANBNEAGOB[Pm@Df@F?DHKEKI?L?OAN@Q?N?KCFCADB@C?H?KEN@I@DDGCA?G?F?IED?FBA@I@DCA@A?N?QAT@UABACBH?K?T?U?P?K?H?IG@DB@I?P?OCFAI@FD?AB@IAF?I?T?KE?DCMs@BAC??BB@SSBAXr@ARFDGBAEDj@COHXAMb@H`@APMDQl@_@DG?GG@S`@QDW\\k@DOPWFw@MaADaHMkBFiDG_@GoGDYEIQIiCDwAEsB?kDCeAL_ANCZDJZ?d@ANE?@FSPBCADDFBAIIBC?IMLBDE@BICKH?BHPWBW?m@OO]@IOB[Cq@By@KwB?cFC{@@WDUEg@C}ADwJI}CB[Li@BcBBSFMTM~AwANY?MGEKeAy@wBOQc@IkBB}@LBF\\DPA?E_@IMB?JB@P@FGQ?AHFV@IEDD@A@g@U@KBEVK^JMDCMvBFDABKCgGDSEi@AcFAFGDFaDGaAB_@LQGyAFw@@kBCw@CiBByAGkCF_CAyBDyAGgB@_FGaBAiEBmAJc@Gw@BwDGwB@sGBwCGwHFk@EoEB[IeAFgDAGSEAuBB]VO@cCBQz@aARY\\w@Po@X{C?YQsAUs@s@eA{@k@Oe@Ci@BgDEaCDs@EaA@gCB}BGqCH}CASKMWCiBLsBC_AS{BkAkASoB?MOCKBuJD_ACqAA{BBc@C}ADkALcAFaEEeDFuAEaCDmBC{DSmA?}AD_AGECBDzBl@DPO@DAELBBWGBDWB?CKDFAKCFR\\O[",
+            "resource_state": 2
+        },
+        "trainer": false,
+        "commute": false,
+        "manual": false,
+        "private": false,
+        "visibility": "everyone",
+        "flagged": false,
+        "gear_id": null,
+        "start_latlng": [
+            39.73330959677696,
+            -104.94868962094188
+        ],
+        "end_latlng": [
+            39.733289647847414,
+            -104.94868266396224
+        ],
+        "average_speed": 3.99,
+        "max_speed": 16.994,
+        "average_watts": 123.8,
+        "kilojoules": 419.6,
+        "device_watts": false,
+        "has_heartrate": false,
+        "heartrate_opt_out": false,
+        "display_hide_heartrate_option": false,
+        "elev_high": 1644.6,
+        "elev_low": 1594.0,
+        "upload_id": 11279732714,
+        "upload_id_str": "11279732714",
+        "external_id": "d477746c-a108-40e8-9967-614a29203e0c-activity.fit",
+        "from_accepted_tag": false,
+        "pr_count": 0,
+        "total_photo_count": 5,
+        "has_kudoed": false
+    },
+```
+
+The `total_photo_count` is distinctive to me. 
+
+That's an activity from today, though. Lets jump to a specific one, I still have a tab open to https://www.strava.com/activities/10381720567
+
+So, I made a guess, and in Postman did `GET https://www.strava.com/api/v3/activities/10381720567`, and sure enough:
+
+```javascript
+{
+    "resource_state": 3,
+    "athlete": {
+        "id": 38072598,
+        "resource_state": 1
+    },
+    "name": "Big day",
+    "distance": 25504.1,
+    "moving_time": 6095,
+    "elapsed_time": 38981,
+    "total_elevation_gain": 159.1,
+    "type": "Velomobile",
+    "sport_type": "Velomobile",
+    "id": 10381720567,
+    "start_date": "2023-12-14T13:20:42Z",
+    "start_date_local": "2023-12-14T06:20:42Z",
+    "timezone": "(GMT-07:00) America/Denver",
+    "utc_offset": -25200.0,
+    "location_city": null,
+    "location_state": null,
+    "location_country": null,
+    "achievement_count": 0,
+    "kudos_count": 0,
+    "comment_count": 0,
+    "athlete_count": 1,
+    "photo_count": 0,
+    "map": {
+        "id": "a10381720567",
+        "polyline": "eloqFtyp_SGB_ADCN?r@N~@B`@@tHAzA?~ERJtAKj@AjC?~@CnF?zAC~DBLHCNAtBFtL@nRCNB`BErBBhA?fIDrCA|GFjDAtJFrg@CbFFx[I`OBbMC~BBtFAbGAZ@tDCjCB`B?ZGFC\\@b@ZzCDz@CfEBbJAlL@jGCnBEhMHnF@vDD~AFX`FKfJCt@IZM\\EH?DDABE@BDE]B@@KDEB@@JCFC@GS?D@KCTBU?NAIBBAC@BACAB?C?J@CAC?F@UAN@@AKBJEGACBA@L?C?I?JAC?D?IAN@QANBCCWBLCHB@AB?U?LDJAAAKA@@OAR@OAHCIBD?AAN@S?F@AAC?D?GA|@?IC??@F?ICAGGHB@DE?D@ABBLI?@KDBFIAEEA?CK@@AD@A@BBC@FEAC@GIEB?CJADEJBDJIBGA?EEIED?CEDAAD@?A@@FGB@EBECLADBJ?HJ??ECAB@EABC?@@?EC@BAAADC?BC??BCCB@C?@B?C@??@CAA@?AC@?CBB?BD@A?@B?CBB?A?CCB?E?@?C@BAE@??B?GA@AECJCBDCBJ@AEE[IUT_@Bc@@aCCoLDSAGESCuFCk@@IAGCEEGi@D}BCmA@uBDcDB]?uAFa@FGL?LDBL?nAE`@EO?E@@@DIIDDC?D?@DEGB?A??@B?EAB?A@AA@BAAB??ABBEAB??CC?@FAAB@EADBAB?C@C@@ABEG@E?DAAC@@BCCB?BDAEHHDAKIBBAFE?GCDA?C@BAE?D?EBF@CBDCFFA?GIABC@GECE@@AFLAD@GABEEBB?BAEN?BBCDCCAF@CCCD?CAAE?@CA?DCCBG@DC@AC@@AFE@D?AC@FDC@@COD@BFABCGBCABE@?CCEF@?FECBA@BB?@DEDEE?FBBAEBDCK@DCBEMFSBHCJB?C@AG?HBAACA?@GCADACJE@BABEA@CCDDCCADBFAK@D?C@J?ODFA@CAA@BF@EBBAIA@CCEBCCDB?D?GCACI@@@JB@?GFLBE@@ECFGIA?BD?CFCEBJ?EDECGA@DD@ACJ?AE?AI@P?ABDAQBB?EAAADAGC@?E@F@CDHE?ACHBAACA?BHFA?ACA@?GCB@@DAAGCDEG?BD@?HCABGB@AA?FAIA@AKBX@AEMAB?J?OA@?CC?CFLF?A?BCEC?@A?D?IFD@ACEAGGIDT?CA?FC?AG@ALGAQODEJ?FB?BEC?FAK@B?ABDCC@B@EBA@DCABA?DECDB@GB?@DC@EG@FB@BABBKWF@@BGPEHAKBH@AGKABDACG@D@KAC@PDABG?BC@?BCIOABDJFBC?@CA@@BEE??DBBBCEA?@B@FHCCCFD?IQEH@B?CBE?BAC@JCGD@EEFF?C???@AA@DCB@@ACBEECABBABBEA@G?J@ACC?B@GCCAD@DEA?CB@@C?BF@@AC?CC@FGIDB?DCI@J@AEGD@@A@FEGABG?JA@@IMFFCCBFAEB?CDDDSNHKAEBE@BA@D?HBCI?sAEIEAY@GMAiCIGICkNJ{AAYC_BBcBCaCHaM@w@Do@TWNUPqAjBk@h@ULWFWBeBDe@HcA?aAEe@I[OYWKM?C@@I@Yy@WkAEIGEI?g@LoElBgBl@w@Tu@JcAD[A]EWKG?WNcC^]JKAcAb@qBrAo@l@k@v@kBrDaA~Au@t@[VgEtCq@j@YVq@x@{GbKq@~@y@t@}AfA{@r@oArAm@`Am@fAiA`DkCvGuBzG}AlGM\\_A`Dy@~Dw@zEsBnHw@bD}AnFe@tAg@fAC@@Om@fBu@hBcAtBa@|@m@hB[hAe@tBo@pBc@hAyBpEo@jBe@fBe@rBW|@S`@IXQFg@r@E\\Az@@zAE^GHAHN^BdBAbHDTHDXEb@?NDBD?JG|A@n@Cd@B`AEFICEBRAC|@BfAAj@E@_AAQGIIFkABgBCESFINAJANB?NQHJGCADDGLJF?A?AFBZCd@J\\BXFBJG?@GF?@FBA@MOKCEEH?BJKWCCE@DH@ABmBDADH?DC@?ECC?BDHCVD`@?`@FRJGBKCCC@ABDJ@ECGGAG@SV?DB@CF?P@HFFBCIGBk@BAVEBGEIGDDFADI?@IGH@?A?F??GIBBDCE@?@DJBI@ACRFGL?FBFDBFCAGB@@ACIMSAWBCDR?CIDG?A@B?E@@E@@CC@F?C?@BAAACDDGGDB@G?FAAAB@CCABB@AEA?@BCCDAE?DDIGDHAE@AEEF@CAABBBCG@DBAABEGFDA@CGBA?DA?@@ACB?E@CEF?I?DDD?MGJBE@DH?CC@D?BAEA?DACBB@?A@?G@?EB@AAC@H?C?@D?E@AC@C?HAEBACFF?C@BBRB@B?CAA@ACGICG@ECJBGABBA?@AE@AC?BA?BCC@F@IAD@?E?D@A?A?@C??@?AD?CA@@C?DCCBCABB?CCB@CBBAA@@DEG@F?JDUEAE@DD@CAEGDJCG@D?GABFBAB?CC?F@E?@?CAB?AB?A@?CA@BAC@@B?AA?BTFBFCEAG?DEE?CECE@?BCA@CC@D@I?@?ACBBAAB?CABDEEB?ADBACC@?C?BC@H@EADAC@AA@?B?E?D?CBCCDBCAB@@C?DACA?B@CCCLHCAFACABESFREAA@GEFKDPEM?@BC?LCMB@@ACBBE?@C?BFA?@DEQD@AA@@@@GEDHAEBAAPEQFNGODNGSJL?IGBBGCDBA@i@HVCC?FM@QJIG@YCEGCU@g@AYE?LE@F?GD@@CGF@CEBBB?GA?ERDI?@B?A@?CA?B@?GG@A@BBB?@EB@BBCHAKBAA??@F?MA?CBAAF@CFAC@CEGLG@ECCO@IJQRE@Q@mBE_AA{ADuACcFDu@@gEBq@H_@|@}AZu@Vu@z@kDd@qAx@cB^gA^u@HG?GDBBGp@gBd@oAfAoEh@aBlAgCb@s@RKV?DGHiAHc@vAcEv@oCvBgIhCoKHOPExEIN@LFLJFPDl@CzBBzBC^Ff@EbAGrCC^EFI@K?_CMoAAGECWJ{EA_EEu@BaA?CEEAG@?@EAJCBBCI?JHCIBk@DMPQ@GEG[?CCCGAMHc@|@wCT{@F[?DHSbA_EzBiIn@mBb@cAdC_Hv@gBd@}@h@{@n@s@r@m@dCiBVUl@o@hEoGRc@LQFEFABFhAmBd@o@f@i@lAcAhAw@@@BALMfBqAxEwEx@s@tBaBfAo@r@W`BWxCEvBOZErA_@vAe@nBu@rCqAzCaBRIL?E?r@g@tBsAp@g@xBiBHKLWH{AACE??OCCC@BUGeF?qBCaJLqLCaC@g@Jc@P_@tAoBNi@Dg@Cg@Sa@aBsBMa@Io@BE?DBA?B@OByGC}CBuIEwF@eG@gB?iF@eAAi@@EBAAeCBmAG{C@{IBkE?CCAAG?yCD_SAsHDkA@aDCoCBgGCyNB{A@OFINILANB~A?tCJd@ErDBzBCL?FDFC@KEwAAwAB_@HYDAX@vE?j@AF@DABGAm@GkAD_@?FHB?CCCD@?C?}@HCNFBPE\\?J@EAC?FF?C@AA@@?EAA?B@EC@@?A@@C?BDCE??BAG@F?AIIHD?CN?@AOAMHHB?B@G?@CA@@A?B??@?C?BAA@@?C?@?C?D?C?B?CA@@??A?@?QCUKECDDL?PBH?LCF@@CA@CG?A@BCE??ECDCEB@G@?C?BGGF}A@kCCk@@_@CMEIW@G?CGGcEBq@?aECi@B_AAuAD{@Cg@CiB@WR{@Bq@@cBBu@CkABgCCgAB{FA@@?EeB?g@Gg@?IBEGS@[DIf@@LCFGD?AED@?AE?HGDHC@CC?I?FCaACX?C@C?JG?BA",
+        "resource_state": 3,
+        "summary_polyline": "eloqFtyp_SgAHCN?r@R`B?pRRJ`CMvOGlELEdCHvc@ErBNn^HfwAI`O@|n@K`Ab@zF?df@IxPPfOFXhQOnB]NDCJE]JODLKFAWCTBUAP?OBJGKDJCD@QAK?V@ODXC[CVBMAC?x@EGF@KKGH^EMFBFQGCKHLWE\\GDJIBMQMDRC@AZNKAIEJLBAEQGNDCBJ_@QUTcADqP@cJSMo@BaIHwGLg@^JCvBKWBBDAALAOGDTFKI@JMCDGLNCUECE@DNPAIHAOG@BGINL@COHHAGGDCI@DJFK@DHIIDYBTEE?HBQILFGEDDH?ODF@FQKAINT?GFGIA@P?SFDCJGKDT@SIGNTIEF?KI@LFEGMDVEMAN?OIDLHEKHBMWDTDGILYQXAEFAKP?G?LJKWF@ETGH?KBHGIBS@PHICHSKNLDGED@?JJGBCQEHDECB?CFBAJAQ?JCMALJEMEJHQCL?IMJPSNJWNHC}AKKa@KAiCSKal@V}Av@qAjBk@h@m@TcDReCEaAYe@i@GBq@eCWOwK~DyBPyASWNmDh@uDvB{AdBmDrGqAlAsGxE_K|NsEpDoArA{AhCuExLuBzG}AlGmA~DqBzKiGbUqA~C@OiEdK_DzK}CzGo@jBcBxG]z@y@z@EtDOr@N^BdBAbHNZ|@ENDBPG|A@vCUFRAApDeA?[QJsDW@KZANRQHJI@ZBChANv@RCGHDF_@YLFUUHD?gBFEDHG@FdBHRLSI@DJAMO?SVFp@DAIGBk@^OEIGDBLO?F?ICVNGTHJJKQ]@[DRSDBGKF@EDAIADHEMF@ICF?KAJBDFGCFPTFCOY?F?IAH?G@BCRDOCIIB@@JZNQUOBB@DAFBBKSFRE?IQLPEUDREQFJGOHL?MGDBk@JVCD_@JIg@IA}@GYVGIBERHGGEJ@?L?MF@K?HEGCONISL[RE@QCcQF}FLqAxAsCxBsHxBaFdA{BvCaKpB{Dp@SRmBnCsIhGgVlFO\\HT\\@dIFf@QvF[HwEUBkPCWAJI?JH?u@Xg@e@KEUnHkXxEqM|AeDxAoBxDwCdAeA|EsHTWJDhAmBlAyArG{ExEwEnDuCzBgA`BWlH[zG{BnHsD`@IE?zEcDxBiBVc@H{AOUGoUJ{Q\\cAtAoBTqACg@Sa@aBsBWqAF@@OByGEkVBgUDG@sEG{CDgPEgDJocAHY\\KpRNHOGoDLy@jH?HIIyBD_@HJCGDA?}@XBAz@?IBHCGFAOGZ?]FHDBCAQCUKEBfAa@QF}A?wEIWc@EGaNFqEGqCTsAHkE?uOEmCKkAFe@t@ATUDHGCCaAEZ"
+    },
+    "trainer": false,
+    "commute": false,
+    "manual": false,
+    "private": false,
+    "visibility": "everyone",
+    "flagged": false,
+    "gear_id": null,
+    "start_latlng": [
+        39.73331638611853,
+        -104.94890989735723
+    ],
+    "end_latlng": [
+        39.73330657929182,
+        -104.94868727400899
+    ],
+    "average_speed": 4.184,
+    "max_speed": 20.634,
+    "average_watts": 217.9,
+    "kilojoules": 1327.8,
+    "device_watts": false,
+    "has_heartrate": false,
+    "heartrate_opt_out": false,
+    "display_hide_heartrate_option": false,
+    "elev_high": 1644.4,
+    "elev_low": 1581.9,
+    "upload_id": 11112868960,
+    "upload_id_str": "11112868960",
+    "external_id": "304de00e-bcce-40ea-bc1d-94f4c6e8ec38-activity.fit",
+    "from_accepted_tag": false,
+    "pr_count": 0,
+    "total_photo_count": 3,
+    "has_kudoed": false,
+    "description": null,
+    "calories": 1480.5,
+    "perceived_exertion": null,
+    "prefer_perceived_exertion": false,
+    "segment_efforts": [],
+    "splits_metric": [
+        {
+            "distance": 1004.3,
+            "elapsed_time": 165,
+            "elevation_difference": 7.2,
+            "moving_time": 130,
+         
+    "laps": [
+        {
+            "id": 35754386179,
+            "resource_state": 2,
+            "name": "Lap 1",
+            "activity": {
+                "id": 10381720567,
+                "visibility": "everyone",
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 38072598,
+                "resource_state": 1
+            },
+            "elapsed_time": 38981,
+            "moving_time": 38981,
+            "start_date": "2023-12-14T13:20:42Z",
+            "start_date_local": "2023-12-14T06:20:42Z",
+            "distance": 25504.1,
+            "average_speed": 0.65,
+            "max_speed": 20.634,
+            "lap_index": 1,
+            "split": 1,
+            "start_index": 0,
+            "end_index": 32783,
+            "total_elevation_gain": 159.1,
+            "device_watts": false,
+            "average_watts": 217.9
+        }
+    ],
+    "photos": {
+        "primary": {
+            "unique_id": "45ef90b2-5b41-4a1c-9c47-c0f4ed7bc6ff",
+            "urls": {
+                "600": "https://dgtzuqphqg23d.cloudfront.net/QThlg8qH8Ci0kjAhbDXUOW0LAD1z_TTbvDs3lWNkM6Y-768x576.jpg",
+                "100": "https://dgtzuqphqg23d.cloudfront.net/QThlg8qH8Ci0kjAhbDXUOW0LAD1z_TTbvDs3lWNkM6Y-128x96.jpg"
+            },
+            "source": 1,
+            "media_type": 1
+        },
+        "use_primary_photo": true,
+        "count": 3
+    },
+    "stats_visibility": [
+        {
+            "type": "heart_rate",
+            "visibility": "everyone"
+        },
+        {
+            "type": "pace",
+            "visibility": "everyone"
+        },
+        {
+            "type": "power",
+            "visibility": "everyone"
+        },
+        {
+            "type": "speed",
+            "visibility": "everyone"
+        },
+        {
+            "type": "calories",
+            "visibility": "everyone"
+        }
+    ],
+    "hide_from_home": false,
+    "device_name": "Strava Android App",
+    "embed_token": "34e7fe2fd3ab1486f8da60c9c67c547e835111f0",
+    "available_zones": [
+        "power"
+    ]
+}
+```
+
+Huge blob. Most can be ignored, there's a few mentions of photos:
+
+```javascript
+    ...
+    "photo_count": 0,
+    ...
+    "total_photo_count": 3,
+
+
+    "photos": {
+        "primary": {
+            "unique_id": "45ef90b2-5b41-4a1c-9c47-c0f4ed7bc6ff",
+            "urls": {
+                "600": "https://dgtzuqphqg23d.cloudfront.net/QThlg8qH8Ci0kjAhbDXUOW0LAD1z_TTbvDs3lWNkM6Y-768x576.jpg",
+                "100": "https://dgtzuqphqg23d.cloudfront.net/QThlg8qH8Ci0kjAhbDXUOW0LAD1z_TTbvDs3lWNkM6Y-128x96.jpg"
+            },
+            "source": 1,
+            "media_type": 1
+        },
+        "use_primary_photo": true,
+        "count": 3
+```
+ugh so annoying. Not sure how to get the photo URLs. I could maybe write a little scraper?
+
+Every time there's a `total_photo_count` of >0, run a headless browser to the activity show page, use a `querySelectorAll` to get the image 
+
+https://dgtzuqphqg23d.cloudfront.net/Vkf0NB3I6peD-pCt-iAfd234zHx2TVhYpZCSfI22_3c-2048x1536.jpg
+
+Hm:
+
+```javascript
+
+let take2 = document.querySelectorAll('html.logged-in.clean.offset.feed3p0.old-login.js.no-touch.history.draganddrop.localstorage.svg.fullscreen body.logged-in.clean.offset.feed3p0.old-login div.view div.page.container div#view section#ride-overview.pinnable-view.with-border div#map-canvas.leaflet-container.leaflet-touch.leaflet-retina.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag div.leaflet-pane.leaflet-map-pane div.leaflet-pane.leaflet-marker-pane div.leaflet-marker-icon.leaflet-zoom-animated.leaflet-interactive div.photo-marker img')
+```
+
+That works. Each element contains a nice URL:
+
+`https://image.mux.com/AZV02huXXwvoi7kQSgHABN6JsucW54K8LZqd85rOj65Q/thumbnail.jpg?width=1012&height=1800&fit_mode=preserve&time=0`
+
+Unfortunately, that object doesn't have any latlong coordinates in it. So, I could theoretically scrape the image URLs from Strava via automated headless browser, but that still wouldn't tell me where to place them. hm.
+
+Googling "how to view geodata for photo"
 
 
 ## 2024-01-03

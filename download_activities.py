@@ -4,8 +4,10 @@ import time
 
 import jsonlines
 
-CLIENT_ID = os.getenv("CLIENT_ID")
-CLIENT_SECRET = os.getenv("ec9912e83201bef9c78642034bf54c8ad3d63130")
+# CLIENT_ID = os.getenv("CLIENT_ID")
+# CLIENT_SECRET = os.getenv("2dc1f3418e48616f6ff0e19b7d52a92e803bb1a8")
+CLIENT_ID = "63764"
+CLIENT_SECRET = "ffe54672e5129efff0efa2c05ea5808fc32ce8c9"
 
 
 def check_token():
