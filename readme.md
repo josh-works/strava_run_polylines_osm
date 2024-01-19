@@ -6,12 +6,144 @@ How to setup/run/use locally:
 # Get token to use in `download_activities.py`
 
 
-
-1. install everything
+1. install everything, smthg like `pip install -r requirements.txt`
 2. Run `download_activities.py` with `python download_activities.py`
-3. Get login/creds with `uvicorn authenticate:app --reload` (more just below)
-3. run `$python extra_runs.py` // get polyline for each activity
-4. run webserver with `flask run`
+3. Get login/creds with `uvicorn authenticate:app --reload` (more just below), this doesn't seem to work super well
+3. run `$ python extra_runs.py` // get polyline for each activity
+4. run webserver with `flask run` or `python app.py`
+
+## 2024-01-17
+
+Gonna add photos to the map. I'd long given up that this was possible, but then accidentally stumbled across a map (again) within the strava UI, i had another idea of a way I might be able to get latlong for the photos. That had always been my sticking point, I knew if I could get the lat/long I could render the photos. 
+
+I was lamenting about this to a friend, and I mentioned as an aside 'of course I could add the photos to the map at the lat/long coordinates of the beginning of the polyline, _but they won't be exactly where they were taken_', and he said (paraphrased) 'hm, I'd still love to see it, feels like that would accomplish some of what you're intending.'
+
+Sorta as he said that, I realized I'd long had everything I needed to get photos added to the map, from Strava, which I'd like to point out _was the entire purpose of the journey that's brought us to here. I thought the functionality I would be looking for would be in the API, and it would be so simple. Something like:
+
+```
+GET strava.com/api/activities/12345
+{   id: 12345,
+    distance_miles: 10.4
+    begin_time: Jan 17, 10:34:12AM,
+    photos: {
+        latlng: "19.142406, 98.678621",
+        preview_photo_url: "s3.aws.com/b21983uyhlk_600px.jpg",
+        photo_url: "s3.aws.com/b21983uyhlk.jpg"
+    }
+
+}
+```
+
+NOW it's looking like I'll have to stinking SCRAPE STRAVA to get the URLs.
+
+Anyway, I'm outlining the next 15 minutes of actual work I'm about to do.
+
+I'm going to get this working in Ruby:
+
+1. open up `https://www.strava.com/activities/10381720567` in Nokogiri, using a cookie that I'll get somehow, will load that page, rather than a 404 or whatever
+2. target the right class, like `class="MediaThumbnailList--list--boXGW"` and snag the contents. write to a file. 
+3. ignore getting latlng for now.
+
+Here's the HTML I'm gonna get, once I can open this authenticated page in Nokogiri:
+
+![html for images](/images/snagging_url.jpg)
+
+I've done something similar to this in the past: [https://josh.works/load-testing-your-app-with-siege](https://josh.works/load-testing-your-app-with-siege)
+
+
+
+useful URLS I've looked at for research:
+
+https://webscraping.ai/faq/nokogiri/can-nokogiri-handle-cookies-or-sessions-while-scraping
+
+So, first, I'm gonna see if I can use the cookie that I've got saved to my browser session already.
+
+![cookie](/images/cookie.jpg)
+
+Peeping https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie, because the script we're referencing talks about setting cookies, and I know enough about headers that I don't wanna guess anything about them:
+
+```ruby
+cookie = response['Set-Cookie']
+
+# Use the cookie for subsequent requests
+uri = URI('http://example.com/protected_page')
+request = Net::HTTP::Get.new(uri)
+request['Cookie'] = cookie
+response = http.request(request)
+```
+
+Looks like I can do:
+
+```ruby
+cookie = '_strava4_session=sqgni82q7u40j6fn2vk05ki5qt5j72i3'
+
+# Use the cookie for subsequent requests
+uri = URI('https://www.strava.com/activities/10381720567')
+request = Net::HTTP::Get.new(uri)
+request['Cookie'] = cookie
+response = http.request(request)
+
+# Now you can use Nokogiri to parse the HTML content
+doc = Nokogiri::HTML(response.body)
+# ... do something with the parsed document ...
+
+puts doc
+```
+
+Lets run it:
+
+```
+$ ruby script.rb
+```
+
+OK, had to uncomment some stuff around `http`, this worked:
+
+```ruby
+require 'nokogiri'
+require 'net/http'
+require 'uri'
+
+uri = URI('https://www.strava.com')
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true if uri.scheme == 'https'
+
+# # Create the HTTP request and set the cookie if you have one
+# request = Net::HTTP::Post.new(uri.request_uri)
+# request.set_form_data('username' => 'user', 'password' => 'pass')
+# response = http.request(request)
+
+# Save the cookie, or copy-paste the cookie your browser session is using right now (dev tools, or a cookie-related extension)
+# cookie = response['Set-Cookie']
+cookie = '_strava4_session=sqgni82q7u40j6fn2vk05ki5qt5j72i3'
+
+# Use the cookie for subsequent requests
+uri = URI('https://www.strava.com/activities/10381720567')
+request = Net::HTTP::Get.new(uri)
+request['Cookie'] = cookie
+response = http.request(request)
+
+# Now you can use Nokogiri to parse the HTML content
+doc = Nokogiri::HTML(response.body)
+
+puts doc
+```
+The entire (logged in) page printed out to my terminal:
+
+![html response](/images/html_response.jpg)
+
+sick. Lets get the URLs we want. Gonna pop this into a pry session, copy/paste the contents in, so I can call `doc` in the pry session, and get the full document back. 
+
+I'm referencing some old Nokogiri stuff I did: https://github.com/josh-works/intermediate_ruby_obstacle_course/tree/main/nokogiri#end-result
+
+We'll copy the css selector from the dev tools. Something like `doc.css('.MediaThumbnailList--list--boXGW)` should do it...
+
+Hm. really struggling with the nokogiri css selectors. 
+
+I think I'm fumbling between something like `[collection] [instance of collection] [collection]` in my css chaining. taking a quick break, this was a good-enough single session.
+
+Got from 'idea' to `well-documented, iterable process to getting a logged in session working in a ruby script`
+
+
 
 ## 2024-01-12
 
@@ -20,6 +152,37 @@ I'm not embarrassed, but I'd be tempted to be, that I only recently got Postman 
 POST https://www.strava.com/oauth/token?client_id=111&client_secret=2e68a222416b4fbf8&refresh_token=333&grant_type=refresh_token
 
 That's it. Take the `refresh_token` from the initial token request, with `grant_type` `read, read_all`, or whatever. I've got the exact call below. 
+
+I'd like to add a page for a fun little leaderboard.
+
+Sprinkle QR codes about. Like Mt. Lido and the church across the street from Tejen. Scan QR code (approve the location request) and say "begin trip segment". Scan another QR code on the other side, "end trip segment".
+
+There's a big illuminated cross at on Mt Lido. It's sorta annoying: https://en.wikipedia.org/wiki/Mount_Lindo
+
+Enter handle (JDT) and get an entry on a leaderboard. This is totally a different lift, gonna happen later. I'll think on how it could be a teeny tiny project, instead of accidentally becoming huge.
+
+```
+# on QR code: /trips/location_guid/
+# click "check in" or "start effort"
+# travel, scan another QR code, click "check in/end effort"
+
+...store a cookie in the browser? I want this to work without logging in/creating accounts. 
+
+like an old video game with a leaderboard. anyway...
+```
+
+So, I could write my own little token refresher thing, if I wanted. I probably will at some point. I've not been able to get the automated `auth/client.pkl` thing to work.
+
+Sigh.
+
+`li.MediaThumbnailList--item--6KcOd:nth-child(1) > div:nth-child(1) > img:nth-child(1)`
+
+I might be able to grab the marker via a querySelector, and then ask the object it's LatLng: https://stackoverflow.com/questions/16036824/find-latitude-longitude-of-saved-marker-in-leaflet
+
+blar. Did lots of work to tie stuff together. I can easily set the alt text of the marker, find it via querySelectors in the front-end, but cannot get to an object that knows that lat/long of that pin. 
+
+If I could ask the map directly each of it's markers, that would be easy, because markers know their own location, but I cannot see a way to run console commands in the front end to generate something like `map.markers` or `Markers.all`. 
+
 
 
 
