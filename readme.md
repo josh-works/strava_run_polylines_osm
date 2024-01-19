@@ -16,9 +16,13 @@ How to setup/run/use locally:
 
 Gonna add photos to the map. I'd long given up that this was possible, but then accidentally stumbled across a map (again) within the strava UI, i had another idea of a way I might be able to get latlong for the photos. That had always been my sticking point, I knew if I could get the lat/long I could render the photos. 
 
-I was lamenting about this to a friend, and I mentioned as an aside 'of course I could add the photos to the map at the lat/long coordinates of the beginning of the polyline, _but they won't be exactly where they were taken_', and he said (paraphrased) 'hm, I'd still love to see it, feels like that would accomplish some of what you're intending.'
+I was lamenting about this to a friend, and I mentioned as an aside 'of course I could add the photos to the map at the lat/long coordinates of the beginning of the polyline, _but they won't be exactly where they were taken_', and he said (paraphrased)
 
-Sorta as he said that, I realized I'd long had everything I needed to get photos added to the map, from Strava, which I'd like to point out _was the entire purpose of the journey that's brought us to here. I thought the functionality I would be looking for would be in the API, and it would be so simple. Something like:
+> hm, I'd still love to see it, feels like that would accomplish some of what you're intending.
+
+Sorta as he said that, I realized I'd long had everything I needed to get photos added to the map, from Strava. 
+
+over a year ago, I'd hoped I'd be able to do something as simple as a GET request, and retrieve all details about photos, attached to an activity. For example:
 
 ```
 GET strava.com/api/activities/12345
@@ -33,10 +37,29 @@ GET strava.com/api/activities/12345
 
 }
 ```
+and have everything I needed. That turned out to be emphatically not the case. I took many detours from that original intent, enjoyed most of them, but the entire project would be more lively, and perhaps make more sense, and would certainly be interesting to me, if *every photo I had ever attached to an activity in Strava was able to be rendered on the map near where it was taken!!!*
 
-NOW it's looking like I'll have to stinking SCRAPE STRAVA to get the URLs.
+ so now I'm going to sidestep the issue by scraping strava itself to get the img URLs, like:
 
-Anyway, I'm outlining the next 15 minutes of actual work I'm about to do.
+```ruby
+uri = URI('https://www.strava.com')
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true if uri.scheme == 'https'
+cookie = '_strava4_session=saasdkjfhaslkdjfh3'
+
+# Use the cookie for subsequent requests
+uri = URI('https://www.strava.com/activities/10381720567')
+request = Net::HTTP::Get.new(uri)
+request['Cookie'] = cookie
+response = http.request(request)
+doc.css('activity-summary activity-photos').each do |i|
+    i['src'] # get the S3/cloudfront URL like https://dgtzuqphqg23d.cloudfront.net/T2UNx0g6ApQAlT__qg0yoMPfcddatmUjFhJZCe6GuYw-2048x1536.jpg
+  # and store it`
+end
+
+```
+
+Anyway, I'm outlining the next 15 minutes of actual work I'm about to do, and jumping around a bit. The thing above ended up *almost* working, that was the results of the first chunk of time on this.
 
 I'm going to get this working in Ruby:
 
@@ -143,7 +166,147 @@ I think I'm fumbling between something like `[collection] [instance of collectio
 
 Got from 'idea' to `well-documented, iterable process to getting a logged in session working in a ruby script`
 
+-------------------
 
+after the break, finding the actual correct LI in Nokogiri.
+
+Referencing [this again](https://github.com/josh-works/intermediate_ruby_obstacle_course/tree/main/nokogiri#end-result) again:
+
+```ruby
+class Scraper
+  attr_reader :doc, :links
+  def initialize
+    @doc = Nokogiri.HTML(open("./practice_documents/hn_what_is_your_blog.html"))
+    @links = links
+  end
+  
+  def zero_indent_rows
+    doc.css('td[class="ind"] > img[width="0"]') # hmmmm
+  end
+  
+  def comments_with_zero_indent_siblings
+    zero_indent_rows.map do |td| 
+      td.parent.parent.css('.commtext').css('a') # hmm hmmm hmmm
+    end
+  end
+  
+  def links
+    comments_with_zero_indent_siblings.map do |a| # can we admit
+      a.css('a').map do |link|                    # this all seems excessive?
+        link.attribute('href').value 
+      end
+    end.flatten
+  end
+end
+```
+
+Actually, even better, lets peep the css selector from a HN comments thread, which is what this above madness was dealing with:
+
+```
+tr.comtr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(3) > div:nth-child(3) > span:nth-child(1)
+```
+
+I think that nth-child shit, and the alternating `tr:`, `td:`, `table:` stuff was particularly complicated, and the css selector I think I'm dealing with here, to get a collection of `link` or `img` object/node/things:
+
+```
+li.MediaThumbnailList--item--6KcOd:nth-child(1) > div:nth-child(1) > img:nth-child(1)
+```
+so... hm. `li.MediaThumbnailList--item` should be grabbable, and return something.
+
+```
+![got something](/images/got_something.jpg)
+```
+OK, so I can do `li`, can I scope it to all `li`s with a class that fuzzy-matches `MediaThumbnailList--item`? That GUID-y thing obv needs to be dumped.
+
+
+```ruby
+doc.css('li')
+links = _
+links.count
+links[25] # ets
+# from my 'scrape hacker news' project
+doc.css('td[class="ind"] > img[width="0"]') # hmmmm
+
+# how about...
+doc.css('li[class="MediaThumbnailList"]')
+# nope
+
+# maybe...
+athlete_summary = doc.css('.athelete-activity-summary') # example
+athlete_summary.css('li') # example
+```
+
+OK, got it. 
+
+```ruby
+activity_summary_section = doc.css('.activity-summary')
+# nvm, close but no
+
+# this is it
+details = doc.css('.details')
+```
+found it inspecting the html (again, I don't have a good heuristic of html/css selector stuff. Yet)
+
+https://www.zenrows.com/blog/xpath-vs-css-selector#how-to-use-xpath
+
+### super useful learning about SEEING what's happening with xpath
+
+`ctrl-f`, write `xpath`, start hitting enter, it jumps you around the page, way more visual and intuitive than viewing the raw nokogiri text output. 
+
+![xpath](/images/xpath.jpg)
+
+Remember, `enter` and `shift+enter` sorta tabs through the results. very easy to bop around the result set.
+
+Whoa. The above article mentioned that you can run xpath expressions in the browser dev tools, I'd never thought of that, IT HELPS SO MUCH!!!
+
+OMG. Just read the line `it's hard to figure this shit out, so thats why you can use the 'copy xpath' functionality.`
+
+boom. glorious.
+
+
+```
+/html/body/div[1]/div[3]/section/div/div/div[1]/div/div/div[2]/div/ul/li[1]/div/img
+```
+
+hm. tbh, not super inspiring. back to the css selector path...
+
+This is tricky.
+
+https://simonewebdesign.it/fuzzy-matching-with-css3/
+
+I just had the thought that even though I'm passing an exact class name (the '6Kc' thing), it's possible I could fuzzy match? 
+
+```
+# what I have
+li[class=MediaThumbnailList--item--6KcOd] 
+# what might work, from 
+# https://simonewebdesign.it/fuzzy-matching-with-css3/
+img[class^="wp-image-"] 
+
+li[class^="MediaThumbnailList"]
+```
+OMG this is extremely frustrating. I am 2 hours into this chunk of work, need to relocate, will carry on when I return with:
+
+1. run script to get doc in pry session. Use new cookie, bc I delete them if they get pasted into this document
+2. sort out something like `doc.css('li with a class that begins with `MediaThumbnailList`)`, or all the `li` or `img`s inside of the `div` with the class of `details`. 
+
+ok, this works, in the search bar:
+
+[class^='MediaThumbnailList']
+OMG. fml. how is this ungrabbable in Nokogiri
+
+Googled `nokogiri css fuzzy class match`, found an open issue. Ugh, not super clear: https://github.com/sparklemotion/nokogiri/issues/2520
+
+doc.css("li[class^='MediaThumbnailList']")
+
+maybe pick up here when I return:
+
+```
+img[alt=""]
+
+```
+
+It keeps not working in pry, I worry that something is not working, elsewhere.
 
 ## 2024-01-12
 
