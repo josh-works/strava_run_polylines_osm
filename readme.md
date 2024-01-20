@@ -12,7 +12,7 @@ How to setup/run/use locally:
 3. run `$ python extra_runs.py` // get polyline for each activity
 4. run webserver with `flask run` or `python app.py`
 
-## 2024-01-17
+## 2024-01-17 huge progress getting images from Strava. Webscraping via a headless browser, not the API. womp womp
 
 Gonna add photos to the map. I'd long given up that this was possible, but then accidentally stumbled across a map (again) within the strava UI, i had another idea of a way I might be able to get latlong for the photos. That had always been my sticking point, I knew if I could get the lat/long I could render the photos. 
 
@@ -58,6 +58,8 @@ doc.css('activity-summary activity-photos').each do |i|
 end
 
 ```
+
+### outline for this session
 
 Anyway, I'm outlining the next 15 minutes of actual work I'm about to do, and jumping around a bit. The thing above ended up *almost* working, that was the results of the first chunk of time on this.
 
@@ -288,11 +290,12 @@ li[class^="MediaThumbnailList"]
 OMG this is extremely frustrating. I am 2 hours into this chunk of work, need to relocate, will carry on when I return with:
 
 1. run script to get doc in pry session. Use new cookie, bc I delete them if they get pasted into this document
-2. sort out something like `doc.css('li with a class that begins with `MediaThumbnailList`)`, or all the `li` or `img`s inside of the `div` with the class of `details`. 
+2. sort out something like `doc.css('li with a class that begins with MediaThumbnailList)`, or all the `li` or `img`s inside of the `div` with the class of `details`. 
 
 ok, this works, in the search bar:
 
-[class^='MediaThumbnailList']
+`[class^='MediaThumbnailList']`
+
 OMG. fml. how is this ungrabbable in Nokogiri
 
 Googled `nokogiri css fuzzy class match`, found an open issue. Ugh, not super clear: https://github.com/sparklemotion/nokogiri/issues/2520
@@ -308,6 +311,8 @@ img[alt=""]
 
 It keeps not working in pry, I worry that something is not working, elsewhere.
 
+### last chunk of time for the day
+
 [... a few hours of break, scooting in the cold from Longmont to Denver, now at Improper City, so much on my mind for road networks]
 
 Er, possibly good news. I'd not looked at what it was like to visit an activities show page without being logged in, until just now as I recycled my cookies. (first, deleted the cookie, though should have logged out to expire the cookie) Turns out the URLs are still visible, so I won't even need to deal with a session or cookie, when doing this for real.
@@ -315,6 +320,8 @@ Er, possibly good news. I'd not looked at what it was like to visit an activitie
 Can simply open the page in nokogiri, css selector the `ul li[img]` for each img, grab the URL. This feels _so close_.
 
 I keep getting what I want when opening a page in the browser and ctrl-f'ing for xpath `//img` thing. That returns 8 results. but `doc.css('//img')` returns 0.
+
+### viewing locally the html that nokogiri is parsing
 
 arg. OK, I wanted to see the rendered version of what I'm playing with, so I did this little diddy:
 
@@ -336,6 +343,8 @@ f.write(response.body)
 
 ```
 then, in your terminal, do `open -a 'Firefox.app' output.html`. Here's what we see:
+
+
 
 ![empty](/images/empty.jpg)
 
@@ -369,6 +378,8 @@ I'll try the cookie thing again. maybe it never worked, even when I thought it d
 
 Oh snap, maybe never worked. HM.
 
+### checking assumptions
+
 It deff was never working, but I've now made
 
 https://stackoverflow.com/questions/22593778/making-ruby-nethttpget-request-with-cookie
@@ -379,7 +390,13 @@ Now, it seems a cookie is being found, perhaps read, and content is coming back.
 
 ![moredata](/images/moredata.jpg)
 
-OK, so googled something like `wait until the JS of a page has finished loading`, hell yes. Found a gem that does some easy headless browsing, which is better for letting async js finish:
+### headless browser
+
+OK, so googled something like `wait until the JS of a page has finished loading`, hell yes.
+
+https://stackoverflow.com/a/13792540
+
+Found a gem that does some easy headless browsing, which is better for letting async js finish:
 
 ```ruby
 require 'nokogiri'
@@ -393,7 +410,7 @@ browser.goto('https://www.strava.com/activities/10381720567')
 doc = Nokogiri::HTML.parse(browser.html)
 f = File.new('output.html', 'w')
 f.write(browser.html)
-puts "wrote some shit"
+puts "wrote some stuff"
 ```
 
 Hm, running into webdriver issues. `brew install --cask chromedriver`.
@@ -409,6 +426,8 @@ Lets test it via Nokogiri:
 yeeees. Finally. JFC it's a slog, but close to getting it working.
 
 https://ruby-doc.org/stdlib-3.0.0/libdoc/csv/rdoc/CSV.html#method-c-open
+
+### writing data to csv
 
 I'm now just futzing around on exactly what I want and how to put in the CSV
 
@@ -437,10 +456,12 @@ activity_ids.each do |id|
 end
 ```
 
+### plan for the next session
+
 got stuff in my CSV. The next add will be:
 
 1. don't write URLs if the activity ID has already been saved 
-2. in a different portion of the flow, run a script that gets the polyline for each associated activity, decodes it, stores the starting lat/long in the final row of the CSV, so the CSV is `id|cloudfront_url|latlng`. 
+2. in a different portion of the flow, run a script that gets the polyline for each associated activity, decodes it, stores the starting lat/long in the final column of the CSV, so the CSV is something like `id,image_url,latlng`. 
 
 I'll then be able to plot that on the map, I think. holy shit. 
 
