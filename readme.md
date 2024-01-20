@@ -308,6 +308,144 @@ img[alt=""]
 
 It keeps not working in pry, I worry that something is not working, elsewhere.
 
+[... a few hours of break, scooting in the cold from Longmont to Denver, now at Improper City, so much on my mind for road networks]
+
+Er, possibly good news. I'd not looked at what it was like to visit an activities show page without being logged in, until just now as I recycled my cookies. (first, deleted the cookie, though should have logged out to expire the cookie) Turns out the URLs are still visible, so I won't even need to deal with a session or cookie, when doing this for real.
+
+Can simply open the page in nokogiri, css selector the `ul li[img]` for each img, grab the URL. This feels _so close_.
+
+I keep getting what I want when opening a page in the browser and ctrl-f'ing for xpath `//img` thing. That returns 8 results. but `doc.css('//img')` returns 0.
+
+arg. OK, I wanted to see the rendered version of what I'm playing with, so I did this little diddy:
+
+```ruby
+# etc etc
+uri = URI('https://www.strava.com/activities/10381720567')
+request = Net::HTTP::Get.new(uri)
+# request['Cookie'] = cookie
+response = http.request(request)
+
+doc = Nokogiri::HTML(response.body)
+# this is what I was trying to parse in Nokogiri,
+# but I never checked to see what the actual HTML coming
+# back was. I realize now I was making dumb guesses about
+# the html I was working with...
+
+f = File.new('output.html', 'w+')
+f.write(response.body)
+
+```
+then, in your terminal, do `open -a 'Firefox.app' output.html`. Here's what we see:
+
+![empty](/images/empty.jpg)
+
+So, good news, we now know that we 1) can and 2) should check to see what the HTML is, exactly, that's being messed with.
+
+OK, so I'm inspecting what I'm getting in the terminal in more depth.
+
+I did 
+
+```
+curl -v https://www.strava.com/activities/10381720567
+```
+`-v` is for `verbose`. I wanted to see if there was any reference to cookies in the headers.
+
+and as I SMASHED the `ctrl-c` to end the output before I couldn't scroll to the beginning of it...
+
+I found:
+
+```
+<script>
+  window.__LOAD_NON_ESSENTIAL_COOKIES__ =
+    Array.isArray(window.__LOAD_NON_ESSENTIAL_COOKIES__) ?
+      window.__LOAD_NON_ESSENTIAL_COOKIES__ : [];
+  window.__LOAD_NON_ESSENTIAL_COOKIES__.push(loadBranch);
+</script>
+```
+
+so... I donno. my intuition is its something cookie related. I tried giving it a sleep() to let more content load. no dice.
+
+I'll try the cookie thing again. maybe it never worked, even when I thought it did!
+
+Oh snap, maybe never worked. HM.
+
+It deff was never working, but I've now made
+
+https://stackoverflow.com/questions/22593778/making-ruby-nethttpget-request-with-cookie
+
+Basically, added `to_s` in the `request['Cookie'] = cookie.to_s` line.
+
+Now, it seems a cookie is being found, perhaps read, and content is coming back. There's a spinner spinning where I want my images, though:
+
+![moredata](/images/moredata.jpg)
+
+OK, so googled something like `wait until the JS of a page has finished loading`, hell yes. Found a gem that does some easy headless browsing, which is better for letting async js finish:
+
+```ruby
+require 'nokogiri'
+require 'net/http'
+require 'uri'
+require 'cgi'
+require 'watir'
+
+browser = Watir::Browser.new
+browser.goto('https://www.strava.com/activities/10381720567')
+doc = Nokogiri::HTML.parse(browser.html)
+f = File.new('output.html', 'w')
+f.write(browser.html)
+puts "wrote some shit"
+```
+
+Hm, running into webdriver issues. `brew install --cask chromedriver`.
+
+Then, when we open up that `output.html`:
+
+![headless_browser](/images/headless_browser.jpg)
+
+There's my photos!!! It'll possibly take FOREVER to get all the images via a headless browser session per activity that has photos... it took quite a few seconds to load the browser and get the content. 
+
+Lets test it via Nokogiri:
+
+yeeees. Finally. JFC it's a slog, but close to getting it working.
+
+https://ruby-doc.org/stdlib-3.0.0/libdoc/csv/rdoc/CSV.html#method-c-open
+
+I'm now just futzing around on exactly what I want and how to put in the CSV
+
+currently, though, finally, finally getting the image URLs:
+
+JFC got it working:
+
+```ruby
+activity_ids = ["10381720567","10579076827"]
+activity_ids.each do |id|
+  browser = Watir::Browser.new
+  browser.goto("https://www.strava.com/activities/#{id}")
+  doc = Nokogiri::HTML.parse(browser.html)
+  f = File.new('output.html', 'w')
+  f.write(browser.html)
+  puts "wrote some shit"
+
+  div = doc.css('div[class^="Photos"]')
+  imgs = div.first.css('img')
+  CSV.open('pictures.csv', 'a+') do |csv|
+    imgs.each do |img|
+      csv << [id,img.attribute_nodes.first.value]
+      puts "writing to csv: " + img.attribute_nodes.first.value
+    end
+  end
+end
+```
+
+got stuff in my CSV. The next add will be:
+
+1. don't write URLs if the activity ID has already been saved 
+2. in a different portion of the flow, run a script that gets the polyline for each associated activity, decodes it, stores the starting lat/long in the final row of the CSV, so the CSV is `id|cloudfront_url|latlng`. 
+
+I'll then be able to plot that on the map, I think. holy shit. 
+
+
+
 ## 2024-01-12
 
 I'm not embarrassed, but I'd be tempted to be, that I only recently got Postman API calls working consistently around strava's oauth flow.
