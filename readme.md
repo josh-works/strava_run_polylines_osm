@@ -3,14 +3,69 @@
 
 How to setup/run/use locally:
 
-# Get token to use in `download_activities.py`
+# General setup 
 
+## Get token to use in `download_activities.py`
 
+0. clone the repo, or, really, download the same initial repository I started with:
 1. install everything, smthg like `pip install -r requirements.txt`
 2. Run `download_activities.py` with `python download_activities.py`
 3. Get login/creds with `uvicorn authenticate:app --reload` (more just below), this doesn't seem to work super well
 3. run `$ python extra_runs.py` // get polyline for each activity
 4. run webserver with `flask run` or `python app.py`
+
+## 2024-01-22 short session around CSV manipulation in Ruby
+
+I think I might find myself using CSVs a lot in Ruby, so I don't mind practicing a bit
+
+reading rows by IDs:
+
+```ruby
+
+```
+
+## 2024-01-21 getting images rendered to map, perhaps
+
+check end of last session.
+
+Random inspiration for something later maybe. I've been curious for D3 for a while.
+
+https://www.toptal.com/javascript/a-map-to-perfection-using-d3-js-to-make-beautiful-web-maps
+
+OK, so I've got this CSV with a URL and an activity_id, now I want to append an activity start latlong to it:
+
+```
+10381720567,https://dgtzuqphqg23d.cloudfront.net/jAhbDXUOW0LAD1z_TTbvDs3lWNkM6Y-2048x1536.jpg
+
+```
+
+is what I want. I can snag the corresponding polyline (manually) from the `runs.csv`
+
+```ruby
+# look up corresponding polyline from runs.csv
+# decode polyline
+# grab first latlong coordinate pair
+```
+
+Might use https://github.com/klaxit/fast-polylines
+
+well, that was easy:
+
+```ruby
+polyline = 'kyuqFzsgaSI@ED@HC?MBAHNl@b@v@x@nBLRJb@RDh@o@\m@|AqBjAqA|AqAh@g@pByA~@_Az@s@~DcEbB{A`@[l@]A@FA??dAs@dAiAvCqCt@{@`DyCxAoAf@k@\QZYX]hBcB~@s@dCuBvAyAfA_AR@HH`AbCNTN?DOFDKJCK@OADEIBLLGDBQEK[IE_@y@BDAPGJ?FGBS@s@v@I@KMKG?BHDGE@@@CSF}NlIsFnD]X[V~Q{I^k@\o@lBmBn@]\R@Q^G'
+coords = FastPolylines.decode(polyline)
+start_point = coords.first
+return start_point
+# [39.76614, -105.22958]
+```
+
+Perfect. I'll store that with every photo. I wonder how to ensure they're slightly offset, instead of stacked on top of each other. I'll deal with that later.
+
+https://stackoverflow.com/questions/9599568/how-to-find-a-specific-row-in-csv
+
+ugh, this was made more annoying by the internet being oddly broken. I had to break apart my headless chrome function to make things work with/without internet. Lost a few minutes of the session, with internet again the next day already will be much better. 
+
+
 
 ## 2024-01-17 huge progress getting images from Strava. Webscraping via a headless browser, not the API. womp womp
 
