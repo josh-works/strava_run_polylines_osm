@@ -252,17 +252,43 @@
       
       // console.log(begin_latlong, end_latlong)
 
-      L.polyline(
+      var line = L.polyline(
           coordinates,
           {
               color: rainbow(encodedRoutes.length, stepCounter),
               weight: 2,
               opacity: .7,
-              lineJoin: 'round'
+              lineJoin: 'round',
+              smoothFactor: 3
           }
       ).addTo(map);
-      
+      // console.log('adding event listner to line')
+      // line.addEventListener('mouseover', mouseover(line))
+      // line.addEventListener('mouseout', mouseover1(line))
+      // line.addEventListener("mouseover", mouseover());
+      // line.addEventListener("mouseout", mouseover1());
     }
+
+
+    function mouseover(e) {  
+      console.log("mouseover???")
+      // not needed since item is already global, 
+      // I am assuming this is here just because it's sample code?
+      // var item = document.getElementById("button"); 
+      // self.setAttribute("style", "background-color:blue;")
+      if (!e) var e = window.event;
+      var relTarg = e.relatedTarget || e.fromElement;
+      console.log(relTarg)
+
+    }
+
+    function mouseover1(e)
+    {  
+      console.log("mouseout")
+      console.log(e)
+      // self.setAttribute("style", "background-color:green;")
+    }
+
 
     /**
  * @param numOfSteps: Total number steps to get color, means total colors
