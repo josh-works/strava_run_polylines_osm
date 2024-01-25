@@ -26,8 +26,16 @@
     </div>
   
     <div id="map" style="width: 100%; height: 100%"></div>
-
     <script>
+
+      var bigBlueIcon = new L.Icon({
+        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+        iconSize: [30, 51],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+      });
 
     
     function placelatlngzoominurl(cords){
@@ -41,38 +49,73 @@
     var zoom_param = {{ zoom }}
     var denverCords = [ 39.72927165246686, -105.00802723474892 ]
     var map = L.map('map').setView(denverCords, zoom_param);
-          L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-            maxZoom: 22,
-            minZoom: 1,
-            id: 'mapbox/satellite-v9',
-            tileSize: 512,
-            zoomOffset: -1,
-            accessToken: 'pk.eyJ1Ijoiam9zaHdvcmtzIiwiYSI6ImNrcWk2NzUxeTJhbm8yem4weDFreTY5bjQifQ.Qja1F9B1-i7hK3KOvSYAvg'
-          }).addTo(map);
+
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 22,
+      minZoom: 1,
+      id: 'mapbox/satellite-v9',
+      tileSize: 512,
+      zoomOffset: -1,
+      accessToken: 'pk.eyJ1Ijoiam9zaHdvcmtzIiwiYSI6ImNrcWk2NzUxeTJhbm8yem4weDFreTY5bjQifQ.Qja1F9B1-i7hK3KOvSYAvg'
+    }).addTo(map);
 
     // markers
+    var markersArray = []
+    var photos_and_coords = {{ photos|safe }}
+    console.log(photos_and_coords[0])
+    for (let i = 0; i < photos_and_coords.length; i++) {
+
+      data = photos_and_coords[i]
+      console.log(data)
+
+      url = data[0]
+      latlng = JSON.parse(data[1])
+      console.log(url, latlng)
+      console.log("adding to map... at " + latlng.toString() )
+
+      
+      let fuck = L.marker(latlng, {
+        icon: bigBlueIcon,
+        title: url,
+        autoClose: false
+      }).addTo(map);
+      markersArray.push(fuck)
+    }
+    for (let mark of markersArray) {
+      console.log("adding event Listeners...")
+      mark.bindPopup(
+                    `<img src="https://dgtzuqphqg23d.cloudfront.net/QThlg8qH8Ci0kjAhbDXUOW0LAD1z_TTbvDs3lWNkM6Y-2048x1536.jpg" 
+                      style="width:200px"><p>this photo came with geodata, as it was taken on a drone I was flying at the time.</p> `
+                      ).openPopup();
+
+      
+      console.log('adding event listner')
+    }
+
+    
+
+
+    console.log("done processing photos...")
 
     var photoMarker = L.marker([39.728373, -104.940488], {
-      draggable: true,
+      draggable: false,
       title: "i'm a title! This is where this photo was taken",
       style: "background-color:black;",
       alt: 'zzz-photo-marker'
     }).addTo(map);
 
+    photoMarker.bindPopup('<img src="https://dgtzuqphqg23d.cloudfront.net/QThlg8qH8Ci0kjAhbDXUOW0LAD1z_TTbvDs3lWNkM6Y-2048x1536.jpg" style="width:200px"><p>this photo came with geodata, as it was taken on a drone I was flying at the time.</p> ');
     photoMarker.addEventListener('click', function() {
       console.log('trying to open photo...')
       window.open(this.src, '_blank');
     });
 
-
-    photoMarker.bindPopup('<img src="https://dgtzuqphqg23d.cloudfront.net/QThlg8qH8Ci0kjAhbDXUOW0LAD1z_TTbvDs3lWNkM6Y-2048x1536.jpg" style="width:200px"><p>this photo came with geodata, as it was taken on a drone I was flying at the time.</p> ').openPopup();
-
-    let thumb = document.querySelectorAll(".leaflet-popup-content > img:nth-child(1)")[0];
-    thumb.addEventListener('click', function() {
-      console.log("also trying here...")
-      window.open('https://dgtzuqphqg23d.cloudfront.net/QThlg8qH8Ci0kjAhbDXUOW0LAD1z_TTbvDs3lWNkM6Y-2048x1536.jpg', '_blank');
-    });
+    // let thumb = document.querySelectorAll(".leaflet-popup-content > img:nth-child(1)")[0];
+    // thumb.addEventListener('click', function() {
+    //   console.log("also trying here...")
+    //   window.open('https://dgtzuqphqg23d.cloudfront.net/QThlg8qH8Ci0kjAhbDXUOW0LAD1z_TTbvDs3lWNkM6Y-2048x1536.jpg', '_blank');
+    // });
   
 
     var homebot_office = L.marker([39.74896, -104.999058]).addTo(map);
@@ -188,6 +231,8 @@
       shadowSize: [41, 41]
     });
 
+
+
 // L.marker([51.5, -0.09], {icon: greenIcon}).addTo(map);
 
     var encodedRoutes = {{ runs|safe }}
@@ -200,8 +245,8 @@
       
       
       // too heavy duty on the web app rn to add the thousand+markers this would load
-      L.marker(begin_latlong, {icon: greenIcon}).addTo(map);
-      L.marker(end_latlong, {icon: redIcon}).addTo(map);
+      // L.marker(begin_latlong, {icon: greenIcon}).addTo(map);
+      // L.marker(end_latlong, {icon: redIcon}).addTo(map);
       
       
       // console.log(begin_latlong, end_latlong)
@@ -219,7 +264,7 @@
     }
 
     function setView(){
-      if(coords_param) {
+      if(coords_param[0]) {
         console.log("trying to use map.setView to: " + String(coords_param))
         console.log("setting view...")
         map.setView(coords_param)
