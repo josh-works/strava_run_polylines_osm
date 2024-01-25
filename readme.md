@@ -14,15 +14,51 @@ How to setup/run/use locally:
 3. run `$ python extra_runs.py` // get polyline for each activity
 4. run webserver with `flask run` or `python app.py`
 
+## 2024-01-25 next session, more with markers
+
+sidebar: https://medium.com/@jennyjean8675309/web-scraping-with-ruby-and-nokogiri-73e75a6f34ed
+
+```ruby
+doc.css('#city').css('.browseCategoryItem')
+# feels like I may have under-utilized chaining .css w/my nokogiri earlier...
+```
+
+markers markers markers. I think I should back ALL markers off the map now, start again from scratch. 
+
+Maybe pop 'em into a CSV again.
+
+BTW, I'm doing cool-ish stuff around adding new runs regularly. Saving the `strava_token.json` (but not in git) has been helpful. Easy to do a copy/paste token refresh call to Strava.
+
+
+
+## 20224-01-23 rendering collection of markers to map
+
+OK, I can render the collection of markers to the map, now, but I to mass add event listeners, I need to do something funky. I'm also not sourcing the right image URL.
+
+I might use something like https://stackoverflow.com/questions/44920932/leaflet-how-to-get-the-popup-content-on-marker-click
+
+I'll set the marker content to the image URL when creating the marker, then on click open up a thumbnail to that image url, or something. 
+
+```javascript
+let marker = L.marker(latlng, {
+  icon: bigBlueIcon,
+  title: url,
+  autoClose: false
+}).addTo(map);
+markersArray.push(marker)
+
+```
+
+I want the pins to all open the photos on the map, but I might not be ablew to do that. 
+
 ## 2024-01-22 short session around CSV manipulation in Ruby
 
 I think I might find myself using CSVs a lot in Ruby, so I don't mind practicing a bit
 
-reading rows by IDs:
+- [x] reading rows by IDs
 
-```ruby
 
-```
+got it working, I've got latlngs getting written to the CSVs, now I need to feed the document to the front-end, and render these as markers.
 
 ## 2024-01-21 getting images rendered to map, perhaps
 

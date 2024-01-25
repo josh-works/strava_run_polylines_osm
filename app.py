@@ -28,7 +28,21 @@ def my_runs():
         for row in reader:
             runs.append(row["polyline"])
 
-    return render_template("leaflet.html", runs = json.dumps(runs), latlng = latlng_param, zoom = initial_zoom_level )
+    photos = []
+    print("dealing with photos...")
+    with open("pictures.csv", "r") as photos_file:
+        reader = csv.DictReader(photos_file)
+
+        for row in reader:
+            photos.append([row["url"], row["latlng"]])
+
+    print(photos[0])
+    print('rendering template')
+    return render_template("leaflet.html", 
+                           runs = json.dumps(runs), 
+                           latlng = latlng_param, 
+                           zoom = initial_zoom_level,
+                            photos = json.dumps(photos) )
 @app.route('/about')
 def about():
     return render_template('about.html')
