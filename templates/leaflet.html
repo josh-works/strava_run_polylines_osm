@@ -48,7 +48,11 @@
 
     var zoom_param = {{ zoom }}
     var denverCords = [ 39.72927165246686, -105.00802723474892 ]
-    var map = L.map('map').setView(denverCords, zoom_param);
+    var map = L.map('map', 
+            {
+              closePopupOnClick: false
+            }
+            ).setView(denverCords, zoom_param);
 
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
       attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -64,34 +68,65 @@
     var markersArray = []
     var photos_and_coords = {{ photos|safe }}
     console.log(photos_and_coords[0])
-    for (let i = 0; i < photos_and_coords.length; i++) {
+    console.log("making circles...")
 
-      data = photos_and_coords[i]
-      console.log(data)
+    var humboldt = [39.74149, -104.969312]
+    // L.circle(humboldt, 
+    //         {radius: 5300,
+    //           fillRule: 'evenodd',
+    //         color: "#ccee33"}
+    //         )
+    //         .addTo(map);
 
-      url = data[0]
-      latlng = JSON.parse(data[1])
-      console.log(url, latlng)
-      console.log("adding to map... at " + latlng.toString() )
+    const pointOptions = {
+      radius: 200,
+      stroke: false,
+      color: '#E65217',
+      weight: 1,
+      opacity: 1,
+      fill: false,
+      fillOpacity: 1
+    // render: L.svg(),
+    // className: 'main-point-marker'
+    }
+    L.circle(humboldt, pointOptions).addTo(map);
+    L.circle(humboldt, {radius: 1000, fill: false, color: "#70b394", stroke: true}).addTo(map);
+    L.circle(humboldt, {radius: 5000, fill: false, color: "#70b394", stroke: true}).addTo(map);
+    // L.circle(humboldt, {radius: 2000, fill: false, fillColor: "#70b394"}).addTo(map);
+    // L.circle(humboldt, {radius: 5300, fill: false, fillColor: "#70b394"}).addTo(map);
+    // for (let i = 0; i < photos_and_coords.length; i++) {
+
+    //   data = photos_and_coords[i]
+    //   console.log(data)
+
+    //   url = data[0]
+    //   latlng = JSON.parse(data[1])
+    //   console.log(url, latlng)
+    //   console.log("adding to map at: " + latlng.toString() )
 
       
-      let fuck = L.marker(latlng, {
-        icon: bigBlueIcon,
-        title: url,
-        autoClose: false
-      }).addTo(map);
-      markersArray.push(fuck)
-    }
-    for (let mark of markersArray) {
-      console.log("adding event Listeners...")
-      // mark.bindPopup(
-      //               `<img src="https://dgtzuqphqg23d.cloudfront.net/QThlg8qH8Ci0kjAhbDXUOW0LAD1z_TTbvDs3lWNkM6Y-2048x1536.jpg" 
-      //                 style="width:200px"><p>this photo came with geodata, as it was taken on a drone I was flying at the time.</p> `
-      //                 ).openPopup();
+    //   let newMarker = L.marker(latlng, {
+    //     icon: bigBlueIcon,
+    //     title: url,
+    //     autoClose: false
+    //   })
+      
+    //   newMarker.addTo(map);
+    //   markersArray.push(newMarker)
+    //   newMarker.bindPopup(
+    //     `<img src="${url}" style="width:200px"><p>Here's a photo I took from the activity</p>`
+    //   ).openPopup();
+    // }
+    // for (let mark of markersArray) {
+    //   console.log("adding event Listeners to marker: " + mark[0].toString())
+    //   mark.bindPopup(
+    //                 `<img src="${url}" 
+    //                   style="width:200px"><p>Here's a photo I took from the activity</p> `
+    //                   ).openPopup();
 
       
-      console.log('adding event listner')
-    }
+    //   console.log('adding event listner')
+    // }
 
     
 
