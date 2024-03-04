@@ -1,0 +1,161 @@
+<html>
+  <head>
+    <title>I think Felt might be a great fit!</title>
+    <link rel="stylesheet" type="text/css" href="/static/index.css" />
+  </head>
+
+  <body>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/jieter/Leaflet.encoded/master/Polyline.encoded.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <div class="nav">
+      <div class="links">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/felt">Felt & Josh</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <p>hi there, Felt team. I think I might be a great fit for your team, and vice versa.
+    </p>
+
+    <p>I'll use this page to make a small case for 'why'</p>
+
+    First, <a href="https://felt.com/careers">you're hiring</a> per the following. I might fit this role exactly, or something else to it:
+    <pre>
+      Web / Elixir Engineer
+      Help build our real-time collaboration engine, using Elixir and the OTP platform. An opportunity to scale a platform to millions of users.
+      You might be a good fit if:
+      • You are product driven and believe in doing the right thing by the user first
+      • You know how to secure a web application, how to make it fast, and how different services interact
+      • You have experience building a real-time collaborative platform
+      • You’re experienced at creating content across multiple channels, and are incredibly organized
+    </pre>
+
+    <p>I've done b2b sales in the past, so the sales engineer position might also have some overlap. Part of what makes me sometimes skilled in these sorts of roles is the work I've done on/with customer support and customer success teams.</p>
+    
+    <p>More directly related to software and data, I *might* be about to do something really impressive.</p>
+
+    <p>I doubt many days you see a completely new kind of map, or a completely new kind of map-based data visualization.</p>
+
+    <p>But I think today you might be about to look at a novel maps-based data set!</p>
+
+    <p>If my intuition here is correct, and it's half as interesting to you as it is to me, I think we should chat on Zoom or Whatsapp for 45 mins.</p>
+    
+    <p>Long story short, I've been using Strava to track my scooter rides (and other things) pretty consistently for several years now.</p>
+
+    <p>I've got a map of nearly everywhere I've been, in a rather precise way, for the last few years of my life.</p>
+
+    <p>I have not ever seen elsewhere a visualization of this kind of data. Given how chronically online we all are, and that it's 2024, I think that's an impressive feat.</p>
+
+    <p>So, I'd love to talk with the Felt team more. Maybe there's some room for us to work together. </p>
+
+    <p>I've got a few years of both work experience in domains highly related to Felt's 'space', and highly unrelated. I think both types of experience will prove to be helpful. </p>
+
+    <p>What else would be helpful from me to suss this out? I could go on at length about some of this work or other things, I'm sort of wanting to fish for where our mutual interests most strongly intersect. I've emailed </p>
+    
+    </div>
+    </pre>
+  
+    <div id="map" style="width: 100%; height: 100%"></div>
+    <script>
+
+    // var zoom_param = {{ zoom }}
+    var seattleCoords = [ 47.602691, -122.315907 ]
+    var map = L.map('map').setView(seattleCoords, 12);
+
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 22,
+      minZoom: 1,
+      id: 'mapbox/satellite-v9',
+      tileSize: 512,
+      zoomOffset: -1,
+      accessToken: 'pk.eyJ1Ijoiam9zaHdvcmtzIiwiYSI6ImNrcWk2NzUxeTJhbm8yem4weDFreTY5bjQifQ.Qja1F9B1-i7hK3KOvSYAvg'
+    }).addTo(map);
+      
+    var encodedRoutes = {{ runs|safe }}
+    var coords_param = [ {{ latlng }} ]
+    var stepCounter = 0
+    for (let encoded of encodedRoutes) {
+      var coordinates = L.Polyline.fromEncoded(encoded).getLatLngs();
+      var begin_latlong = coordinates[0]
+      var end_latlong = coordinates[coordinates.length-1]
+      stepCounter += 1
+      console.log("adding first polyline")
+              
+      var line = L.polyline(
+          coordinates,
+          {
+              color: rainbow(encodedRoutes.length, stepCounter),
+              weight: 2,
+              opacity: .7,
+              lineJoin: 'round',
+              smoothFactor: 3
+          }
+      ).addTo(map);
+      console.log("added first polyline")
+    }
+
+    /**
+     * @param numOfSteps: Total number steps to get color, means total colors
+     * @param step: The step number, means the order of the color
+     */
+    function rainbow(numOfSteps, step) {
+        // This function generates vibrant, "evenly spaced" colours (i.e. no clustering). This is ideal for creating easily distinguishable vibrant markers in Google Maps and other apps.
+        // Adam Cole, 2011-Sept-14
+        // HSV to RBG adapted from: http://mjijackson.com/2008/02/rgb-to-hsl-and-rgb-to-hsv-color-model-conversion-algorithms-in-javascript
+        var r, g, b;
+        var h = step / numOfSteps;
+        var i = ~~(h * 6);
+        var f = h * 6 - i;
+        var q = 1 - f;
+        switch(i % 6){
+            case 0: r = 1; g = f; b = 0; break;
+            case 1: r = q; g = 1; b = 0; break;
+            case 2: r = 0; g = 1; b = f; break;
+            case 3: r = 0; g = q; b = 1; break;
+            case 4: r = f; g = 0; b = 1; break;
+            case 5: r = 1; g = 0; b = q; break;
+        }
+        var c = "#" + ("00" + (~ ~(r * 255)).toString(16)).slice(-2) + ("00" + (~ ~(g * 255)).toString(16)).slice(-2) + ("00" + (~ ~(b * 255)).toString(16)).slice(-2);
+        return (c);
+    }
+
+
+    function setView(){
+      if(coords_param[0]) {
+        console.log("trying to use map.setView to: " + String(coords_param))
+        console.log("setting view...")
+        map.setView(coords_param)
+      }
+
+      if(zoom_param) {
+        console.log("trying to map.setZoom to: " + String(zoom_param))
+        console.log("setting zoom...")
+        map.setZoom(zoom_param)
+      }
+    }
+
+    map.on('click', 
+					function(e){
+            console.log(e)
+            console.log(e.latlong)
+						var coord = e.latlng.toString().split(',');
+						var lat = coord[0].split('(');
+						var lng = coord[1].split(')');
+						console.log("You clicked the map at " + lat[1] + "," + lng[0]);
+            console.log("attempting to set URL to where clicked to: " + e.latlng.toString())
+            placelatlngzoominurl(lat[1] + "," + lng[0])
+					});
+
+    // adding labels, will do this in a 'real' way sometime. store as another CSV, stream from python as [latlng|label title|detailed text]
+    // or something like that, same as the polylines?
+    
+      console.log("about to call setView()")
+      setView();
+    </script>
+  </body>
+</html>
