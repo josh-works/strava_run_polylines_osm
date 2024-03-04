@@ -106,3 +106,59 @@ p, h1, h2, h3, h4, h5, h6 {
   /* margin-top: -50px;
   margin-left: 10px; */
 }
+
+
+/* header, main {
+  margin: 0 auto;
+  max-width: 50em;
+} */
+
+/* 02 Text Styling */
+
+#font-family {
+  display: block;
+}
+
+body {
+  font-family: "Helvetica", "Arial", sans-serif;
+  line-height: 2;
+  padding: 1em 1em 0em 1em;
+}
+
+h2 {
+  margin-top: 1em;
+  padding-top: 1em;
+}
+
+/* 04 Contrast for code blocks */
+
+code, pre {
+  background: #eee;
+  padding: 1em;
+
+}
+code {
+  padding: 2px 4px;
+  vertical-align: text-bottom;
+}
+
+a {
+  color: #268bd2;
+  text-decoration: none;
+}
+
+a:hover, a:focus  {
+  text-decoration: underline;
+}
+
+/* 06 style code a bit more */
+
+code, pre {
+  background: #f5f7f9;
+  border-bottom: 1px solid #d8dee9;
+  color: #a7adba;
+}
+
+pre {
+  border-left: 2px solid #69c;
+}

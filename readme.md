@@ -5,14 +5,86 @@ How to setup/run/use locally:
 
 # General setup 
 
+### firs run/update runs instructions
+
+because I forget this thing so bad. 
+
+1. Check `strava_token.json`, which is .gitignored, grab the refresh token (or save this whole thing in a Postman request....)
+2. copy returned `access_token` value into `extra_runs.py:27`
+3. in terminal, `python extra_runs.py`, watch auth request, query, new runs get saved, once it hits old runs, as visible in the output, hit `ctrl-c`. Done. 
+4. `python app.py`, visit localhost:5001 
+
+
+
+
+## Tuesday, February 20, 2024
+
+My gosh my notes are messy. 
+
+Cleaning up, eventually
+
+https://www.google.com/maps/place/Denver,+CO/@39.7417598,-104.9701244,726m/data=!3m1!1e3!4m6!3m5!1s0x876b80aa231f17cf:0x118ef4f8278a36d6!8m2!3d39.7392358!4d-104.990251!16zL20vMDJjbDE!5m1!1e4?entry=ttu
+
+Going to print a map, notice that google tracks the param `726m`, that changes as I zoom in/out. Seems likely to be the zoom equivalent. 
+
+
+
+
 ## Get token to use in `download_activities.py`
 
-0. clone the repo, or, really, download the same initial repository I started with:
+0. clone the repo, or, really, download the same initial repository I started with: [https://gist.github.com/mneedham/34b923beb7fd72f8fe6ee433c2b27d73](https://gist.github.com/mneedham/34b923beb7fd72f8fe6ee433c2b27d73). This gist explained in detail [here](https://www.markhneedham.com/blog/2017/04/29/leaflet-strava-polylines-osm/)
 1. install everything, smthg like `pip install -r requirements.txt`
 2. Run `download_activities.py` with `python download_activities.py`
 3. Get login/creds with `uvicorn authenticate:app --reload` (more just below), this doesn't seem to work super well
 3. run `$ python extra_runs.py` // get polyline for each activity
 4. run webserver with `flask run` or `python app.py`
+
+# Per-session notes
+
+I generally keep notes per working session. Helps me keep track of myself.
+
+## Thursday, February 8, 2024
+
+Quick session, been a few weeks since working on this. 
+
+I'm gonna take a break with the pins, and see if I can finish populating a list of all the photos, scraping strava's UI.
+
+Something like:
+
+```ruby
+run_ids = collect_run_ids_from_runs_csv
+run_ids.each { |run| get_photos_for(run) }
+
+def get_photos_for(run)
+  next if run_already_processed
+
+  scrape_strava_page_for(run)
+end
+
+def scrape_strava_page_for(run_id)
+  browser = Watir::Browser.new
+  browser.goto("https://www.strava.com/activities/#{run_id}")
+  doc = Nokogiri::HTML.parse(browser.html)
+  f = File.new('output.html', 'w')
+  f.write(browser.html)
+  puts "wrote some shit"
+
+  div = doc.css('div[class^="Photos"]')
+  imgs = div.first.css('img')
+  CSV.open('pictures.csv', 'a+') do |csv|
+    imgs.each do |img|
+      csv << [id,img.attribute_nodes.first.value]
+      puts "writing to csv: " + img.attribute_nodes.first.value
+    end
+  end
+end
+```
+
+OK, I've got it working, but I forgot to pull only the runs with photos, I was beginning to process all 1000+ runs.
+
+I'll have to re-do my original strava call, and when downloading activities flag somewhere if the run has images and then do something with it.
+
+- [ ] re-run strava processing, store if it does or doesn't have photos attached. 
 
 ## 2024-01-25 next session, more with markers
 
@@ -29,9 +101,68 @@ Maybe pop 'em into a CSV again.
 
 BTW, I'm doing cool-ish stuff around adding new runs regularly. Saving the `strava_token.json` (but not in git) has been helpful. Easy to do a copy/paste token refresh call to Strava.
 
+OK, cleaned up old markers, changed the line colors so there's (perhaps) more data that could be inferred.
 
+Lets sort out markers for photos now...
 
-## 20224-01-23 rendering collection of markers to map
+I've got markers rendering, per-photo, at the start location of the line. Now I need to make the photo show up as a thumbnail attached to the marker. 
+
+```javascript
+for (let i = 0; i < photos_and_coords.length; i++) {
+      data = photos_and_coords[i]
+      url = data[0]
+      latlng = JSON.parse(data[1])
+      
+      let newMarker = L.marker(latlng, {
+        icon: bigBlueIcon,
+        title: url,
+        autoClose: false
+      })
+      
+      newMarker.addTo(map);
+      markersArray.push(newMarker)
+      newMarker.bindPopup(
+        `<img src="${url}" style="width:200px"><p>Here's a photo I took from the activity</p>`
+      ).openPopup();
+    }
+  }
+```
+
+So, this works except the `openPopup()` function seems to not be doing anything.
+
+- [ ] get one-off running that has `openPopup()` working
+
+## 2024-01-23 opening popups w/images at once
+
+OK, I've got everything set right-ish, except I _think_ the Leaflet map is closing the popups after adding them.
+
+I can click on markers, sequentially, and see the mapbox image.
+
+Lets make them all open up at once:
+
+```javascript
+
+      let newMarker = L.marker(latlng, {
+        icon: bigBlueIcon,
+        title: url,
+        autoClose: false
+      })
+      
+      newMarker.addTo(map);
+      markersArray.push(newMarker)
+      newMarker.bindPopup(
+        `<img src="${url}" style="width:200px"><p>Here's a photo I took from the activity</p>`
+      ).openPopup();
+      
+    var map = L.map('map', 
+            {
+              closePopupOnClick: false // played with this
+            }
+            ).setView(denverCords, zoom_param);
+
+```
+
+## 2024-01-23 rendering collection of markers to map
 
 OK, I can render the collection of markers to the map, now, but I to mass add event listeners, I need to do something funky. I'm also not sourcing the right image URL.
 
@@ -43,13 +174,18 @@ I'll set the marker content to the image URL when creating the marker, then on c
 let marker = L.marker(latlng, {
   icon: bigBlueIcon,
   title: url,
-  autoClose: false
+  autoClose: false // maybe important?
 }).addTo(map);
 markersArray.push(marker)
 
 ```
 
-I want the pins to all open the photos on the map, but I might not be ablew to do that. 
+I want the pins to all open the photos on the map, but I am so far not able to get that. Only the last photo to be added gets opened:
+
+![only-one](/images/only-one.jpg)
+
+
+
 
 ## 2024-01-22 short session around CSV manipulation in Ruby
 

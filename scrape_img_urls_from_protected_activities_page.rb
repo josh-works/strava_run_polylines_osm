@@ -6,16 +6,27 @@ require 'watir'
 require 'csv'
 require 'fast-polylines'
 
-@csv = CSV.read('runs.csv', headers: true)
+@csv = CSV.table('runs.csv')
+all_ids = @csv[:id]
+puts all_ids
+
+photo_run_csv = CSV.table('pictures.csv')
+all_saved_photos_by_activity_id = photo_run_csv[:id]
 
 def run_headless_browser(id)
   browser = Watir::Browser.new
   browser.goto("https://www.strava.com/activities/#{id}")
   doc = Nokogiri::HTML.parse(browser.html)
 
-  puts "processing activity #{id}"
-
+  puts "processing activity https://www.strava.com/activities/#{id}"
+  # require "pry"; binding.pry if id == 7218346928
   div = doc.css('div[class^="Photos"]')
+
+  if div.empty?
+    puts "no picture found for #{id}" 
+    return
+  end
+
   imgs = div.first.css('img')
   puts imgs
   
@@ -35,6 +46,16 @@ def run_headless_browser(id)
   end
 end
 
+# run some shit
+
+all_ids.each do |id|
+  if all_saved_photos_by_activity_id.include?(id)
+    puts "already processed #{id}"
+    next
+  end
+
+  run_headless_browser(id)
+end
 
 # uri = URI('https://www.strava.com/activities/10381720567')
 # http = Net::HTTP.new(uri.host, uri.port)
@@ -55,18 +76,5 @@ end
 #   p i['src'] # get the S3/cloudfront URL like https://dgtzuqphqg23d.cloudfront.net/T2UNx0g6ApQAlT__qg0yoMPfcddatmUjFhJZCe6GuYw-2048x1536.jpg
 #   # and save it in a CSV, maybe w/a format like `activity_id, img_url, latlong`
 # end
-activity_ids = ["10381720567","10579076827",
-                "10609349635",
-                "10579076827",
-                "10572911928",
-                "10566890440",
-                "10560952032",
-                "10609349635",
-                "10541779662",
-                "10540809837",
-              ]
-activity_ids.each do |id|
-  run_headless_browser(id)
-  
-end
+
 
