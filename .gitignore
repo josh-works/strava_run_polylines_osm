@@ -1,3 +1,4 @@
 auth/client.pkl
 __pycache__
 .env
+strava_token.json
