@@ -24,7 +24,7 @@ with open("runs.csv") as runs_file:
 print("there are " + str(len(runs_ids)) + "rows of data")
 
 
-token = "72f14e1d1fedf94c5ede238f00c8ec07c776a2b2"
+token = "5ca62e11ca2670f8d6b24330f64b4d71c041c1a8"
 # token = os.environ["STRAVA_TOKEN"]
 headers = {'Authorization': "Bearer {0}".format(token)}
 print(headers)
