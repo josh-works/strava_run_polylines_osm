@@ -34,7 +34,7 @@ with open("runs.csv", "a") as runs_file:
     print("token is: " + token)
     print("headers are: " + str(headers))
     writer = csv.writer(runs_file, delimiter=",")
-    writer.writerow(["id", "polyline"])
+    writer.writerow(["id", "type", "polyline"])
 
     page = 1
     # page = 9
@@ -52,6 +52,8 @@ with open("runs.csv", "a") as runs_file:
         else:
             for activity in response:
                 id = activity["id"]
+                type = activity["type"]
+
                 if str(id) in runs_ids:
                     print("id already found, skipping")
                     continue
@@ -63,7 +65,7 @@ with open("runs.csv", "a") as runs_file:
                 polyline = r.json()["map"]["polyline"]
                 print(id)
 
-                writer.writerow([id, polyline])
+                writer.writerow([id, type, polyline])
                 print("next activity...\n")
             page += 1
 

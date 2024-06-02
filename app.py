@@ -10,9 +10,7 @@ app = Flask(__name__)
 def my_runs():
     latlng_param = ""
     initial_zoom_level = "15"
-    print(request.args)
 
-    print("app.py#my_runs")
     if request.args.get('latlng'):
         latlng_param = str(request.args.get('latlng'))
     
@@ -26,18 +24,19 @@ def my_runs():
         reader = csv.DictReader(runs_file)
 
         for row in reader:
-            runs.append(row["polyline"])
+            print(row)
+            runs.append([ 
+                row["type"],
+                row["polyline"] 
+            ])
 
     photos = []
-    print("dealing with photos...")
     with open("pictures.csv", "r") as photos_file:
         reader = csv.DictReader(photos_file)
 
         for row in reader:
             photos.append([row["url"], row["latlng"]])
 
-    print(photos[0])
-    print('rendering template')
     return render_template("leaflet.html", 
                            runs = json.dumps(runs), 
                            latlng = latlng_param, 

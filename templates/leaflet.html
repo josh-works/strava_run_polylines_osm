@@ -38,10 +38,29 @@
       });
 
     
+      const activityMap = {
+      "Velomobile": "Scooter",
+      "Walk": "Walk",
+      "Wheelchair": "Car",
+      "RockClimbing": "Walk"
+    }
+
+    const colorTable = {
+      "Scooter": "aqua",
+      "Walk": "yellow"
+    }
+
+    function getColorForActivity(type){
+      realType = activityMap[type]
+      if (activityMap[type] == null) {
+        console.log(type)
+      }
+      
+      return colorTable[realType]
+    }
+
     function placelatlngzoominurl(cords){
-      console.log("oh shit placelatlngzoominurl to " + cords)
       zoom = map.getZoom()
-      console.log("and zoom to: " + zoom)
       
       window.history.replaceState('', '', '?zoom=' + zoom + '&latlng=' + cords);
     }
@@ -67,8 +86,6 @@
     // markers
     var markersArray = []
     var photos_and_coords = {{ photos|safe }}
-    console.log(photos_and_coords[0])
-    console.log("making circles...")
 
     var humboldt = [39.74149, -104.969312]
     // L.circle(humboldt, 
@@ -97,12 +114,9 @@
     // for (let i = 0; i < photos_and_coords.length; i++) {
 
     //   data = photos_and_coords[i]
-    //   console.log(data)
 
     //   url = data[0]
     //   latlng = JSON.parse(data[1])
-    //   console.log(url, latlng)
-    //   console.log("adding to map at: " + latlng.toString() )
 
       
     //   let newMarker = L.marker(latlng, {
@@ -118,20 +132,15 @@
     //   ).openPopup();
     // }
     // for (let mark of markersArray) {
-    //   console.log("adding event Listeners to marker: " + mark[0].toString())
     //   mark.bindPopup(
     //                 `<img src="${url}" 
     //                   style="width:200px"><p>Here's a photo I took from the activity</p> `
     //                   ).openPopup();
-
-      
-    //   console.log('adding event listner')
     // }
 
     
 
 
-    console.log("done processing photos...")
 
     // var photoMarker = L.marker([39.728373, -104.940488], {
     //   draggable: false,
@@ -142,13 +151,11 @@
 
     // photoMarker.bindPopup('<img src="https://dgtzuqphqg23d.cloudfront.net/QThlg8qH8Ci0kjAhbDXUOW0LAD1z_TTbvDs3lWNkM6Y-2048x1536.jpg" style="width:200px"><p>this photo came with geodata, as it was taken on a drone I was flying at the time.</p> ');
     // photoMarker.addEventListener('click', function() {
-    //   console.log('trying to open photo...')
     //   window.open(this.src, '_blank');
     // });
 
     // let thumb = document.querySelectorAll(".leaflet-popup-content > img:nth-child(1)")[0];
     // thumb.addEventListener('click', function() {
-    //   console.log("also trying here...")
     //   window.open('https://dgtzuqphqg23d.cloudfront.net/QThlg8qH8Ci0kjAhbDXUOW0LAD1z_TTbvDs3lWNkM6Y-2048x1536.jpg', '_blank');
     // });
   
@@ -274,23 +281,19 @@
     var coords_param = [ {{ latlng }} ]
     var stepCounter = 0
     for (let encoded of encodedRoutes) {
-      var coordinates = L.Polyline.fromEncoded(encoded).getLatLngs();
+      polyline = encoded[1]
+      activityType = encoded[0]
+      var coordinates = L.Polyline.fromEncoded(polyline).getLatLngs();
+      var color = getColorForActivity(activityType) 
       var begin_latlong = coordinates[0]
       var end_latlong = coordinates[coordinates.length-1]
       stepCounter += 1
-      
-      
-      // too heavy duty on the web app rn to add the thousand+markers this would load
-      // L.marker(begin_latlong, {icon: greenIcon}).addTo(map);
-      // L.marker(end_latlong, {icon: redIcon}).addTo(map);
-      
-      
-      // console.log(begin_latlong, end_latlong)
 
       var line = L.polyline(
           coordinates,
           {
-              color: rainbow(encodedRoutes.length, stepCounter),
+              // color: rainbow(encodedRoutes.length, stepCounter),
+              color: color,
               weight: 2,
               opacity: .7,
               lineJoin: 'round',
@@ -305,22 +308,19 @@
     }
 
 
+
     function mouseover(e) {  
-      console.log("mouseover???")
       // not needed since item is already global, 
       // I am assuming this is here just because it's sample code?
       // var item = document.getElementById("button"); 
       // self.setAttribute("style", "background-color:blue;")
       if (!e) var e = window.event;
       var relTarg = e.relatedTarget || e.fromElement;
-      console.log(relTarg)
 
     }
 
     function mouseover1(e)
     {  
-      console.log("mouseout")
-      console.log(e)
       // self.setAttribute("style", "background-color:green;")
     }
 
@@ -361,34 +361,25 @@ function rainbow(numOfSteps, step) {
 
     function setView(){
       if(coords_param[0]) {
-        console.log("trying to use map.setView to: " + String(coords_param))
-        console.log("setting view...")
         map.setView(coords_param)
       }
 
       if(zoom_param) {
-        console.log("trying to map.setZoom to: " + String(zoom_param))
-        console.log("setting zoom...")
         map.setZoom(zoom_param)
       }
     }
 
     map.on('click', 
 					function(e){
-            console.log(e)
-            console.log(e.latlong)
 						var coord = e.latlng.toString().split(',');
 						var lat = coord[0].split('(');
 						var lng = coord[1].split(')');
-						console.log("You clicked the map at " + lat[1] + "," + lng[0]);
-            console.log("attempting to set URL to where clicked to: " + e.latlng.toString())
             placelatlngzoominurl(lat[1] + "," + lng[0])
 					});
 
     // adding labels, will do this in a 'real' way sometime. store as another CSV, stream from python as [latlng|label title|detailed text]
     // or something like that, same as the polylines?
     
-      console.log("about to call setView()")
       setView();
     </script>
   </body>
