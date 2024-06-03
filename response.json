@@ -1,0 +1,629 @@
+[
+  {'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+    }, 'name': 'Lots of cars, makes no difference to me', 'distance': 5199.7, 'moving_time': 978, 'elapsed_time': 1283, 'total_elevation_gain': 41.2, 'type': 'Velomobile', 'sport_type': 'Velomobile', 'id': 11543032487, 'start_date': '2024-05-31T21: 54: 19Z', 'start_date_local': '2024-05-31T15: 54: 19Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11543032487', 'summary_polyline': 'wymqFvj{_SOABD@C@B?EB@EA@AF@U?MGMAYTa@JeACaAKoBEaAB_CA
+      }A@_AEOSCyBEy@I[GIIC[?w@EiBBcAAQCGIEa@AeC@sA?BCAFq@?aED
+        }@@CC@HO?GMSCQBuCEwED
+      ]KeA?eC@eBF_BAw@IEi@Iq@@c@HM?w@Ie@Do@AYD
+    }BCmAFmAC@@QSk@_BE_AA{F@i@DSAs@?yAAOFiBDOSgD?SFg@Ae@H
+    }C?_@MoA@C@@AWHiCCoBCmABgDCyA@
+  }ACeD@UTcALmAEeF?qEBgEBw@CyCBqABYGmBCuHASEMGEkACsAB{@E
+  ]BGAGEGU?yCB_AEuB@_A@QDGGi@Cy@@_DEiC@eCCwA@k@BU@_@Ck@@oABKI_@Jm@Im@MSs@[I?IBa@p@[Vo@ZUFg@Cq@HEACGSIG?YLQEc@?gAD_@Ci@@u@Cg@Ek@HcCD_ACSEUCoCDg@CSBo@@mACGBCFCNAh@@lC@HHRDBDC?ODCLFBA@QDMF@|@ClAK
+    ]?uAH_@HEFE@FE?OH@C?ACD_@DGJCOFCC?FKAEE', 'resource_state': 2
+  }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': None, 'start_latlng': [
+    39.725244445726275,
+    -105.002834033221
+  ], 'end_latlng': [
+    39.74144414998591,
+    -104.9691704660654
+  ], 'average_speed': 5.317, 'max_speed': 13.17, 'average_watts': 123.2, 'kilojoules': 120.4, 'device_watts': False, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1626.8, 'elev_low': 1594.0, 'upload_id': 12321242442, 'upload_id_str': '12321242442', 'external_id': '95ea44bf-40b4-45f7-b658-dac21c3b6fa0-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+},
+{'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+  }, 'name': 'Afternoon Activity', 'distance': 5194.2, 'moving_time': 804, 'elapsed_time': 905, 'total_elevation_gain': 6.7, 'type': 'Velomobile', 'sport_type': 'Velomobile', 'id': 11542259150, 'start_date': '2024-05-31T19: 05: 22Z', 'start_date_local': '2024-05-31T13: 05: 22Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11542259150', 'summary_polyline': 'yboqFxzs_Sa@FQJeAIi@G[?
+    }@H_@NYDSO
+  ]IsBMY?i@Bg@Hi@Ng@Xa@Ns@l@g@t@Q`@Uz@OhAEtA?~@@\\Jn@Zx@Zb@XXFFXL`@FFJHbA@f@CtBE~@F~@BfCCvC@nEAzC@x@CvBBzDArEFnBGrBDfB?dBG`H?xBDnAApBBxCAd@AP@V?|@YfACvACJDpACrEBzBA~A@|D?f@CB?CFDCTDvBEb@GtA@^F`@?~@EjABfDGh@DZ@fAAv@E\\Fp@HpCEhD@tAAh@Ef@Bl@CLS\\u@n@iBfAmBnAKRC\\?d@EXCj@@bB?bLGlA?r@BjC?`D@TDNFLJFN@lACrBB`@@\\FHP?J?`EHLNHlAGvAAzBHlFEp@DRAj@Dd@@rBGhB?`@BTEhAA|ADfBCJFL?t@GRA|DHzBChDAxAGZSVDRA@FGA@QGKDC@YJEBDAJIBBEAFC@@A@DG@', 'resource_state': 2
+}, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': None, 'start_latlng': [
+  39.731817450374365,
+  -104.96444206684828
+], 'end_latlng': [
+  39.72536372020841,
+  -105.00260336324573
+], 'average_speed': 6.46, 'max_speed': 14.656, 'average_watts': 116.9, 'kilojoules': 94.0, 'device_watts': False, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1639.3, 'elev_low': 1591.5, 'upload_id': 12320447320, 'upload_id_str': '12320447320', 'external_id': '1295ab4e-0dac-47fc-ba4e-c06299d86144-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+},
+{'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+}, 'name': 'Lunch Walk', 'distance': 941.1, 'moving_time': 959, 'elapsed_time': 3809, 'total_elevation_gain': 3.5, 'type': 'Walk', 'sport_type': 'Walk', 'id': 11542180208, 'start_date': '2024-05-31T17: 14: 39Z', 'start_date_local': '2024-05-31T11: 14: 39Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11542180208', 'summary_polyline': 'meoqFvzs_SKMC@@CC?@BC?FAFKDW?QCIOO?IDO?_@D{@DEF??BCEBOPCHG@FFBBARJd@@LABI@YBaACKU?E@ENCACCEUIWDK?SCGY@CAIOO@AOD@BEEK?@AAGBSMCEIA?B@@?SJOA@Oc@AYF_@FGJE`@BDEOYSG@QIm@CoAKGO@GPC?ED?JCJHNFKEBBOFQ\\QFFAPDTCX@FGt@@PEj@BLB^CRDb@G\\BHARD`@?b@@BT?HDD|@@DB?BGAEBAC@?DACB@?D@G@?ACHFGG?CAD@DB?A?CABBAC@EA?@AAA?DCB?CDBAB', 'resource_state': 2
+  }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': 'g4095954', 'start_latlng': [
+    39.732231348752975,
+    -104.96443485841155
+  ], 'end_latlng': [
+    39.731965558603406,
+    -104.96296157129109
+  ], 'average_speed': 0.981, 'max_speed': 2.898, 'average_cadence': 47.7, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1643.5, 'elev_low': 1639.4, 'upload_id': 12320366232, 'upload_id_str': '12320366232', 'external_id': '52752375-4f4e-4e11-bba1-ecebbd73f413-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+},
+{'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+  }, 'name': 'Lunch Activity', 'distance': 1284.8, 'moving_time': 269, 'elapsed_time': 363, 'total_elevation_gain': 22.9, 'type': 'Velomobile', 'sport_type': 'Velomobile', 'id': 11541491009, 'start_date': '2024-05-31T17: 08: 24Z', 'start_date_local': '2024-05-31T11: 08: 24Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11541491009', 'summary_polyline': 'uzpqFltt_STCv@Q@ILDDDf@BfB?tBDj@CVGNA~@Jr@?VAfBHpACp@JDA?GCECAABH@VIZ@XELGVKb@Yd@w@?OEKWa@WYUc@QsACg@FkBV
+  }ADOHGL_@b@
+}@Z
+]v@k@dBi@~AGt@FnA?JDJJJDLGPAZMLC`AANC|@LHID@@E', 'resource_state': 2
+}, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': None, 'start_latlng': [
+39.74075809121132,
+-104.96854953467846
+], 'end_latlng': [
+39.73222414031625,
+-104.96445866301656
+], 'average_speed': 4.776, 'max_speed': 10.33, 'average_watts': 111.8, 'kilojoules': 30.1, 'device_watts': False, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1639.3, 'elev_low': 1615.2, 'upload_id': 12319659894, 'upload_id_str': '12319659894', 'external_id': '1aa5d059-a3f5-47af-a282-d57f19fb5605-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+},
+{'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+}, 'name': 'Huge and lovely day', 'distance': 37311.7, 'moving_time': 10507, 'elapsed_time': 55979, 'total_elevation_gain': 153.5, 'type': 'Velomobile', 'sport_type': 'Velomobile', 'id': 11537613206, 'start_date': '2024-05-30T13: 43: 02Z', 'start_date_local': '2024-05-30T07: 43: 02Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11537613206', 'summary_polyline': '__qqFlxt_SVJK?DxAvFDR`@DjCTXhQ?`@~EzQPJd{@CbFc@tDHje@AjFMjGB~El@~BGtd@t@Z|FHNrAE|CVXvQF`@nBhHBHlBlAXbISIi@PJMM?bADMIGG^uDYgYOCeNRuDd@RBpAc@GVFK@B?BTJKIHOe@If@TLBc@UARJQOPTIM?EG?NTOYZHMOMLNEBXOIHICRAUECAN^O
+]BDVLQE\\RMWUCVP?I_@FJCHUILNBK@DGWJHQPF
+]BTM?DKLLGQGTNEIMRR[MNLOOBVLsBg@EE[CoUUy@KPx@s@lGC?oEmHg@
+}@^wO?i@q@WeANsJ@uGSwPDiX`@uCEkh@h@{B^|@KVMaBm@TC~JKd@ee@TQ[BgJMu@iIMBqZLiAzAwCM_As@O\\
+}@@j@_@g@Vm@JN@_@m@p@VVOFHMMFLGDXSb@JH
+]Oi@KACBR^IWOVPYKVFg@@?AR@[En@DIA@BGCP@OFNIOFNCM@LA[AXASERB@DAEABBB_@C^?W?XBS?PCWBVASAR?[CX@Y?T@M?WFh@Gs@Fx@GXa@a@U\\IBRREOxAhAZxDMJj@@dhASlc@KnBuA|CLpAhAdBNt@@zON^f@FlFRhJ?BxSIzUPR~GZJfCGdJz@Zdi@CvLLdBCXYVNC
+  }@LLS@VXOHHRbAKjCkBPoK~y@WlSqH|@\\VkA`CwAhEqFpBwAbDOzFtBfDWbDmCnDqGfFsX~@_DxAuCfMkQrLiMjQwSfI{FvAmC`FwGiGYEUCcSd@[UWG_BFw[EwBQYiICbGF~@DC\\_@FM^CWa@`@IfAh@dAMw@KUVvAi@_Ci@HDU_@DJW
+      ]n@KDSSRAEb@FMS@Za@UBD^Fg@?X_@ENDGRXg@OEXJUCPc@?X_@DXB@VAi@OJDDGPOMHNBQAT^W
+    }@|@Gb@MQJU`BRIeASAj@g@`AEb@_@@p@O
+  ]OTXe@[c@u
+  ]GiATuGEc@Ui`@Gol@FkD\\\\MbC??fBiEH~DCJ^IlAqIDSTDnTZfBk@zAsYD
+}E_A_JIwgANY
+]@{KkHSDsN_BaA
+}@yAc@SeABUr@
+}@bAaCQwMJKy@CzCnA^G\\s@GAnBX?Wk@@eAx@HKg@yJ?MlEd@N@a@QLLZHqAL`A[^Og@O@h@d@B_@Y?LECEUOVJKLd@UEDSTcAa@XPUI^JFQDNAA?DWIPBI@a@YRBO?LVJGSG^?
+]Nj@GMANA_@BPN@I', 'resource_state': 2
+}, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': None, 'start_latlng': [
+39.7414480894804,
+-104.9691844638437
+], 'end_latlng': [
+39.74159401841462,
+-104.96946517378092
+], 'average_speed': 3.551, 'max_speed': 24.356, 'average_watts': 137.7, 'kilojoules': 1446.8, 'device_watts': False, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1631.1, 'elev_low': 1591.8, 'upload_id': 12315662725, 'upload_id_str': '12315662725', 'external_id': '13e8db93-1cbb-4f54-a037-3d9fa0a3f8de-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 5, 'has_kudoed': False
+},
+{'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+}, 'name': 'Evening Activity', 'distance': 11706.9, 'moving_time': 5429, 'elapsed_time': 43400, 'total_elevation_gain': 47.9, 'type': 'Velomobile', 'sport_type': 'Velomobile', 'id': 11532653511, 'start_date': '2024-05-30T01: 39: 36Z', 'start_date_local': '2024-05-29T19: 39: 36Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11532653511', 'summary_polyline': 'snoqFp{t_SD|CGXQLiGBoIEI`@?jDQp@Y@DEEEYGmOAQUWwCa@MuB?IgBeAUZuAQq@i@CCSLM@
+]LGk@a@IBBLDSECCZVRKOMLUIr@D^^_@JBIe@JAAd@Ie@JZEi@FHAGK?NAMHBOEPJMCJ?AQGCPKGIDSTEXTOFLCMF?p@n@HETDNb@@lASbBJLn@@jBR`@RJdCMjCRtGYj@J|G?b@VDhKHNIPBhDI~@Hn@DzL?lKEz@B|QEnCa@|DH|ACpCDpGGrF@fGFdDI|CHjBFbKERWNqAEMFBJQG_@NIUNTOAHIFRECDLQPJ_@JIY@NSCEEN@WGFVHk@AxDEFk@CyJ@uFJcJMwEDiCGmMFc@CwBNo@HkADiFG{OJkDGsACaICoNHsFAyLImC@aDR_@rASl@_@Cc@RaBEGDDUa@D?ILEWEPDU[JJ?COJPBMMFHHI@DIZHKA?LAAHOCBPNDZNEVb@f@Ez@k@DH_@j@mDxBcAPuBYeAtAoAh@sAIiR@a@i@MBGXQFwGFCjEn@HAiAE?FDHSUUIp@t@b@
+}@FDDJKw@?XFI?J?MJNM?@ED?QG@a@En@NDDIFCOKC`@CY@CBHBMMPJGBHCKBFAI@J@GA?@HMI?FDACY@@CXEKPBKZJOGGHLKKEEWFj@FEM?TEQDFOCLIAL@WBN@IEHGKBTFU@VAWAHDi@Ij@AKFT?GCKDNEW?THLK[@ZGOAH@K@CLEADIG@`@@SEAJEKHC?JEEA@HFGCFGKBFDKGPAGHIGJHBC?IMHNDE@KGJ?WEJGPLS?VIWDWCf@G?LI@H?MDLGOEN?UCHABFNDI@IEJCO@VE[BRBS@JBFGGCE@JGYDl@?c@?`@DUGFAGLF?IKDCIBP?IAPCO?TBKCJBU@DA@BDEOFFB@GI?H?G@ABJAMADF@KCNKAICRE?LF?BOGBBFBSGPGEHI?LOARBE@Q?DEKEHHTEM?F@ICF@GFHEACMDHI@BS@DFBEH@CFAOHBO?PESDHJBEKCHDDEI@@HHEI@BDIKDFD@EMOATCGEHVMAJHIIRDOQHLG@AORNSMKFREK@HFQAJDMEDILDGBDDIGNAOBHEI?DECHF?KCJ@MDHAICHAICP@MBJCFBK??JFBCOG?CDFDFMIDABTCSBJIICF?ICNBOCLBKDHBr@ASS[L`@E_@JPJc@M@AB?IALFKIBJAGBKSDV?EB@JKEH@EKHDH??AMCBDADCKJJKEFA@RBGKAHBOMh@Gg@[JAOALc@j@FCH@RFAI?', 'resource_state': 2
+    }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': None, 'start_latlng': [
+      39.73370094783604,
+      -104.96968058869243
+    ], 'end_latlng': [
+      39.741374077275395,
+      -104.96924003586173
+    ], 'average_speed': 2.156, 'max_speed': 14.126, 'average_watts': 126.4, 'kilojoules': 686.4, 'device_watts': False, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1632.3, 'elev_low': 1595.0, 'upload_id': 12310567070, 'upload_id_str': '12310567070', 'external_id': '2477691e-2bf8-412b-ab05-099d30b7c790-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+  },
+  {'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+    }, 'name': 'Afternoon Activity', 'distance': 9191.3, 'moving_time': 1980, 'elapsed_time': 5648, 'total_elevation_gain': 81.0, 'type': 'Velomobile', 'sport_type': 'Velomobile', 'id': 11529167071, 'start_date': '2024-05-29T23: 22: 50Z', 'start_date_local': '2024-05-29T17: 22: 50Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11529167071', 'summary_polyline': 'y{oqFbny_SCOHE@IKw@B
+      ]Cq@Bq@Jk@AEBABUFAdABD
+    ]B_ADc@Ay@CAAIDcBAyEBeCBa@BaAAa@B[KoAB
+    }AC
+  ]?oAE
+}C@gAAo@Bm@?qBBsDDu@Hq@A[DME
+}CDiB?aCByAC_K@g@D[AG@CE{@@uBD
+  }@GiB@eBCwH@
+}ABWE
+]BS?mAGkEBeKKiFDy@OUKIq@WK@EBUf@o@d@_A`@WDkAOmAHoB@aAEa@@c@Iw@JcB?aCEGBQEqBAw@BaCBQDIPAjAB|BHND@PBHE@B@
+]HCDGIs@IG@SIGA?CF?PCB@DH@O@IHOCNGG@KL?DH@NLIBCFI?CCF@CDc@EH@PCGAHELCBBG?@?ACBF@?IEAB@A@BI?BDFACGJDDGD_@CHCBMFOBCBJADDBCEAB?C@TJ@ACAB?CA@C?BDAABEA@@DUAOD??AEMLWBCNBA@ANCB?DD@?f@Hi@Gl@CJKJSFGAEECu@Be@?aB@KDKFEX?v@FJCCFE?PIl@D`@C`ABJGl@DzDAXDrAFb@Al@GdAAZBp@EhABPHDJ@~BEjH@~EC|B?lABJDpCBz@ErJDlBJP\\ChADbAAjA@z@EFFDPBx@CnBD^?n@E|CE^FbBEdCBlA?zACv@BzBCnDU~BCtHDnA?fAElABb@Ar@DrAAfBDpACvE@|A?|BGt@HvCCzBCXBVDrB?zACPOFg@@iACSBCD@H?IOSAg@FWI
+]@IDEJAz@Cz@BTAFOCg@F
+}@EmF@[FOBMGy@FmNDEh@C~@KnBE^IHEDIBK@iCCcDBeFDmD?oABg@TiAB{@AAKiFDmD@qMD_ADE@EGYAi@EaD@sAD_@TW@SFe@?QF\\AD@RHDHTAHG?@BDDAFCBGQDB?FEITDA@ECHAE@ADCQECDCAGDEA@GAEIGg@EKDCGBMIEEMa@Ee@BiAAy@@y@AaDCwABuDCoEBs@Cq@BiBCm@Bc@A{@@c@AGE@ID?FC?Ag@DUAMCGOBOCUHY?QDICI@QKO
+]QSEEKBB??EA?B@?ILBA?', 'resource_state': 2
+}, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': None, 'start_latlng': [
+39.73581871949136,
+-104.99313944019377
+], 'end_latlng': [
+39.73469529300928,
+-104.96822859160602
+], 'average_speed': 4.642, 'max_speed': 15.52, 'average_watts': 149.1, 'kilojoules': 295.3, 'device_watts': False, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1630.4, 'elev_low': 1594.9, 'upload_id': 12306962268, 'upload_id_str': '12306962268', 'external_id': '6c7a8718-30b3-4706-a2d8-598572c7008a-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+},
+{'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+}, 'name': 'Huuuuuuuge day', 'distance': 15134.1, 'moving_time': 10156, 'elapsed_time': 29468, 'total_elevation_gain': 57.5, 'type': 'Walk', 'sport_type': 'Walk', 'id': 11521485875, 'start_date': '2024-05-28T17: 54: 02Z', 'start_date_local': '2024-05-28T11: 54: 02Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 1, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11521485875', 'summary_polyline': 'gdoqFtws_Sj@Bv@c@PNNUVVQZBMGBHEOEJYZBAi@LKIYPCi@O@k@
+]CG
+]MNIc@J[t@DOi@Y@`@E@RBKiBDa@a@w@A?oCe@MXFLYD
+]@UGK?RGCB{CyD?KS`@Ai@OELR_@IHBWBZEODXAKAA@VCW@AYDXMA@NZZJh@DFKpAI^h@FxHAMEDEf@FdAXMLZG`Cg@LDlBNRGZmCFGTa@Ye@FPjASd@QMQm@mBSsCT_CjAmBvCYlC?zCWVmDNsFW_H?q@UyBZO\\JtAg@PQzAe@`@@xAmATErAZHE
+]HKHk@SUSJLHCFO@PCAf@MAGJF?G@FAIBJCKBJCKBJCKLCISIQLMMDPl@Ei@Rn@?F
+}@[C\\HMIYiAA_At@a@tAg@@ZI?CXBzByAIQv@HNIQ\\h@
+}@K^@WAT@UEVDi@Gf@Dc@CD@CF^Ci@Gl@Fm@MHC`@NUERDq@@r@@k@@j@A{@Dz@Ei@Jh@Ka@C`@@e@@f@Ag@@f@?g@?d@Ae@BNSDPR?WAV@QAVCKDFH@SMHPGOBJJAQNHMCJ?RQWLVm@XdAq@FQKBeEPGrGGbVAt@IlAq@X{@iA{BI{BP{CvAkD|BsAzA
+]vDLd@ZnB_@f@w@Wb@CMb@_@z@NNQK{AgAOY[DYUDf@e@SILFDWQJCq@h@G?c@nAHBWpAE@iAWGWgAA_At@e@VDIVTAQYaCDSyCs@C?^h@FGGJGM@RS?AG\\@YEHDLMCLCK?GNBSIREMJd@KVCQCT@BVTEUINXTU@XP[RMRT@AK\\TDO
+  ]NPb@Al@GHLRAvAn@ZFVAjBe@P?p@XLFSr@_@^BJT[@cAdA`@PLIBYFJVE?g@ILXN\\SHh@J@KEGQ\\CWm@N
+  ]E{@TOC
+  }@UBS\\ZEBs@G_@WKOBFd@SGIuAB[t@CTW?iBOc@T{Ac@{@
+      }BLw@UELJn@Az@Nd@Ae@NK`@PK?W|@
+    ]FDxC^PLd@b@@B\\v@HG|BWDANgAGg@T?jB\\Py@`@G~AOXQC?C@nBYvBc@E[
+      [eA
+      }CKgArC{@UO_CV[TkBIgCTuCbB_AxAW`AS~BJzCp@|A|@l@r@LtB[lBeA`CsBj@z@Qq@YMsBjB
+          }BtAcBT{AW_AvAeAb@cFCuCOqBTwPEOjAFjCf@@BoAHLI?J?U?DUWBCPKJGOIXIWRHBf@LE', 'resource_state': 2
+          }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': 'g4095954', 'start_latlng': [
+            39.73204728215933,
+            -104.96394334360957
+          ], 'end_latlng': [
+            39.741581277921796,
+            -104.96942544355989
+          ], 'average_speed': 1.49, 'max_speed': 10.21, 'average_cadence': 48.0, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1643.5, 'elev_low': 1611.8, 'upload_id': 12299061596, 'upload_id_str': '12299061596', 'external_id': '72b83c95-90f4-486a-8796-288e5227c525-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 4, 'has_kudoed': False
+        },
+        {'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+          }, 'name': 'Morning Activity', 'distance': 15984.5, 'moving_time': 5460, 'elapsed_time': 18478, 'total_elevation_gain': 84.0, 'type': 'Velomobile', 'sport_type': 'Velomobile', 'id': 11518662239, 'start_date': '2024-05-28T12: 45: 52Z', 'start_date_local': '2024-05-28T06: 45: 52Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11518662239', 'summary_polyline': 'c|pqFfrt_SIGFAECEN@XJH`FNtGDtBI|DBHHBJ@pDBHHDdKMzDBRBHND|ECpMDtHCnA?lPC~CGTF`@B|AAzFBbEE~EYhB@rEEbG@pABFC\\BjCEdCAtL@xAB@CAHr@BlAKrC@vDGrCD~@`@zABd@Etc@FHr@FdEFz@NFxA?bHCbBDRNPbLE`CB|@L`AKlBCtMBPQr@GLPIaAGG@T@ELb@i@CYNWB
+          }EHgHA_BKIQAQGsDCIUK
+        }FAi@EmEFaBGGGAu@?cDFaAE{EDc@CQ?eCIwAg@K
+        }ANa@C
+      }AHQ?OMKcBCwBBqBEcGHmB?Qa@eBEsA?kEDy@GoEDeAK{D@iIDe@CoCDuB@{QBm@R_AFeAD?IeE@mDGmHDcCCkKBeGG{IBm@IkE?
+          }FEIQKqEBw@I{BNwDAUK{@LaF?
+            ]KmCNuCCGCUkAg@s@Ac@IM
+          ]Qe@K[SeA?o@FK[Ao@FAAADFJOAFKM[CAVJDK?KGNAKDGPAMPDI?BRNJDH_@IM@P@U?V?W@NCD?MDJEG?GMODT@?ILLIOFLK[JLBNGCDFGGHDIEHFKGHBMCBDFBAEGCJBKCL@G?DBGCFBGCJDMEJDKEJBK@JAK@L?M?HAK@JAK@LAM@HAG@FKGJJAK@J?M?NCQBR@WATAY@TAYAZ@SEJDSBV?[@^C[BNEDA[HCDd@Im@Jh@Oc@Hb@Ae@Bd@Ga@BLCNCa@Fb@Eg@FH?A@`@Ic@Hf@Gi@Fj@IG?YDZGWBH?C@JKa@AFH\\EWDX?Y?VAS?P?GGNFDGCFDGGFFGGBHB?JBECM?DI?N?M@H?KAAM@HEBB@GKSAWJH@DFf@EWDPC@CGAH@IAVGGDFEEAAHE?DDDECKEFBGE??L@E?D@?BG
+                      ]DV?FSSKIFHAEIC@JFGCPIDWPA@DH??FW@TF@FLIMND@?\\DWOx@DBr@@^Lv@IfB@XPJ
+                    ]PQfC?JDA~ALJlLADLBxFAlHM@?DU?HKR?AGGBIG?HG@D?KB`@C@Le@@LSBu@KZ?P
+                  ]D@mAHI|FB~BKJYBmACcCBoCCsB@k@E_BF_ECYOUk@U
+                }@s@i@gAKg@EuAFqBHi@XiAt@uAl@m@jAo@n@QzAIjBBn@H\\PHPNJ@^@JBAHQPOBKAFBENHC@@ICGDDMM@DPREABCCG?DK@?GDJALO@BUAHMHEECIBCD?ATf@WEMI?GMHLCK@Er@QRWZs@~@?DGCKDYT?', 'resource_state': 2
+              }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': None, 'start_latlng': [
+                39.74097987636924,
+                -104.9682002607733
+              ], 'end_latlng': [
+                39.73205164074898,
+                -104.96392859145999
+              ], 'average_speed': 2.928, 'max_speed': 15.454, 'average_watts': 106.2, 'kilojoules': 579.7, 'device_watts': False, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1639.9, 'elev_low': 1594.0, 'upload_id': 12296140736, 'upload_id_str': '12296140736', 'external_id': '1981dc86-9c61-496f-b806-3d3fb5889e21-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+            },
+            {'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+              }, 'name': 'Afternoon Activity', 'distance': 14079.3, 'moving_time': 3365, 'elapsed_time': 138178, 'total_elevation_gain': 35.3, 'type': 'Velomobile', 'sport_type': 'Velomobile', 'id': 11516382218, 'start_date': '2024-05-26T22: 22: 33Z', 'start_date_local': '2024-05-26T16: 22: 33Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11516382218', 'summary_polyline': 'aynqFnxz_SEHBI@
+              ]K
+            }@[@IOAKBmBEsA@
+            }BCqABgECeCGgAHiCCeAEOKKk@Ig@F
+          }BCsAFsB?{BB_@DUAg@iBCw@EqD?cCB[COEcC@_CEmCFuLE_A?
+            ]@y@Dk@Ag@BFBAEsB@mACqC@sBAqBDcALm@Dm@?eBBq@AeJBo@IyCDmE?sEBiABKJG`D@tAGt@?HQ?Q?oDJMTEpA?hDDRBHQ?QCwDCI@SAGSDEAEI@qBCo@OO_@Q
+          ]GuCBaACm@ByDGkDFsG@cDFoAEMMUJoADuCAq@CGEEUCyA@yACwM@mD@WAi@@uBA
+        }ICeBB{B?MKMuFCc@IEECK@{C@W?gBBwAEqFBkA@OHOXALIDa@EQGEMBAH@LNX@FEHGB[CMBIHENCR@|GE`C?vEAl@U`@AVB\\AIF@ADH\\?VEF_A?k@I_CHi@CGBGf@ApA@dAEjD?pBChBETDxA?~ABZJHd@A?KJQKISACE@KNGA@B?@DEGJG?BB?CF@GK
+            ]STDRFGD@EDIEW?GDOAIDOMEHAN@NTFPNJ?DIIIG?KLDIB@BK?ICOCDHRCFH@CA@GEANHIAHBKCNBYEJ@NA?B@GG?CFE?@A?@EAADBGFAI?SJB@^Ec@DXGa@B?BBAKDA@DE@DGDEEFCI@t@Ky@JdAKaBPbBQgAJdAMeALz@ISB\\CI?H?cAHdAMsAPdAKs@Lr@Mu@Ft@Iw@Dr@Cu@Hx@I_AH`AKcALbAKcAJz@Mq@FC?HBp@Kc@Hd@Gm@Fv@Iw@Hl@Ig@Lh@Me@Dh@Eo@Fj@Ee@B`@E
+          ]B`@Ci@Dd@EOBDCW@BCOAN@ND@Y@VAADAN?MAG^TYEFDIMDNE
+        ]@ZCU@N?EBDCQAP@[I\\F
+        ]DXI_@Hd@CWDPA
+      ]L\\Qa@Lj@Qc@LZI
+    ]Db@G
+  ]DVC[F\\Gc@Ff@Iu@Jv@Ki@JM@r@My@Lt@Iu@Hp@Ks@Jz@Ki@Fd@Ew@Hz@KaAL`AMcAN~@KFE@?ELDGGBBA@EJHG?M[W@V@AFJBEDB@ED@@C?DBJEG@@A@@EDBIG?LCGBF?MG@AE@BG@FH?JSGBB@ADI?LHGAEFAGJBMEKDJ?JOI?EBDDC?D@CBFGI?DB@AGCBDACB?ABCEJLHKU@KIE@D@CCC@?HJFCCK?TCY@b@CI@KGC?B@E?PCBG@LEGKEBCB@CBBDAFL?AAzB
+    }F', 'resource_state': 2
+  }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': None, 'start_latlng': [
+    39.73025405779481,
+    -104.99991218559444
+  ], 'end_latlng': [
+    39.740965124219656,
+    -104.96817863546312
+  ], 'average_speed': 4.184, 'max_speed': 16.214, 'average_watts': 103.1, 'kilojoules': 346.9, 'device_watts': False, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1622.2, 'elev_low': 1593.9, 'upload_id': 12293804513, 'upload_id_str': '12293804513', 'external_id': '071f7a74-97de-4bec-90db-e70c65f2c656-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+},
+{'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+  }, 'name': 'The dungeon', 'distance': 42763.1, 'moving_time': 5352, 'elapsed_time': 24094, 'total_elevation_gain': 555.5, 'type': 'Walk', 'sport_type': 'Walk', 'id': 11505528012, 'start_date': '2024-05-26T15: 18: 00Z', 'start_date_local': '2024-05-26T09: 18: 00Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 3, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11505528012', 'summary_polyline': 'uxcpFlmgbSmAxASr@P\\U[m@PgEs@sAp@{Be@d@zBwB|B_@dA_Bp@kAB
+      ]`ABx@_@b@{Aq@OzAy@AIhAa@u@QZcAtCq@ZKw@q@~Aa@MN_@Qi@OZOq@u@OgA{DR`@Cp@E_@c@T{@
+          }@hA~@EV^@Id@d@SOlANh@TSEhBp@mAXj@j@q@Cr@REdA_AH|@CE\\q@b@Sh@iCTR@
+        ]Tv@RcA^Dj@
+      }BPj@bANZg@PmBlDo@b@uAvByB[gBH[ZP~B\\ZeAAT`@RbFXTXv@URb@x@Ml@gADoBtCkFpAgBxGoFh@iBBeB_B
+        }Hh@k@lD
+      }Al@sFzC{DzBsFjCuA~AMzAj@dCjCf@y@ZkCxHh@CmAiDgDa@sAf@gDhBsBtAWdAb@pBhHjFhBrArAlCdE`CJjEmCpAQ~@n@tApCh@EzLcRbBgDpLsKzAmH~HgB`EGx@aATwD^o@|@YtCj@l@a@lBuCxKyLjBcGr@
+      }@vE_EvAxBEh@i@ScDqNgEeCiJkC{BmAo@q@_CuIoCgFuAsAmG{CaC
+        }Ck@yBqAmKoFoLy@iDYgFJyJeAqGsLe[wKwQqA{CaAiDyCoUkBqGmByCqJqFyDyC
+          }B
+        }CeB_EiA{E[kDe@_ZqAkKuD{LyZi|@eE_LsBgDsCaCwBq@gRUgS
+            }FaFg@k{@~M_E@sEk@kEyCyCkF{CaC{SeCyIkDmJ{PiQoY{AmEm@_FmBej@kAsOeA{F_L
+                      }_@uByN[kMZ
+                      }Ra@gFmAuC
+                    }FmI_BeEQcDx@qGfEmKdAyDZoESuEgAqEsAgCiBkBcJkFeBsBkAqCq@{Gn@_LWcF
+                    }@aD_EoGkAqCg@mDWgNsBcGgAoA_CqAqOwCeEOoNx@od@yEsHVoZtGuEOkEoAkCiB_D{Ds\\ol@{
+                        [ys@yEeFwG_BuCB_Ez@aM~G
+                        }Id@sD`Asc@r^kFbDcCb@wStA_ClA
+                      }JnImBp@sBBgI{B_CCaD`AiEfEiBbAuBJoBg@sB
+                      }ByBoJ
+                    }A_DgBkAgHuAiAwAe@wBAwA`@{BpF
+                    }G~@{CKuDmCeJ_@eCZoDxB{Fl@sCXuNSiCa@mA
+                      }CuD_AyCBgCtAmIk@oN^yJM
+                    }Ec@
+                  }C{@uCaGoJuA{DUgDXaMUmCy@{BePuVcDgIoBiJsHwl@sByHoEcIsi@uz@iFoJwAmHQcIj@uAbAa@bARt@z@PtAU|AcKjQkc@fz@eGlIyG~EyItCy[nA
+                        }@`BrAhIMh@k@Lc@YVg@YJCp@j@VhA
+                      ]^{@aBqF', 'resource_state': 2
+                      }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': 'g4095954', 'start_latlng': [
+                        39.51003975234926,
+                        -105.39238834753633
+                      ], 'end_latlng': [
+                        39.65305714868009,
+                        -105.18183385021985
+                      ], 'average_speed': 7.99, 'max_speed': 30.254, 'average_cadence': 47.6, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 2816.4, 'elev_low': 1740.8, 'upload_id': 12282601326, 'upload_id_str': '12282601326', 'external_id': 'ec2cfa53-4b74-43df-9b60-4c8bad7145a1-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 7, 'has_kudoed': False
+                    },
+                    {'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+                      }, 'name': 'Oops forgot to trim', 'distance': 4098.0, 'moving_time': 762, 'elapsed_time': 1243, 'total_elevation_gain': 18.3, 'type': 'Velomobile', 'sport_type': 'Velomobile', 'id': 11502841479, 'start_date': '2024-05-26T13: 49: 34Z', 'start_date_local': '2024-05-26T07: 49: 34Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11502841479', 'summary_polyline': '{_qqFdzt_SBAA@AAD@C?@B@AC?CUDIAKK?@BH@GCDD?JAA?IFAHLAJINAKAB@C?BE?KICBDC@YAAABFB@AE@@DHDF@FGGK?DK?BG?c@HCF@LD?HHDAFDAI?F@?EJ@AES?DFAEBD@AAh@G^@Hf@BJ@LHJ?\\If@Ef@@p@FJ?JJBLLrCBNJP^FN?hBKbACpAFp@ErF@JEbA?hD?fAFJDRBXMNAxB@z@Gd@@NDBDDP@jCEvFDrEAZI`@Hb@@R@h@Av@D|@EvEDhBGjC?|DAf@B~BAjADtAE|@?rECnA@bCCf@QhACZ?jEE`BD|BKpCHvCAhAEXDrBE`NBnCAxADvA@xBItCFt@ZjADt@CpF@tAEfBFfCCxBD`DE`B@n@DXDBbABf@EZ@rBAXBTAF@h@DzA?~AGh@Dh@AHERFNANR@RAz@ADAEG?AEAB', 'resource_state': 2
+                        }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': None, 'start_latlng': [
+                          39.74158,
+                          -104.969465
+                        ], 'end_latlng': [
+                          39.730316,
+                          -104.999905
+                        ], 'average_speed': 5.378, 'max_speed': 13.88, 'average_watts': 149.4, 'kilojoules': 113.8, 'device_watts': False, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1626.6, 'elev_low': 1594.3, 'upload_id': 12279831717, 'upload_id_str': '12279831717', 'external_id': '0657f192-85fd-4ad5-9988-88f1c5959245-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+                      },
+                      {'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+                        }, 'name': 'Evening Activity', 'distance': 6795.5, 'moving_time': 2522, 'elapsed_time': 42919, 'total_elevation_gain': 21.6, 'type': 'Velomobile', 'sport_type': 'Velomobile', 'id': 11502268794, 'start_date': '2024-05-26T01: 54: 06Z', 'start_date_local': '2024-05-25T19: 54: 06Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11502268794', 'summary_polyline': 'o_qqFpxt_SD?CHJGRh@BXGP@Bb@Ep@J|AC~@@D@HXBJ?lCBxB?nMDbAD`@DNPNnBG`DFrDKfB?PBJGrE?l@G`AAfADvEChADrEC`AD~@CfEDh@BNJBZ@`CEzC@|BBn@ClDBrACtBE^BXA`AFfCBHFFd@FrBAnA?TF@H@~B?zFCjAOFg@@sBK_A?SGGIA{@?KDIFGrB@h@EDFBb@DFQ?CO@WIE
+                          ]CUBa@?_@FUEGIC_@BsAMMMGaIBs@CsBBeCEqDH_CIWFiBDoC?u@IgBLcA@
+                        }BEKCUBcE@qAAKGGKEi@GiCBgHEiC@y@GIKAuAGsB?aAFYEGGCKAcJDiKGcDHoJAc@@i@fA_BPe@Lc@@OCUQEc@CCC?IBA?B?IC@AMFa@VOCHKEGFDIE@FB@EGABABEFAO?CI?OEHE?EBCJ?XFBEG@A?DE?EC?CBBABCEDETV@JADWXCKE@AI@@?FB?IKFJAE@@?CAFBA?BG?@BBBDEEAD@CCBDECD?E@DEGBFAIA?EBCBHINDI?KK?FHEGFFGGFDGEDBEEFFGGDHEGFDGEDFEGDBECFDHAI@B@EAD@CCBBGAB?ABGA@CG?DDDCM@N?K?J?K?LAM@JCKBJ?K?J?K?JAK@JAK@JAK@@IAFLCBHAEC@BCGC?C@@EBACD?CA@A@FECBFC?@EACDGED?F@CCGABHA@BA@D@A@CC@ED@A??BF?I?@@EDAC@E?BG?BG@?C?CD@CICFJCFBE?ELDKAF?IAJ@A@BBDCEBMINFKGFDKBHAOAN?O?LAGBJAICHBG@F??@DA?EC@@BA@J@@BBGQELD?HMID?BDACJEKDGALHMGD?EAB@AA@@AA?BAE@@E?D@CAB@AC@DEEBBCAB@AA@AAA@B?CAD@C@BACCBBC@BAA@CADAEBBAEADB@?EA@@@AC?B@CA@?A?@@?AB?E@BCCBBAE?D@AC?BDDCGAHFAEE?HHKKJJKKFFGGFBEAHHKKHJIKB@CADDECFBECHJIIFBEEFFKILLMMJFIGFHOEH?AC?F?EG?DABFEABACEDBAA?B?C@@?@ACBBCC@@CAB@A?@B?EC@BAA@@@?CA@@@AA@AA@@??BAC@DAE?B?C^\\_@
+                      ]@HAGDFEIECBAC?@BCDF?@GGAB@@CE@B?EDB@G?JC@B', 'resource_state': 2
+                    }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': None, 'start_latlng': [
+                      39.74152956157923,
+                      -104.96920919045806
+                    ], 'end_latlng': [
+                      39.741578763350844,
+                      -104.96946198865771
+                    ], 'average_speed': 2.695, 'max_speed': 15.484, 'average_watts': 132.1, 'kilojoules': 333.2, 'device_watts': False, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1621.1, 'elev_low': 1608.5, 'upload_id': 12279240638, 'upload_id_str': '12279240638', 'external_id': '8adaba2f-0bf8-443f-a3e9-5eefa1c9de51-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+                  },
+                  {'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+                    }, 'name': 'Afternoon Activity', 'distance': 8255.4, 'moving_time': 4184, 'elapsed_time': 23802, 'total_elevation_gain': 36.3, 'type': 'Velomobile', 'sport_type': 'Velomobile', 'id': 11498019657, 'start_date': '2024-05-25T19: 17: 14Z', 'start_date_local': '2024-05-25T13: 17: 14Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11498019657', 'summary_polyline': 'einqFxj{_SiD@_AIuH?aEH_CGI[CcCD
+                        }IE{ACkNB
+                        }COMM?gFL[CSQE
+                        }HBcC
+                      ]cDIoMPeDMuB@sd@ZwEBsVAmNBy@d@y@?y@D?Jj@DBM@LRADAGHKHCDa@HDJTKl@MP@LHNEIKCHEGFFES@JEIJF?SABm@l@GBOc@g@F?KDMZCPBJAa@W[@UQISm@FeBIuHUQ_GAGa@EcDEQKGwHCcJH
+                      }BGqBF[MKWAuBHgSAiCGUG?MZ
+                      ]H_GAOrAGnDDfEJVHDdA@LLe@bAu@x@EAES?gBHMXBLOC
+                    ]@[CKDMDBIRAXJAG@CVAm@DLEBUCEFCI@HH@O?F??C@FCE@FGBGCNC?G@N?ICFCGFK?DIFNQMH@HBGCHHFOKBAH@G?@KJ?IA?F?GBDE?@H?KJAEFBDEIEFAED?QELAG@ZFYAUSXBC@DFEBJEEDD@MC@HE?HCMENDAIBLECB@CFEKNCQ?F@CADECFHCIFJHBEGALCUBAGPAGDAEB@GA@BS@V?KIDA@HHSERG?H?@FOIHFOFDAMGVGBHGCFBGICJ@ID@OCLB@FBEGNBGCMPTEOIABBG@?BCAHAG?DACDFBOIZR@CIGO?D@IQJ@GCAHY@LE\\DOFJEKAJCG?HFDISFJ@EAHIE?F@S@FGLNUIJFK?AIFAE?ABPAECINHC@F?OCDVCQABJSCVAOBB@BAMAAGr@J
+                    ]KEHCGg@FPCIGMJDB?GNEZNHIEEFCOHOKCDTIFLODHBKKL@ULMGEHFMZAQLDCRAKIIBHB?GDACB?K@^ODJOT?SADI?PMKJAECB@?FK@H?GEBHCBLQAEMAJBIBBCEEFEE@DXIAHQIBDJTGMP@GGB?MDAQFFEKARDJI?DKC@FXGa@?@JDBFEQGVCGDBGK?EFJEEBAGH@GF@GJDEJDE[IAIVTGKFDe@FPBEANCG@JIUG@IECD?IAb@JEHW?RCFHAGFCUBBBIFHCKQPJIDR@O?DI?FLAGCO@DGD?I@DDMNPOQFLABICACLPIMFH?GSEJNBWHJBEIBGQCJ[FJANHFO?LBCHGIHKCGOXN?C@DDM@JIEA@EH?E?KEP@ELBKHDAEe@RZIAIQ?P@OCD?AEDAEBB@@FH@AKDCIFICCHJI@FGIJFUADAC@BFN?CABGICJ@KCHCEAHHC@e@@b@?C@BDKAAEHEBDKC?CL@IBDCIE@HC@LCEC?DBBFEGADHI@HAAGBHIETJDFUOF@ECBBDMOFVA@MCOMFDEIAJ@O?BQ?JB?P
+                      ]XDKDAJGEFm@MIAHQBBh@G?L?II', 'resource_state': 2
+                    }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': None, 'start_latlng': [
+                      39.727712497115135,
+                      -105.00284702517092
+                    ], 'end_latlng': [
+                      39.7416016459465,
+                      -104.96915219351649
+                    ], 'average_speed': 1.973, 'max_speed': 17.434, 'average_watts': 179.1, 'kilojoules': 749.5, 'device_watts': False, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1622.2, 'elev_low': 1594.3, 'upload_id': 12274850325, 'upload_id_str': '12274850325', 'external_id': '577ed8f2-14f7-4c45-a8f9-052ce8e40f34-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+                  },
+                  {'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+                    }, 'name': 'Morning Activity', 'distance': 23318.9, 'moving_time': 2831, 'elapsed_time': 4628, 'total_elevation_gain': 75.3, 'type': 'Velomobile', 'sport_type': 'Velomobile', 'id': 11495128532, 'start_date': '2024-05-25T14: 37: 47Z', 'start_date_local': '2024-05-25T08: 37: 47Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11495128532', 'summary_polyline': 'i~pqFxxt_S@CAHFEGICh@K@ADBJEXU@QM@cAA
+                    }BIOICoAKkDBe@EEKAOBgCCaEBs@K{@GM{AGaADsCAu@DkDGOMAKCcEEKSI_@CeEJ{CEIOAQCaAByBI[YM
+                          }CDm@MGOGkABoBGUe@GmDASCIMEgF?
+                        }DD_BCeDq@mJ_@sHImGEmUFeH?sNCkDNoLVsKIaJ@gFEsFBuKEYUG
+                      ]C
+                    }@DgEG
+                  }@DkACqDBkAIoBDiBCqBB_@IKMCK@uCEgEDcGIy@Ak@BkCEc@BaAAmABw@EiBBqBEGa@IyFB
+                }@IIOAO?
+              }DKKy@EsED
+            }@GmBBgAEq@HgBKMIIWOcDCKUQuB?g@GgCBg@IEICc@BoGEOQGcAEuABuCCUICYGgDDqBG{G?mNIeODcCE
+            ]D_MAs@AIUMeFMcMb@qIDoE@eDIo@GI
+          ]?k@vBc[^wGHm@JMh@MHICCAHBCQKHNFBC@?CGBGAF@DKI@FAC?GNQD@SHU?
+          ]DMB@E@@j@E\\@BTQKEB??PEIMPMC?_@Jm@?HD?E@D?EED?AC@BGBHAE?ECHDKFCT?`@JLRAD\\IS?GDFEKBGCC?IDHG@BEJA
+        ]PSGKNER{@dLOdCi@vGs@vJA`@DPFJdAZnALbJDvJ?jFPxIJrBIdDFbEQ~FNHFbCK`IBrEA\\@PNDrFAlLCx@BdCCz@FjCC~AD`AGzC@fEBtAClEB`DChADfCCvAAbFBbAA~BDpB?~BC^DbCC~H@j@EzA@tAFlAA`@@nAB^A`@A~EDnC@pEC`F@zGEbABhGCzAALED?NFvBV~A?vFDxAGtIBvECjJBzDAbDEfABn@ClFBjCAvJCnCFhCEjB@zFBHTHvCC`AHnBKfCFn@ErD@XBJNE~J@lHCf\\@jAEjFFtNAnFZNtCEfB@|@Bz@Kt@B^LPE|BEdB@PF|CIf@DXGz@D`@EhC@VBP^BPAj@FPRHlEAJN@NCp@HnGBFf@JnC?tEJtDCHL|@k@~@aAXa@FAzAFVCZF|@ExABREd@A`BFjAEz@TZ?BKH@J^PVzBIpADJFzAAAhAFLd@E~ALbCEJHHP@jARDjIDtAEtJ@pCDfDGlKBTDDpC?`NNdEKpRIzDJdI@rHC~ADHEAAb@CpOLnDXlCDz@?`CExBH`KDD^DdBFxCEbCBzAGbBHJEHSB
+        }AXI`BBFkAEOD[|BBZDF\\@nKGv@DdDEn@Bf@?fEDbBCvJC\\FtDEfB@nBCPWXs@`@y@n@WJ[BYGSH@GKGCJNi@ACABDA?KEIDBKEBKB^EEFLCKBE', 'resource_state': 2
+          }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': None, 'start_latlng': [
+            39.74133241921663,
+            -104.96924581937492
+          ], 'end_latlng': [
+            39.7253277618438,
+            -105.00252909958363
+          ], 'average_speed': 8.237, 'max_speed': 18.85, 'average_watts': 238.8, 'kilojoules': 676.2, 'device_watts': False, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1621.1, 'elev_low': 1594.5, 'upload_id': 12271856060, 'upload_id_str': '12271856060', 'external_id': '824a27d8-be82-4865-8367-f56dfbe81112-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+        },
+        {'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+          }, 'name': 'Flatirons, with tejen and Emma. I walk so slow. So many thoughts about traffic', 'distance': 6281.0, 'moving_time': 6392, 'elapsed_time': 9256, 'total_elevation_gain': 620.7, 'type': 'Walk', 'sport_type': 'Walk', 'id': 11489492294, 'start_date': '2024-05-24T20: 03: 50Z', 'start_date_local': '2024-05-24T14: 03: 50Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 1, 'kudos_count': 3, 'comment_count': 0, 'athlete_count': 2, 'photo_count': 0, 'map': {'id': 'a11489492294', 'summary_polyline': 'cwcsFhbraSC?ZOFDfF?v@MJDb@OtAEn@DGBAOEQCDHH@N?JCLDGCFBLHJJfAVp@\\\\^t@X|@p@^Jz@AvAH`@N^VXPHP?PQTg@x@
+          ]jAD^Hj@jAZ^h@Tj@Ad@\\Rj@b@Z\\d@^LdAHZTf@Jf@ZP\\VPFPh@`@BHE^WPOTKXJ~@b@JZAJ^RL@LFDPAPMN@?LK`@@JJCLU^
+        ]`@UNFDh@HL\\@RHt@GNFFATZl@j@d@Xf@RZF|@bAVJJNL@\\XBRCLVNPd@J?PNf@FBMGU?_@JQBQJBN\\D@ATD@HONHRCLTPJHRHFJPF?BXPNPAJHATJDKPGTDJABDG?EMK@ELGHQKG?
+      ]IEMBKOMCCMKOSAK_@MKK@?QCCM@GHIQ[DBSCI[UGBAPGPJ`AEHA\\IFFD?BE?ILBTEBBHKF?NBJBAIVD?CEDC@FCZCD@HEABJMVDROH?VGJ?JE?@DILEC@LBDCDGABFCFK?FJ?NDFED@Q@NJNPLE@@ZIP?N^WBj@E@@GJKFH?REH@j@FRCTEPO@GJCKC@?hAL^CBIIQAFRNB@FMEELMCOYWIEILDBB@EATN?JFBJF@LCGSPHKQES\\TF?S_A@q@HHBRDIC_@FCDR@EIg@EADE?WDKG_ACBBJMRBk@CIUj@MHF_@AKFKCQg@n@_@?BGLE@QO@HQ@OHIAODIAQM`@KLHY?HBm@Bf@FE@SYd@IDJg@Aa@MPo@NIPRY?KLSS?HU?U_@r@CE@[Pg@T[OSNE?GF@JQFDRK[QGDECAEFCCCLBAEa@QEUWSM@EQBGVCUMKBLKH@AIMIMBi@\\CF?\\Uj@QPYBMJEJ@RHQHHFCGCCWAMFII
+              ]UHGEB
+            ]J[?IK?QTEKHO?KGBEPEE@BBMJS@WQi@@SCa@GG@QGGEPGABWH_@Ms@FWMSCQASFQJw@DECIE?SPWD_AGDAAi@GQ@OEIWl@a@DU`@ULICCOTW?Sa@PYBI
+            ]UMBEIYc@@SUEQ?_@GUl@g@Fm@CKg@_@QEa@k@_@Me@Cg@a@wAc@w@s@UYM
+          ]_@YYKo@CUMc@m@Yq@WQcAMa@Bo@VUl@SFg@WSUMg@E
+        }@Bq@Kq@GK[KQOw@iB_@k@Sk@Ce@MiAF[B@EB`@MECOTS??GCDKBAPYGi@HWCg@Fo@ROIS@[EK@IJGEQ?
+            }APa@GyBA[CKO', 'resource_state': 2
+            }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': 'g4095954', 'start_latlng': [
+              40.00130326487124,
+              -105.28308489359915
+            ], 'end_latlng': [
+              40.00178254209459,
+              -105.28299713507295
+            ], 'average_speed': 0.983, 'max_speed': 7.136, 'average_cadence': 49.9, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 2176.2, 'elev_low': 1709.1, 'upload_id': 12266028692, 'upload_id_str': '12266028692', 'external_id': 'f8b3712e-99ca-46f3-99f3-ffdc4110f260-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+          },
+          {'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+            }, 'name': 'Afternoon Push', 'distance': 44647.6, 'moving_time': 2109, 'elapsed_time': 2424, 'total_elevation_gain': 433.0, 'type': 'Wheelchair', 'sport_type': 'Wheelchair', 'id': 11488640411, 'start_date': '2024-05-24T19: 23: 15Z', 'start_date_local': '2024-05-24T13: 23: 15Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11488640411', 'summary_polyline': 'sbqqFjdu_Sc@x@ST_DbEACD?@GC@mItLgE~FmDdFs@~@cEhGoCvDiCrD_BtBiBnCmCpDERB?AQUXcCvDaDfEyA|Bg@d@MPmDhF{@xAeDvEW`@uGbJ
+              }EtGaGlIMJe@p@s@t@k@f@q@b@[Ny@VaANa@D{JLgFNeDDaC?_DCo@Ag@G
+                ]SGOEU@iCCcAO_Aa@k@mBk@mDoAiAe@_BeA[
+                  [gCuBiAy@kAw@oAq@sAm@
+                  }Ae@m@QuCk@cBU{CUuEG
+                  }EDeDLoBAw@IeFImG@oUIuIBqBCiDOqBMqBSuRkCmRsCiDo@u@SwEsAqC_A_KgE{Ak@_DsAsCgAm@YKImD{AeCw@kBa@uAUEEOGQ?gAOc@Aw@?kAGoB@uAGyAAu@CgABaBEABC@D@G?aAE_CBqB?gAEoADwD?qACsA?qDImJGwIO
+                    }B@[A
+                    }A@wBOuABgFK{CAiEQ
+                    }C[eDe@mHaBi@GiABc@Fa@L_@N_Ar@_@\\[d@Wd@e@tAU|AEr@?hBTxEJfDFvBFtDEbTBzBA|BG|FMtDG|@iAxIeAbGqGz\\uC`P
+                      }FxZwBnKwHja@iBtIaAxFiAtF_@zBkAzFoBxKOfAmApG{AzI
+                      }CfPsBlIq@bCqA~D
+                    }@~B_AzB
+                  }DjHsAnBuAjBgC|Ck@h@wHhIqHvHwAtAoGrGePrP{HzHmCbCqC|BkE`Ds@d@_DnBsElCeB~@oEtBiGlCaW`Js@XgD|AmDhAeFfByBj@iFrBiMvEiDvAoBbAmBjAgTrNwPdLcLrHyCvBuMpI_G|DgEzCaGxDuM|IiQlLeF~CaE~B
+                  }FtCyI|DgCnAmDjBsEpCkUrNmTfN_WtO{AbAeCnBcCtBaC`CiD`EoAfBoAjBmBfDeArBaBpDkDnJk_@veAaBdEkB~DsBtDyBjD_Y~_@oGzIoCrEcAlB_AnByBlFsAtDqUjq@sKzZ_AbCcA`CiBxDiAxBoMrU{MnUyCrFePlY{F~I_CjDsVv
+                      ]eCnD_CvDsB~DiB`E
+                    }AfEwAnEgCtIqGfUeB|FaApDmFzQyKf`@qHlWwLpb@{GlUgKx^iHtViIvYkC|IqEzMc^fbAoApD
+                    }^fdA_D`JiCzGuA`DoQz^aDnGaGbMeZvm@yCnFmD|GeAnB_@h@QRYP_@Hk@?MBIFIJGd@YtKAbAb@~BnAbEZlAXvAP~ACVIH?`@CRAn@BxAGjAEtCUzEQzG?nAWr`@CrMIl[AbPAVILIBcDBe@AQGGD@?', 'resource_state': 2
+                    }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': None, 'start_latlng': [
+                      39.74202669225633,
+                      -104.97109578922391
+                    ], 'end_latlng': [
+                      40.00130142085254,
+                      -105.28308413922787
+                    ], 'average_speed': 21.17, 'max_speed': 35.396, 'average_cadence': 55.0, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1730.2, 'elev_low': 1568.1, 'upload_id': 12265152359, 'upload_id_str': '12265152359', 'external_id': 'cf65e8ca-dbfd-4498-a5c3-ab66d1a6d125-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+                  },
+                  {'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+                    }, 'name': 'Lunch Walk', 'distance': 13504.0, 'moving_time': 9542, 'elapsed_time': 94290, 'total_elevation_gain': 41.7, 'type': 'Walk', 'sport_type': 'Walk', 'id': 11488458725, 'start_date': '2024-05-23T17: 11: 23Z', 'start_date_local': '2024-05-23T11: 11: 23Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 2, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11488458725', 'summary_polyline': '_eoqF|ys_SIq@JO
+                    ]UJaBCjBRVKd@j@`Ai@
+                  }@Aq@Q_@DkAVSrBKK[@yBqA?J[SKBQVDFWU_@_@HONK
+                    ]Ba@f@KLi@b@GUk@q@JQSAyCc@F?Xs@E[a@w@IOc@f@\\[A_@e@`@CSIGk@?~@X^QYLZ|DXCpLj@H@xBm@ZDfBKMd@j@Ab@UZqEFe@TYMm@f@yAi@{@NYRYfAmAt@uCbDcAc@uBIsAd@{G?tAO`IPlA{@j@oBJcBfAgAzBT`DqArAD`@LFXnBg@tCCHUKYDs@`@w@DgAXi@BQPPA~@@WQWLj@
+                            ]@DQPXGHCC@k@RVc@FGr@g@V?|AXnATd@g@MsA?uC\\aA_@gBIuDp@aBpAaApB[~C@xCmAViAtB
+                            }QOMO@eAP[dGG\\Ti@YoF@QRAvEj@TLz@l@XO`Bs@LYCGSRu@SZFd@hADWJ
+                            }@BS
+                          }AuAh@c@A_AdAyBDK_@HqA`A@AN[QWP@LPJKKHKd@JQV@Zo@GH@KA[@r@MYA@HUNTGKIFBELPG_@JPk@@Rk@h@RWV@sADpAIBUILN@OAVBCCUKZFQHPAQBHEIGPLMCHIUDFFDMEHc@_@LV^AOBRDO?LFOJNK
+                            ]Ad@@_@OBFJCQBPP
+                          ]MT?QNTQAAPC
+                        ]@\\BMHLE{@MVBRGULVHMIb@Js@Ov@LGKa@@T@EIJ@SHNB
+                        ]EP@CSEJBHDOTF[NPCGU?V@Q[?\\@SA@CPBC?QJPQMDNAW_@Hd@V@WMJBOCPFDGO?LFS@JFH[Qf@NOYSLRFKIJj@Ea@E@PGO?LBOICHDKFLCKGHHMFNIGKRRQEJI@\\IUGGTJ_@?N?IMHGFHKK?XCOPGMDADHR@[QLT@SDJGYJRKQ@TCWBXCEBYA^C{@Yv@Xu@Yr@V?Bo@Er@D
+                                ]@XCe@HNER?g@@j@?g@Bd@EI@BAo@Ex@BMAS@^AWAZD?W
+                              ]L^DMOHLc@?\\AJ\\WQEORGOLPF?G[G\\HJLOGHKKB?AI?T?ABK@L@ODHHBWKB@?D[AVT?IXcBPo@`@{AIUfBu@@Cg@JXIA?SPZCSEHNLSWFR?JBWGBHHIQQD?_ALa@dHCDmFjBGHq@LIQdARjAi@NDRIGG^Th@EJa@LQe@@RoAB\\AQ?p@c@s@MJGQJj@SMO?iBnA[p@m@G@Cd@`Af@~A?BYEB?VVESX', 'resource_state': 2
+                                    }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': 'g4095954', 'start_latlng': [
+                                      39.73216949030757,
+                                      -104.96430845931172
+                                    ], 'end_latlng': [
+                                      39.740202287212014,
+                                      -104.968646094203
+                                    ], 'average_speed': 1.415, 'max_speed': 13.266, 'average_cadence': 51.8, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1644.1, 'elev_low': 1609.8, 'upload_id': 12264962792, 'upload_id_str': '12264962792', 'external_id': '56b797e0-8dfa-473a-99d2-bf5b31163c83-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+                                  },
+                                  {'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+                                    }, 'name': 'Lunch Activity', 'distance': 1485.4, 'moving_time': 335, 'elapsed_time': 500, 'total_elevation_gain': 25.7, 'type': 'Velomobile', 'sport_type': 'Velomobile', 'id': 11480248754, 'start_date': '2024-05-23T17: 02: 37Z', 'start_date_local': '2024-05-23T11: 02: 37Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11480248754', 'summary_polyline': 'u
+                                    }pqFhxt_SIBAC?IBEr@UFK?u@BSLKJCXE|AAFBHLGTKP@DB?b@c@NGNClBAXC|A?PCJBJAFGA_GBcCAcAA[IEKBAFBBNGADd@A^KR?j@?XHRBv@KP?z@DVEb@APEZ?VPA@LVBb@FDFEBGBs@Ly@La@d@eAn@{@x@k@XOrA[\\Ej@MTCj@HT?d@HP?JDLJD@`ASp@Gb@APDl@DVLJBRCHIAA', 'resource_state': 2
+                                        }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': None, 'start_latlng': [
+                                          39.74123812280595,
+                                          -104.96916694566607
+                                        ], 'end_latlng': [
+                                          39.732024567201734,
+                                          -104.96449772268534
+                                        ], 'average_speed': 4.434, 'max_speed': 14.438, 'average_watts': 130.5, 'kilojoules': 43.7, 'device_watts': False, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1639.3, 'elev_low': 1613.3, 'upload_id': 12256512470, 'upload_id_str': '12256512470', 'external_id': 'ac1b0e92-6149-43e9-8ccb-656965128c56-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+                                      },
+                                      {'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+                                        }, 'name': "Colefax is hard to be on, hard to avoid. Scooting makes it exceedingly, endlessly, entertaining and speedy. I hardly had to stop, except at a few egregious intersections. These are truly the worst streets I've ever witnessed.", 'distance': 11886.4, 'moving_time': 1377, 'elapsed_time': 1551, 'total_elevation_gain': 47.6, 'type': 'Velomobile', 'sport_type': 'Velomobile', 'id': 11472601531, 'start_date': '2024-05-22T16: 50: 57Z', 'start_date_local': '2024-05-22T10: 50: 57Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11472601531', 'summary_polyline': 'sorqF|oj`S@AOCKHLEP@FIA@RBFCb@WLMTk@Ta@DmADYFIHE\\AN?|@LJCPMFMPiA@yDAgBDyBCoCDqMEgFByAGsH@kACoF@kAEgE@cNAeF@oEB
+                                        ]DIJGx@Gn@Bp@ArD@bAAhABrBAn@E|A@nCArDB`IE^EHEDKBS?eBCeE@oRCyC?eE?_FJ_FGkH@kHAgHDqCG_BDwCAiIGcHHe@@OGwG?{B@m@MeD@mCDoGCwEFeE?
+                                        }AFmACuLDg@DCHCXAzA@jEFJGFOBcBCyA?JAGDQ?OIyCBu@AyBDsAAw@CGKI_BBOEIOGg@KeB?gA@SJu@Vq@t@aBf@m@Vc@bAoBJa@TqA?_ACk@De@?kBIkDSmDUmB[sBGKKGgAQSGo@a@uAiBi@k@c@[CsCDgDCm@Gk@?UPs@b@{BJu@Dy@?
+                                            }@EiBFQNKLCxE@jABhEGHAFIDO@S@kD?{KDwAEcEFuAE_C@aBC_H@{G@sAACD{ECgDBkIGMYI
+                                                }@AiB@oECiABeBG_@?EECI?iNFo@EmA@eCA@@MCgBAcD@aGDgFAyKAcA?qCEECUHc@C_@Bo@C_ADc@?YE
+                                              ]?mAEk@EUSi@g@s@Sa@Ge@ASBQNe@|@gBDOLs@ASBIAwBGqG@qCCsEBwACo@ESYAGEE@QEQDSCQLEHEz@ELQCs@LgAD_@IEO@k@E_E@sAGyBDuCAyNDmAE{@?iBDqBAyCBwAAuC@wBCcFBk@AeBFe@B{@As@I[Dm@Ee@AUBsDDu@DAJBl@@FD@ACCBABFEDBG', 'resource_state': 2
+                                                  }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': None, 'start_latlng': [
+                                                    39.74922859109938,
+                                                    -105.08046839386225
+                                                  ], 'end_latlng': [
+                                                    39.741267543286085,
+                                                    -104.96915889903903
+                                                  ], 'average_speed': 8.632, 'max_speed': 17.316, 'average_watts': 225.5, 'kilojoules': 310.6, 'device_watts': False, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1660.2, 'elev_low': 1584.1, 'upload_id': 12248651985, 'upload_id_str': '12248651985', 'external_id': 'c5281ddf-d2b0-4bab-8d05-f65b3a9d90c8-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+                                                },
+                                                {'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+                                                  }, 'name': 'Morning Activity', 'distance': 11085.1, 'moving_time': 1271, 'elapsed_time': 1462, 'total_elevation_gain': 90.3, 'type': 'Velomobile', 'sport_type': 'Velomobile', 'id': 11472305978, 'start_date': '2024-05-22T16: 19: 15Z', 'start_date_local': '2024-05-22T10: 19: 15Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11472305978', 'summary_polyline': 'k~pqFlwt_SBADBLVMKW@QAO@EJ@hABLJPbA@VLH@JEn@GhBDDBHHNbADDF@fAGT@f@Gj@DVA^@^DZEh@AbDFXCZ@`@DHADFNbBCrC?nCArCF|DEbADfKAnA@rBDlAChDGnAChJDrJ?dDFxCB~JCtCDpBAHDf@Bx@OrKDhAC~@BtFE|BEv@H`E@rEChAFb@I|@MHGNOT
+                                                  }@|@aFfDuAx@mBtAuAx@CDGDMN_@REJAN@vEEn@Kp@GBu@?g@ESCYO_@a@AEKH_Bh@GJ@HDJJHv@Zb@Az@BHANBt@?RBDBJJHXJ|BBrQMtEEhHMxFIvQAtFBh@ElAYvj@?tWFbJFfCD|E?vCB~B?jEE^QJyBJs@CiAAeDFI?EHCLEfFEr@DfA?nABp@EjCDVGVDh@@fAEtA@hAC`@H`CF@@\\ADM^AP?nBC~@DxAAvCBtAC|BC`@Dr@?jBCZ@@@j@Fd@?hCC^OTDf@EzB?^FRAPHd@C~@@`AEr@GFM@w@Ag@@u@E[B
+                                                  ]CGHAL@f@MbDHbPC|D@rIApE@dBACBF?GGlAExBGHGD
+                                                ]AwA@gBJmAA_BBw@?G@GJAN@~@C`@SVI~@Yl@CN@d@CRDf@Gj@GFQBSV[PKBc@Ck@OG@GFCJALJdAAzB@~CEnAF`D?`CBhAAtOIv@FbABbHCdJ@xE?jMD|ICzADlAFvH@pICpEETEDQ@W?CEuFtV', 'resource_state': 2
+                                                }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': None, 'start_latlng': [
+                                                  39.74134071730077,
+                                                  -104.96902462095022
+                                                ], 'end_latlng': [
+                                                  39.749125661328435,
+                                                  -105.08046076633036
+                                                ], 'average_speed': 8.722, 'max_speed': 20.448, 'average_watts': 292.5, 'kilojoules': 371.8, 'device_watts': False, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1660.2, 'elev_low': 1582.0, 'upload_id': 12248350235, 'upload_id_str': '12248350235', 'external_id': '4bd532b2-7fad-4b78-979c-c93bf48f6425-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+                                              },
+                                              {'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+                                                }, 'name': 'Morning Activity', 'distance': 5048.4, 'moving_time': 1093, 'elapsed_time': 2138, 'total_elevation_gain': 38.2, 'type': 'Velomobile', 'sport_type': 'Velomobile', 'id': 11472088438, 'start_date': '2024-05-22T15: 41: 43Z', 'start_date_local': '2024-05-22T09: 41: 43Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11472088438', 'summary_polyline': '{xnqFfyz_SC??CDI@c@As@CGKEY?SK@o@C_C@d@DL@SEqDE_@QCoBHy@CyA@e@Gi@FuAF{@?cBDKEIU@mGEgBDeBAkABmCAUESQa@Me@Co@JaCCaDHa@Io@CiBB{AF
+                                                      ]Eu@BSKsA?gE@u@FaAAeA@ELC~@OTCzBEdA@b@CRGFQCy@@aBCoDDqCEeBBsCCsBFaDEeABeCEoC@y@AuA?{BDsAC_AAqADgAEy@As@@kHDg@E{@AcB@gAEgC@q@Fo@GsBFsBKeC?oADg@EkC@{@DUEoABQDKEIGAMICQ@KBEH?NDBC?uAIy@@MAEGCk@KeAo@{Ag@OQYu@EEIAIBIDe@h@
+                                                            }@b@[\\yBtAg@Jw@B
+                                                            ]K
+                                                          ]QG?GB
+                                                        ]t@OPMH[LURQHWCSDEA_@M[CeAJkBGgA@e@F
+                                                          }@@aFGgAKsCFYPAH?n@FVMJQ@YNc@EALZCFCC?GD@EGJAAB@DMOGK?Q^F@HCLFIDMKD?ABE?CGC?B`@CLCBEAIMDFCBJMKLLSMV?K?H?EC@@BKCJDQIRH@FCE?D?K@BCEBHAE@B@OB?CA@E@@ED@EB@?DF@IC?HA@AE@FAG@HAE?B@A?@DCX?@OAAAB@F@IKGBN@IIQDCc@K?CHC`@AJKDA@BCBCCACBA@BA?HFEE?FJDBD?U?BAAG??C', 'resource_state': 2
+                                                        }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': None, 'start_latlng': [
+                                                          39.73022907972336,
+                                                          -105.0000336393714
+                                                        ], 'end_latlng': [
+                                                          39.741291431710124,
+                                                          -104.96904415078461
+                                                        ], 'average_speed': 4.619, 'max_speed': 14.132, 'average_watts': 146.8, 'kilojoules': 160.5, 'device_watts': False, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1632.8, 'elev_low': 1594.4, 'upload_id': 12248127503, 'upload_id_str': '12248127503', 'external_id': '928aa011-69bb-4a62-a0a5-52ccf0f68b14-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+                                                      },
+                                                      {'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+                                                        }, 'name': 'Morning Push', 'distance': 19501.3, 'moving_time': 2086, 'elapsed_time': 3253, 'total_elevation_gain': 128.5, 'type': 'Wheelchair', 'sport_type': 'Wheelchair', 'id': 11471433357, 'start_date': '2024-05-22T13: 46: 39Z', 'start_date_local': '2024-05-22T07: 46: 39Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11471433357', 'summary_polyline': 'gvpqFbcv_SAfCFr@Bt@@HDHELEAEfCAxDDbFCvCBrGE`B@|AEzFGtBBKC?B~@InD@jDDx@@t@C`@EL[h@[b@IRMf@CVDt@FXHVj@lARl@EN@FCHB?CGGFBh@AtAFrBI|GAFEBCJC\\Hx@?t@NtEBhECbADrA?h@B~@I`B@pBKbDGbDBtCHjF@bJDbDQzHExFIjHYhh@QhR?xAG~CAjDJpWHpGD`KA~DBvCD|A?xHCxC?`GLdQG|SC`D?dIArBDt@CfADhPA|O@xBExNE~DCr@BhGETGBc@Aw@KgAB{@Ae@@w@GG@CDEt@AtGD|FCbBD`BElBBhDCxB@pKCZEFMDK?s\\D{@COCSKEAGBEDCVHdA@dBBjVAxJHhV?vOB~AEfCBnGAdGCVIHICCEMa@QOg@Ew@BQDB?BGKPET@j@Cd@IHK?e@MMDIRBHE?@C?@@A@BCEB?CB@CBAANIFKDOT@n@FTGDIKMLEGCBMIE??DCGSI?GABAACID?E??EDDAPCK?KGE@B?GA?B?ADAE@?A@NRD@AD`@G@NFHFC@QLU?
+                                                                ]DSDCVCFGAGAD@C?BFD^HNGFEHMBIB
+                                                              ]Aw@CSFQLMNGVGN?PB^Lj@p@LHFIHw@A_LCyC@wGGyD?sEH_EAj@GDGCH?@uEEuB?_UAcC?iUBMDIHEJAnII~B?lEBfAArDDlDCfCBx@?`@CL@@EC?PCJFNAPB@BH?FCFKCsCDmBAgDAg@GeIDwBAsLGgG?gC@@C{@?oBB{D@qQBsIAiEB_FGsH?mC@qACcCBsCEuABoBFyA?_AGcG?{HDuCE
+                                                                  }GBkDFc@CM?
+                                                                ]Gg@D
+                                                              }BAwEBcBIaND{Ga@eU?wNLw`@PoJLkPJmRDsCNqD@gAH_BAk@ECGB`Af@`@J\\@\\B^CXHl@DdANZCdAU`@Cb@Or@ET?p@JZAJE?GCPOEI@@GCNBB\\D@AAGIG@OFKB_@CyBF
+                                                              }BPcCIa@E@VER@RAx@DhANX?p@Cr@@^Dz@@n@CT@RClA@RB@Af@?f@G|B?d@Et@DRAFEDk@@uAAw@Bi@@aAC_AH[DoACGA[CyAA^IY??DFLAn@IzA
+                                                                ]xAMJAFBDF?ND?BIBe@FENIJAN@TG?BEACBEfACPGA?MBK@?BBHl@AMGK', 'resource_state': 2
+                                                              }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': None, 'start_latlng': [
+                                                                39.740048395469785,
+                                                                -104.97601973824203
+                                                              ], 'end_latlng': [
+                                                                39.73031993955374,
+                                                                -104.99992718920112
+                                                              ], 'average_speed': 9.349, 'max_speed': 22.48, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1663.3, 'elev_low': 1582.0, 'upload_id': 12247454785, 'upload_id_str': '12247454785', 'external_id': '3255e517-834d-48e1-9783-97b9639b91dd-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+                                                            },
+                                                            {'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+                                                              }, 'name': 'Lunch Push', 'distance': 17718.7, 'moving_time': 2153, 'elapsed_time': 15293, 'total_elevation_gain': 75.9, 'type': 'Wheelchair', 'sport_type': 'Wheelchair', 'id': 11471108598, 'start_date': '2024-05-21T18: 41: 51Z', 'start_date_local': '2024-05-21T12: 41: 51Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11471108598', 'summary_polyline': 'unrqFhlj`SJFPEx@HLEFO@K?y@BWBKNMb@@^Ef@FXRDV?JAAFBRSDaA?kCEmC?gDFQLEfACvABr@Q|@CdHT|JDjBLvAEtFAPDDFBZ?vIDrDFzB?|ABt@A?AE?ZHj@VX|@?LGre@Ldb@TdKLbELPHVZLj@ATCTUb@_@RQ@a@OMMIQGq@KaNCyr@KmmAIuLCcm@FaOHunADwCRiIFgFImRCoSDuHRwP@
+                                                              }GCeII_G[
+                                                                {IQaGIwES
+                                                                }S@yAN{DCkMLqFBsMAo@GIJALQd@ElD@t@BDFFjAAdA@fAIz@@z@Ef@KVaBjAiAd@LADLAGMCg@TK?KKE@DKBHCGB?AGCEBDBGJECGDNAFF?FZQiA?S@BCCDV?OCETRCFBMUO@J?O?T?Q?BDIAECHO@GCNNF?\\g@
+                                                                ]Na@\\NQCFNI@L@G@AADFMADxDk@S@_@|@AMHGOLJAAIIEOL_@W{@I
+                                                                ]PFC?H?GB@C?ADBICPBIAE@CCF@E?D@AECGFDC@FBGC?B@?CELBE@D?G@AGMCSHf@f@yADB?HCA@Yq@zAIES@`@IEGKAHKEHC?xA?@UEAAF@?K@ECB?OFSRNSLCKBAFAEHDNGCDYBAt@FGBBXABBCHBi@BBELAE?`@Ee@BB?LKR?ENYCAMRWGCIFE?KA\\@TRIR
+                                                              ]QJk@DELE?FNAXAGG@CJGEFBACBEDB@RESXQHKDYJDBNCD@J@QC?@OAI?FCEBDAQOs@BLHFg@^@BAE?P?Q?J@GDDE@AABCCD?I@DDGMTEI?CD??HB?DJESIK@DFBGZJIC^GDAHC@B?@BAE?DC?CG@??HGDa@KaADsCG{G@wBGSGGI?{DIk@ECmAFqEASMCg@@uCD{@CaFBmACq@CgKEMQKM?wA?_DB_BHkA?
+                                                                  }AJu@GKCEIEe@@oBCeEFeCKy@KUE[AuBIqBA
+                                                                  ]F_AAwEDYBB?E?SI
+                                                                }@E
+                                                              }BAiGBm@A_AD{FA_EBcBCY?mBByAGC?HBQDuBJ
+                                                              }@H_@Ag@FWCs@@k@?cDGqHD
+                                                            }@Nk@AEKA?EBqDIqEAkIEIQGy@HaAIcBF
+                                                          ]EGK?{C@IBAGaBC_KGSUGoCD{BA[Cu@DqDBmAGKOE_@AuCCUUK_CDwACk@IIICIAaDAKEIOAg@JcA?QE[Ua@J{@Jq@AKGAMBw@C_CD
+                                                                  ]pA?PGJMB
+                                                                ]BGJ?EGD?AB@@IIBDAA@H[JJt@Mr@B\\G^IBCGIHUUQD', 'resource_state': 2
+                                                                }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': None, 'start_latlng': [
+                                                                  39.749079,
+                                                                  -105.079889
+                                                                ], 'end_latlng': [
+                                                                  39.741466,
+                                                                  -104.969038
+                                                                ], 'average_speed': 8.23, 'max_speed': 28.18, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1659.6, 'elev_low': 1585.7, 'upload_id': 12247107553, 'upload_id_str': '12247107553', 'external_id': '330baefb-b443-4180-bbb2-66bc8f8fb6f8-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+                                                              },
+                                                              {'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+                                                                }, 'name': '🔥🔥🔥😭🤬🧐🙄😠🤮😵\u200d💫', 'distance': 10352.1, 'moving_time': 802, 'elapsed_time': 921, 'total_elevation_gain': 102.8, 'type': 'Wheelchair', 'sport_type': 'Wheelchair', 'id': 11464965344, 'start_date': '2024-05-21T17: 22: 21Z', 'start_date_local': '2024-05-21T11: 22: 21Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11464965344', 'summary_polyline': 'cynqFrxz_S@GB@DGAUI[?Up@Ab@M`@?b@ORDHFR@HCPDT?D@FV@h@DRLXRRf@Zj@B~CCpC@j@ExADp@XJPHn@DtC?bACf@BxACjCC|OMzM@tDJlLH`Eh@tRJ~GBxIEpIUdLG|GAfIDrK@vRClDGdCCrECh@?~BDf@?pAJv@ANFf@BtEGp@M|BETCh@Iv@CtAEn@D`DGrBFvA@~BDpC?rEHlH@jCMbIIvKBpGEhDBdFCnD?zBD~DErMVvLDz@C|AQhEGvBAlCDlA@fEB~TAh_@FrVGnTKnAMb@k@l@o@j@SVOZ[xBKROFS@iOEmGDiDIyGGoPEoEEiG?qCC_AEaABwAA?HCDBE?EDEAED?A@M@DBI?qD@oEHuIAMCGICK@
+                                                                    }CCSMMSEmBDa@COEIMAQ?iDEMOEIAyAA
+                                                                  ]B
+                                                                }GDiAGG@GNC\\Ap@IDGEI[SOWEqAEGBIPAnAGXEFODaASED?X', 'resource_state': 2
+                                                                }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': None, 'start_latlng': [
+                                                                  39.730259673669934,
+                                                                  -104.99993062578142
+                                                                ], 'end_latlng': [
+                                                                  39.748992221429944,
+                                                                  -105.08000328205526
+                                                                ], 'average_speed': 12.908, 'max_speed': 32.552, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1660.9, 'elev_low': 1585.3, 'upload_id': 12240814507, 'upload_id_str': '12240814507', 'external_id': '090b6e7a-f8a1-49f4-8a5f-d3d25e3eb2b9-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+                                                              },
+                                                              {'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+                                                                }, 'name': 'Pick up car', 'distance': 3967.1, 'moving_time': 498, 'elapsed_time': 593, 'total_elevation_gain': 18.6, 'type': 'Velomobile', 'sport_type': 'Velomobile', 'id': 11464749581, 'start_date': '2024-05-21T17: 05: 07Z', 'start_date_local': '2024-05-21T11: 05: 07Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11464749581', 'summary_polyline': 'i|pqFput_S?FKBOA[@WVDG_@jAEz@@VTALBh@CP@VDXEX?vAFPCNBJRDdDBHFFxDAj@Et@@PBdBExABhACj@DJE\\C~FBR@XJZK`BCvBAP@PFFt@?rBDxFE~CDrBAjCBnDBfACnB@vBEnB?`AErACNDn@@r@A`DDbEAjHEdA_@nCFzCAdBBdCAhABNCZ@BAEG`@D`CEhBFdC?jBEjABdB?|CBj@?pACfC@lAH^CP?l@OfDFr@ZtACF@@FdACfG@hCLLZH~AAh@IlA?j@CH@DHBLAjDAZLD\\@|@CfA@r@CfADFDDHBf@AnABlE@LBHD@\\?FFCf@@b@@BDA@@G?AJ?A', 'resource_state': 2
+                                                                  }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': None, 'start_latlng': [
+                                                                    39.741018768399954,
+                                                                    -104.96872873976827
+                                                                  ], 'end_latlng': [
+                                                                    39.730253387242556,
+                                                                    -104.99998929910362
+                                                                  ], 'average_speed': 7.966, 'max_speed': 17.684, 'average_watts': 219.1, 'kilojoules': 109.1, 'device_watts': False, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1626.6, 'elev_low': 1594.1, 'upload_id': 12240594992, 'upload_id_str': '12240594992', 'external_id': '50911d0a-980f-4c17-9d23-135fd73a1138-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+                                                                },
+                                                                {'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+                                                                  }, 'name': 'A lovely scoot', 'distance': 7981.6, 'moving_time': 765, 'elapsed_time': 807, 'total_elevation_gain': 21.5, 'type': 'Velomobile', 'sport_type': 'Velomobile', 'id': 11460306152, 'start_date': '2024-05-21T03: 42: 19Z', 'start_date_local': '2024-05-20T21: 42: 19Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11460306152', 'summary_polyline': 'aleqFbnw_Sd@[RE@PEBgBE
+                                                                    ]F[?y@CsCBwBA_AByCEwB@gGKSACAu@DoEGaFFi@E_CB_BEcEDoBEyCAgBDkBAgBBmAEgABk@Cu@@QAY@a@AkEBsAAsDBuDEwFB_DEm@@{DDgAA
+                                                                      }ADk@Co@@sBAq@BkACaABgC@wBAaBG{EGwGDqDCcB@i@AoDDeAEgF?m@?k@IGEGMGJK@QEaGBeDIaDB_AFQISAw@BaACmADgCAw@CqCCmENi@EkB[]Kg@KwCDiDA
+                                                                      }BKy@HOAwAFq@?o@Ck@?k@GaBFkB?m@CgB@MIMAw@@cAGkAAi@BcBEeB@kBFWESDa@@
+                                                                    }@?k@IY?qABk@DwA@
+                                                                  }BCYCcSFgAFwHCOEIW?QBgd@AeAHgBIeD@kBEiAEMEE{BCKACCBeBCCA?AFBbACRIFIDM?eBCIAIEEIAeBAyHDiCEu@?y@D
+                                                                  }CDQRAb@IPDACAFBFELBI', 'resource_state': 2
+                                                                }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': None, 'start_latlng': [
+                                                                  39.68209155835211,
+                                                                  -104.98289273120463
+                                                                ], 'end_latlng': [
+                                                                  39.741227896884084,
+                                                                  -104.96913928538561
+                                                                ], 'average_speed': 10.433, 'max_speed': 18.48, 'average_watts': 331.3, 'kilojoules': 253.4, 'device_watts': False, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1616.4, 'elev_low': 1602.2, 'upload_id': 12236011855, 'upload_id_str': '12236011855', 'external_id': '729e1982-fa3c-464c-8130-26785b14ca98-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+                                                              },
+                                                              {'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+                                                                }, 'name': 'Evening Activity', 'distance': 6073.3, 'moving_time': 450, 'elapsed_time': 628, 'total_elevation_gain': 32.2, 'type': 'Velomobile', 'sport_type': 'Velomobile', 'id': 11460096660, 'start_date': '2024-05-21T02: 18: 43Z', 'start_date_local': '2024-05-20T20: 18: 43Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11460096660', 'summary_polyline': 'azmqFnj{_SB@CADAb@D\\?dAu@z@a@FMHy@?mAFgCB{B@IFGJC~J?dDGdE?bCClFDlFAzIK|@@hAGZGt@UpAi@pB_A|IcDt@_@ABNCh@Yz@YbAu@l@i@hD{Dt@q@\\U`A_@`@Ib@E`@@`@DbAV^L`CfA`Bd@`AF`AC`@GdD
+                                                                      }@`A[dCeAhDkBnMqJvCqB|Au@bBe@fAMfAChADjANtFbApEpAnCp@lBl@bBx@`@L~@J^?`@C^G^Mx@i@|FcFv@m@v@c@\\MdDm@fAKbAGhBA\\IFGH
+                                                                      }@CiO@gAA{DBiBCgDAcGBeHA
+                                                                      }@@_ADWPG\\ApBBbCA~@FzBE|CBnB?dACrCB`DALCBEA@B?GDGODSB??H', 'resource_state': 2
+                                                                    }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': None, 'start_latlng': [
+                                                                      39.725297670811415,
+                                                                      -105.00279815867543
+                                                                    ], 'end_latlng': [
+                                                                      39.68179618008435,
+                                                                      -104.98269542120397
+                                                                    ], 'average_speed': 13.496, 'max_speed': 22.358, 'average_watts': 655.3, 'kilojoules': 294.9, 'device_watts': False, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1613.6, 'elev_low': 1591.3, 'upload_id': 12235794470, 'upload_id_str': '12235794470', 'external_id': 'd970a4ca-dfb6-4ecb-aa43-2d5faa4fbd68-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+                                                                  },
+                                                                  {'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+                                                                    }, 'name': 'Evening Activity', 'distance': 4906.9, 'moving_time': 848, 'elapsed_time': 6864, 'total_elevation_gain': 14.1, 'type': 'Velomobile', 'sport_type': 'Velomobile', 'id': 11460066476, 'start_date': '2024-05-21T00: 23: 43Z', 'start_date_local': '2024-05-20T18: 23: 43Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11460066476', 'summary_polyline': '
+                                                                    }~pqFd{t_S?CD?AEC@DBAECJ@GRLTBVLL@r@Mh@CrAFLPBLLfCBLHJHBp@@rACfB?ZFRBtBKtAAd@EB@A@?CFAA?@AFC@@G?HCP?D@FL|@B`BEfBDz@ENFDLAC?HSFRG@D?MDBBPAN@hAAzFDx@EfA@rCGLFx@BpEA`HAzA@nC?FEB@?@rACh@F`BCtAB~@?~DAX@`CCj@ApCSrBEtBB~GCvBBb@E@HNENE`@DzFBx@A`CDvEAdAMv@D`@DdBElBBNDDlE?r@HJBDDD~DInCFj@Vl@Fr@BpJAf@Bj@LP\\FnABhAGrAAR@BFF~@ElA?z@CVDpAC|ADvACfFBxACvAB|ADHHDbAHxDA^@FFD?TIb@CpBDTAnA?VBXDn@CvAAp@CfBFTDl@Kh@CfE?^JCx@@`@BFFDH^JH@P@XGb@ADQNACACFOBQL@@EEOIGBAB@A`@HDXCXDBBCBQmB@KEEBEABCCD?A@ECQA?DRVPbA@PFD@H', 'resource_state': 2
+                                                                    }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': None, 'start_latlng': [
+                                                                      39.74143283441663,
+                                                                      -104.96962543576956
+                                                                    ], 'end_latlng': [
+                                                                      39.72529364749789,
+                                                                      -105.00280008651316
+                                                                    ], 'average_speed': 5.786, 'max_speed': 14.682, 'average_watts': 144.6, 'kilojoules': 122.6, 'device_watts': False, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1622.9, 'elev_low': 1593.9, 'upload_id': 12235762762, 'upload_id_str': '12235762762', 'external_id': '62c3ff1d-e38b-4e8e-a35f-1e90812dcc3f-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+                                                                  },
+                                                                  {'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+                                                                    }, 'name': 'Afternoon Activity', 'distance': 6552.7, 'moving_time': 2140, 'elapsed_time': 16870, 'total_elevation_gain': 40.8, 'type': 'Velomobile', 'sport_type': 'Velomobile', 'id': 11459630752, 'start_date': '2024-05-20T19: 40: 52Z', 'start_date_local': '2024-05-20T13: 40: 52Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11459630752', 'summary_polyline': 'ozmqF`i{_S?\\CBY@GSCe@Fc@GMEDI?@GKu@A_@Yu@C_@Bo@C[GCOAw@?_@CEIAcA@a@EMOUy@YsACCG?uEHc@@AAE@MKy@AWCkE@aC?GEMICoC?uBGI@@@C@GA@CoAHsB@sAGs@BSCcA?_ADiAAgAFq@EyABuBP_AEMIIQ@eHD_DAW[gAGYE_ABoFA
+                                                                          }A@wADsAA_@F_@McCAy@BkBEmEDwDCaC@iCDeCCcBA{DBiANiA@i@F
+                                                                          ]EwABaDCgEBy@BcGCw@BwAF[E_@Ck@Am@@cBCsADa@TMFIDoAD@?PFb@PA
+                                                                          ]FAKBEB@BJA?B?CCCOMIDSAH?IF@C@CKMAESQWCU@aCBOKiAHeCCoBEoA@aBEmBBkBAiB@YOMc@LgAFuB@u@IuDFi@Ai@DQAYHYOUD_@CqBJe@CgABIAAB
+                                                                        ]E{@Au@@m@Ek@DKEK@AEDOFC?BKR?DJ?FE?u@F
+                                                                        ]?UPo@@QCe@BYIY?i@
+                                                                      ]Eq@?GH@~@CFA\\G?@HDED?HIH?I@D@IA@DHEKBDBEHD@CA@KMBGFAKDAACF@ACs@Xg@?cAb@aAz@WEMOa@A?WGDAF?ACABAGONOJ
+                                                                    ]DAB@IACCFD@GKB?DGNDJ[UC??JR@GVEE?@BKAGEADODCVJSNW@EC@CHDIPAFDBGFDKQ@RCSBREUDTEUDH@DGF?M?FCMBL?M@PAO?J?[E\\Bg@JB@BE`@F?OBBA@CCBEODDAA@D@EE@BC?D??CF@?G?FAAC?B@AF@BCEHMAD@?GBBE?FMCN@KAH@?I?BEAD@IA@CLFEFQ?CCVI@CE?IJD@ALUBRIL?EG@DA??GC?AECFD?E?BBG@B@@CWGdAFh@L{@CHCH?[EACEAEGI@F@?CC@F@BF@AE@@@@CDFGEAF@GG@CCF??@@AC?@ABBIAFA@C@MCEJ@MDENRDKCB@DCG@?GICEJJEM@L?MCBBL@EGBBIBDBA?@C@@EGJ?KB?FHAGCB??DEDDAAADCQ?JDPGM?HAKCBDEGDDC@MEBCAAFBABD@EB?DFLCc@BH@CC??FAAD@CAB@G?h@M
+                                                                          ]F@@IJBAII@Q@LJDGKFNEKAD@E@FAGFJCIC??DDEAa@MDFBBR?DEGEFBECS?[FCR?DEFB@BCDHDN?MLAH@QCDCRBNAO@JAE@DACQP', 'resource_state': 2
+                                                                          }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': None, 'start_latlng': [
+                                                                            39.72535952925682,
+                                                                            -105.00256623141468
+                                                                          ], 'end_latlng': [
+                                                                            39.741492848843336,
+                                                                            -104.9694957677275
+                                                                          ], 'average_speed': 3.062, 'max_speed': 15.294, 'average_watts': 138.7, 'kilojoules': 296.8, 'device_watts': False, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1627.8, 'elev_low': 1593.9, 'upload_id': 12235315919, 'upload_id_str': '12235315919', 'external_id': '1965fe84-eaa8-44dc-aee1-9e2a7a0a23c4-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+                                                                        }
+                                                                      ]
+seems to be a new run: 11543032487
+{'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+                                                                        }, 'name': 'Lots of cars, makes no difference to me', 'distance': 5199.7, 'moving_time': 978, 'elapsed_time': 1283, 'total_elevation_gain': 41.2, 'type': 'Velomobile', 'sport_type': 'Velomobile', 'id': 11543032487, 'start_date': '2024-05-31T21: 54: 19Z', 'start_date_local': '2024-05-31T15: 54: 19Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11543032487', 'summary_polyline': 'wymqFvj{_SOABD@C@B?EB@EA@AF@U?MGMAYTa@JeACaAKoBEaAB_CA
+                                                                          }A@_AEOSCyBEy@I[GIIC[?w@EiBBcAAQCGIEa@AeC@sA?BCAFq@?aED
+                                                                            }@@CC@HO?GMSCQBuCEwED
+                                                                          ]KeA?eC@eBF_BAw@IEi@Iq@@c@HM?w@Ie@Do@AYD
+                                                                        }BCmAFmAC@@QSk@_BE_AA{F@i@DSAs@?yAAOFiBDOSgD?SFg@Ae@H
+                                                                        }C?_@MoA@C@@AWHiCCoBCmABgDCyA@
+                                                                      }ACeD@UTcALmAEeF?qEBgEBw@CyCBqABYGmBCuHASEMGEkACsAB{@E
+                                                                      ]BGAGEGU?yCB_AEuB@_A@QDGGi@Cy@@_DEiC@eCCwA@k@BU@_@Ck@@oABKI_@Jm@Im@MSs@[I?IBa@p@[Vo@ZUFg@Cq@HEACGSIG?YLQEc@?gAD_@Ci@@u@Cg@Ek@HcCD_ACSEUCoCDg@CSBo@@mACGBCFCNAh@@lC@HHRDBDC?ODCLFBA@QDMF@|@ClAK
+                                                                        ]?uAH_@HEFE@FE?OH@C?ACD_@DGJCOFCC?FKAEE', 'resource_state': 2
+                                                                      }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': None, 'start_latlng': [
+                                                                        39.725244445726275,
+                                                                        -105.002834033221
+                                                                      ], 'end_latlng': [
+                                                                        39.74144414998591,
+                                                                        -104.9691704660654
+                                                                      ], 'average_speed': 5.317, 'max_speed': 13.17, 'average_watts': 123.2, 'kilojoules': 120.4, 'device_watts': False, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1626.8, 'elev_low': 1594.0, 'upload_id': 12321242442, 'upload_id_str': '12321242442', 'external_id': '95ea44bf-40b4-45f7-b658-dac21c3b6fa0-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+                                                                    }
+11543032487
+next activity...
+
+seems to be a new run: 11542259150
+{'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+                                                                      }, 'name': 'Afternoon Activity', 'distance': 5194.2, 'moving_time': 804, 'elapsed_time': 905, 'total_elevation_gain': 6.7, 'type': 'Velomobile', 'sport_type': 'Velomobile', 'id': 11542259150, 'start_date': '2024-05-31T19: 05: 22Z', 'start_date_local': '2024-05-31T13: 05: 22Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11542259150', 'summary_polyline': 'yboqFxzs_Sa@FQJeAIi@G[?
+                                                                        }@H_@NYDSO
+                                                                      ]IsBMY?i@Bg@Hi@Ng@Xa@Ns@l@g@t@Q`@Uz@OhAEtA?~@@\\Jn@Zx@Zb@XXFFXL`@FFJHbA@f@CtBE~@F~@BfCCvC@nEAzC@x@CvBBzDArEFnBGrBDfB?dBG`H?xBDnAApBBxCAd@AP@V?|@YfACvACJDpACrEBzBA~A@|D?f@CB?CFDCTDvBEb@GtA@^F`@?~@EjABfDGh@DZ@fAAv@E\\Fp@HpCEhD@tAAh@Ef@Bl@CLS\\u@n@iBfAmBnAKRC\\?d@EXCj@@bB?bLGlA?r@BjC?`D@TDNFLJFN@lACrBB`@@\\FHP?J?`EHLNHlAGvAAzBHlFEp@DRAj@Dd@@rBGhB?`@BTEhAA|ADfBCJFL?t@GRA|DHzBChDAxAGZSVDRA@FGA@QGKDC@YJEBDAJIBBEAFC@@A@DG@', 'resource_state': 2
+                                                                    }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': None, 'start_latlng': [
+                                                                      39.731817450374365,
+                                                                      -104.96444206684828
+                                                                    ], 'end_latlng': [
+                                                                      39.72536372020841,
+                                                                      -105.00260336324573
+                                                                    ], 'average_speed': 6.46, 'max_speed': 14.656, 'average_watts': 116.9, 'kilojoules': 94.0, 'device_watts': False, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1639.3, 'elev_low': 1591.5, 'upload_id': 12320447320, 'upload_id_str': '12320447320', 'external_id': '1295ab4e-0dac-47fc-ba4e-c06299d86144-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+                                                                  }
+11542259150
+next activity...
+
+seems to be a new run: 11542180208
+{'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+                                                                    }, 'name': 'Lunch Walk', 'distance': 941.1, 'moving_time': 959, 'elapsed_time': 3809, 'total_elevation_gain': 3.5, 'type': 'Walk', 'sport_type': 'Walk', 'id': 11542180208, 'start_date': '2024-05-31T17: 14: 39Z', 'start_date_local': '2024-05-31T11: 14: 39Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11542180208', 'summary_polyline': 'meoqFvzs_SKMC@@CC?@BC?FAFKDW?QCIOO?IDO?_@D{@DEF??BCEBOPCHG@FFBBARJd@@LABI@YBaACKU?E@ENCACCEUIWDK?SCGY@CAIOO@AOD@BEEK?@AAGBSMCEIA?B@@?SJOA@Oc@AYF_@FGJE`@BDEOYSG@QIm@CoAKGO@GPC?ED?JCJHNFKEBBOFQ\\QFFAPDTCX@FGt@@PEj@BLB^CRDb@G\\BHARD`@?b@@BT?HDD|@@DB?BGAEBAC@?DACB@?D@G@?ACHFGG?CAD@DB?A?CABBAC@EA?@AAA?DCB?CDBAB', 'resource_state': 2
+                                                                      }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': 'g4095954', 'start_latlng': [
+                                                                        39.732231348752975,
+                                                                        -104.96443485841155
+                                                                      ], 'end_latlng': [
+                                                                        39.731965558603406,
+                                                                        -104.96296157129109
+                                                                      ], 'average_speed': 0.981, 'max_speed': 2.898, 'average_cadence': 47.7, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1643.5, 'elev_low': 1639.4, 'upload_id': 12320366232, 'upload_id_str': '12320366232', 'external_id': '52752375-4f4e-4e11-bba1-ecebbd73f413-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+                                                                    }
+11542180208
+next activity...
+
+seems to be a new run: 11541491009
+{'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+                                                                      }, 'name': 'Lunch Activity', 'distance': 1284.8, 'moving_time': 269, 'elapsed_time': 363, 'total_elevation_gain': 22.9, 'type': 'Velomobile', 'sport_type': 'Velomobile', 'id': 11541491009, 'start_date': '2024-05-31T17: 08: 24Z', 'start_date_local': '2024-05-31T11: 08: 24Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11541491009', 'summary_polyline': 'uzpqFltt_STCv@Q@ILDDDf@BfB?tBDj@CVGNA~@Jr@?VAfBHpACp@JDA?GCECAABH@VIZ@XELGVKb@Yd@w@?OEKWa@WYUc@QsACg@FkBV
+                                                                      }ADOHGL_@b@
+                                                                    }@Z
+                                                                  ]v@k@dBi@~AGt@FnA?JDJJJDLGPAZMLC`AANC|@LHID@@E', 'resource_state': 2
+                                                                }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': None, 'start_latlng': [
+                                                                  39.74075809121132,
+                                                                  -104.96854953467846
+                                                                ], 'end_latlng': [
+                                                                  39.73222414031625,
+                                                                  -104.96445866301656
+                                                                ], 'average_speed': 4.776, 'max_speed': 10.33, 'average_watts': 111.8, 'kilojoules': 30.1, 'device_watts': False, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1639.3, 'elev_low': 1615.2, 'upload_id': 12319659894, 'upload_id_str': '12319659894', 'external_id': '1aa5d059-a3f5-47af-a282-d57f19fb5605-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 0, 'has_kudoed': False
+                                                              }
+11541491009
+next activity...
+
+seems to be a new run: 11537613206
+{'resource_state': 2, 'athlete': {'id': 38072598, 'resource_state': 1
+                                                                }, 'name': 'Huge and lovely day', 'distance': 37311.7, 'moving_time': 10507, 'elapsed_time': 55979, 'total_elevation_gain': 153.5, 'type': 'Velomobile', 'sport_type': 'Velomobile', 'id': 11537613206, 'start_date': '2024-05-30T13: 43: 02Z', 'start_date_local': '2024-05-30T07: 43: 02Z', 'timezone': '(GMT-07: 00) America/Denver', 'utc_offset': -21600.0, 'location_city': None, 'location_state': None, 'location_country': None, 'achievement_count': 0, 'kudos_count': 0, 'comment_count': 0, 'athlete_count': 1, 'photo_count': 0, 'map': {'id': 'a11537613206', 'summary_polyline': '__qqFlxt_SVJK?DxAvFDR`@DjCTXhQ?`@~EzQPJd{@CbFc@tDHje@AjFMjGB~El@~BGtd@t@Z|FHNrAE|CVXvQF`@nBhHBHlBlAXbISIi@PJMM?bADMIGG^uDYgYOCeNRuDd@RBpAc@GVFK@B?BTJKIHOe@If@TLBc@UARJQOPTIM?EG?NTOYZHMOMLNEBXOIHICRAUECAN^O
+                                                                  ]BDVLQE\\RMWUCVP?I_@FJCHUILNBK@DGWJHQPF
+                                                                ]BTM?DKLLGQGTNEIMRR[MNLOOBVLsBg@EE[CoUUy@KPx@s@lGC?oEmHg@
+                                                                  }@^wO?i@q@WeANsJ@uGSwPDiX`@uCEkh@h@{B^|@KVMaBm@TC~JKd@ee@TQ[BgJMu@iIMBqZLiAzAwCM_As@O\\
+                                                                    }@@j@_@g@Vm@JN@_@m@p@VVOFHMMFLGDXSb@JH
+                                                                  ]Oi@KACBR^IWOVPYKVFg@@?AR@[En@DIA@BGCP@OFNIOFNCM@LA[AXASERB@DAEABBB_@C^?W?XBS?PCWBVASAR?[CX@Y?T@M?WFh@Gs@Fx@GXa@a@U\\IBRREOxAhAZxDMJj@@dhASlc@KnBuA|CLpAhAdBNt@@zON^f@FlFRhJ?BxSIzUPR~GZJfCGdJz@Zdi@CvLLdBCXYVNC
+                                                                      }@LLS@VXOHHRbAKjCkBPoK~y@WlSqH|@\\VkA`CwAhEqFpBwAbDOzFtBfDWbDmCnDqGfFsX~@_DxAuCfMkQrLiMjQwSfI{FvAmC`FwGiGYEUCcSd@[UWG_BFw[EwBQYiICbGF~@DC\\_@FM^CWa@`@IfAh@dAMw@KUVvAi@_Ci@HDU_@DJW
+                                                                          ]n@KDSSRAEb@FMS@Za@UBD^Fg@?X_@ENDGRXg@OEXJUCPc@?X_@DXB@VAi@OJDDGPOMHNBQAT^W
+                                                                        }@|@Gb@MQJU`BRIeASAj@g@`AEb@_@@p@O
+                                                                      ]OTXe@[c@u
+                                                                      ]GiATuGEc@Ui`@Gol@FkD\\\\MbC??fBiEH~DCJ^IlAqIDSTDnTZfBk@zAsYD
+                                                                    }E_A_JIwgANY
+                                                                  ]@{KkHSDsN_BaA
+                                                                  }@yAc@SeABUr@
+                                                                }@bAaCQwMJKy@CzCnA^G\\s@GAnBX?Wk@@eAx@HKg@yJ?MlEd@N@a@QLLZHqAL`A[^Og@O@h@d@B_@Y?LECEUOVJKLd@UEDSTcAa@XPUI^JFQDNAA?DWIPBI@a@YRBO?LVJGSG^?
+                                                                ]Nj@GMANA_@BPN@I', 'resource_state': 2
+                                                              }, 'trainer': False, 'commute': False, 'manual': False, 'private': False, 'visibility': 'followers_only', 'flagged': False, 'gear_id': None, 'start_latlng': [
+                                                                39.7414480894804,
+                                                                -104.9691844638437
+                                                              ], 'end_latlng': [
+                                                                39.74159401841462,
+                                                                -104.96946517378092
+                                                              ], 'average_speed': 3.551, 'max_speed': 24.356, 'average_watts': 137.7, 'kilojoules': 1446.8, 'device_watts': False, 'has_heartrate': False, 'heartrate_opt_out': False, 'display_hide_heartrate_option': False, 'elev_high': 1631.1, 'elev_low': 1591.8, 'upload_id': 12315662725, 'upload_id_str': '12315662725', 'external_id': '13e8db93-1cbb-4f54-a037-3d9fa0a3f8de-activity.fit', 'from_accepted_tag': False, 'pr_count': 0, 'total_photo_count': 5, 'has_kudoed': False
+                                                            }
