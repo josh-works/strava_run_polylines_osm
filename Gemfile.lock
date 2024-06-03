@@ -1,0 +1,13 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    uri (0.13.0)
+
+PLATFORMS
+  x86_64-darwin-19
+
+DEPENDENCIES
+  uri (~> 0.13.0)
+
+BUNDLED WITH
+   2.4.19
