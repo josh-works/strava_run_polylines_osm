@@ -14,6 +14,14 @@ because I forget this thing so bad.
 3. in terminal, `python extra_runs.py`, watch auth request, query, new runs get saved, once it hits old runs, as visible in the output, hit `ctrl-c`. Done. 
 4. `python app.py`, visit localhost:5001 
 
+## Saturday, June 15, 2024
+
+Dang this got messy. I'm adding notes to the top again, done lots of work on this without updating the readme.
+
+I'd like to see my activity grouped by day and by type. Example:
+
+When I visit `/travel-by-day/june-10-2024` I should see a map, with lines on it, showing all activity for that day, broken out by color for walking, scooting, driving, or toddlerwalk. 
+
 
 
 

@@ -53,14 +53,16 @@ with open("runs.csv", "a") as runs_file:
             for activity in response:
                 id = activity["id"]
                 type = activity["type"]
+                name = activity["name"]
+                distance = activity["distance"]
+                start_time = activity["start_date"]
 
                 if str(id) in runs_ids:
-                    print("id already found, skipping")
+                    print("id already found on page " + str(page)+ ", skipping")
                     continue
 
-                print("seems to be a new run: " + str(id))
-                
-                print(activity)
+                print("seems to be a new run on page " + str(page) + ", with an ID of " + str(id))
+                print(name, distance, start_time)
                 r = requests.get("https://www.strava.com/api/v3/activities/{0}?include_all_efforts=true".format(activity["id"]), headers = headers)
                 polyline = r.json()["map"]["polyline"]
                 print(id)

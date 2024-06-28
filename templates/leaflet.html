@@ -174,7 +174,10 @@
     baker_climbing_gym.bindPopup("<b>Climbing Gym</b><br>When in Denver, it's the most-frequently-frequented area climbing gym for me. Many, many tracked activities begin, end, or pass through this location.");
 
     var the_spot_clibing_gym = L.marker([39.736038, -104.993251]).addTo(map);
-    baker_climbing_gym.bindPopup("<b>Climbing Gym</b><br>When I moved to near Cheesman Park, this became the closest gym, and I visit regularly. Got a kilter board AND a TB2");
+    the_spot_clibing_gym.bindPopup("<b>Climbing Gym</b><br>When I moved to near Cheesman Park, this became the closest gym, and I visit regularly. Got a kilter board AND a TB2");
+
+    var home = L.marker([39.741609, -104.969355]).addTo(map);
+    home.bindPopup("<b>A place I live</b><br>A spot I have lived and currently live, thus all the walking to/from Cheesman");
 
     var night_1 = L.marker([43.392302, -108.161194]).addTo(map);
     night_1.bindPopup("<b>Spent first night here</b></br>I'd picked out this campground as 'likely to have a nice spot to sleep', and it totally delivered. Covered pavilion, picnic table, easy hammock-hanging, quiet, etc.");
@@ -241,6 +244,30 @@
 
     var trader_joes_colo_ave = L.marker([39.728743, -104.940242]).addTo(map);
     trader_joes_colo_ave.bindPopup("<b>the local grocery store/trader joe's</b></br> first time making regular use of one. I get it. Wish the surrounding intersection wasn't so bad");
+
+    var ideal_market = L.marker([39.733314, -104.97584]).addTo(map);
+    ideal_market.bindPopup("<b>a whole-foods brand store called 'ideal market'. Has an amazon return facility!!!!</b></br> dedicated scooter parking. A small store footprint. this is my current 'local' grocery store");
+
+    var safeway = L.marker([39.731058, -104.973544]).addTo(map);
+    safeway.bindPopup("<b>safeway, mid, use it when necessary. walkable from cheesman</b></br> it's a safeway. unremarkable, but convenient and serves the neighborhood. Way annoying parking lot and one-way streets on the east AND west side. ");
+
+    var cheesman = L.marker([39.733446, -104.967563]).addTo(map);
+    cheesman.bindPopup("<b>cheesman park. Absolutely delightful, in so many ways.</b></br> been here all times of day/year, alone, with others, walking, hammocking, scooting, reading, frisbee, and so much more");
+
+    var botanicGardens = L.marker([39.731058, -104.973544]).addTo(map);
+    botanicGardens.bindPopup("<b>title</b></br> nice spot to sit and read/work");
+
+    var botanicGardensGate = L.marker([39.732193, -104.964119]).addTo(map);
+    botanicGardensGate.bindPopup("<b>botanic gardens gate between cheesman and bg</b></br> get the key fob for access! <a href='https://josh.works/botanic-gardens'> more info here<a>");
+
+    var botanicGardensOffshootsCafe = L.marker([39.732357, -104.960504]).addTo(map);
+    botanicGardensOffshootsCafe.bindPopup("<b>offshoots cafe</b></br> coffee, indoor space so nice when it's really hot or cold outside, outlets, all within the botanic gardens");
+
+    var downtownTjs = L.marker([39.726921, -104.982736]).addTo(map);
+    downtownTjs.bindPopup("<b>trader joes</b></br>and its imfamous parking lot. Never an issue on my scooter");
+
+    var bGOutdoorCafe = L.marker([39.731969, -104.962864]).addTo(map);
+    bGOutdoorCafe.bindPopup("<b>outdoor cafe</b></br> nice spot to sit and read/work");
 
     var south_denver_grocery = L.marker([39.677433, -104.972238]).addTo(map);
     south_denver_grocery.bindPopup("<b>local grocery store (safeway)</b></br> this is/was the local grocery store");
