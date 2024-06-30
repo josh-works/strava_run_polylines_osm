@@ -95,8 +95,85 @@ but the last line of output is "your crontab wasn't updated" and when I check `c
 
 looks right. now we wait. oh right, lets set up logging. the template file had something for logs, and while I might log on heroku, I could/should log locally?
 
+having issues with logging:
 
+`set :output, "/logs/development.log"`
 
+seems mid. 
+
+Figured out crontab `mails` stuff to the system. View system mail. this is fun. type `mail`, hit enter.
+
+wtf, right? anyway, I can see lots of mail to myself with minute-by-minute `sent_at` timestamps, so something is working.
+
+type `?`, turns out `p` seems to read the first message, and it works! Here's the first email I've got:
+
+```
+Message 1:
+From joshthompson@Joshs-MacBook-Pro.local  Sun Jun 30 12:12:21 2024
+X-Original-To: joshthompson
+Delivered-To: joshthompson@Joshs-MacBook-Pro.local
+From: joshthompson@Joshs-MacBook-Pro.local (Cron Daemon)
+To: joshthompson@Joshs-MacBook-Pro.local
+Subject: Cron <joshthompson@Joshs-MacBook-Pro> /bin/bash -l -c 'cd /Users/joshthompson/software_projects/strava_run_polylines_osm && bundle exec script/runner -e production '\''StravaToken.runner_script_because_i_am_lazy'\'''
+X-Cron-Env: <SHELL=/bin/sh>
+X-Cron-Env: <PATH=/usr/bin:/bin>
+X-Cron-Env: <LOGNAME=joshthompson>
+X-Cron-Env: <USER=joshthompson>
+Date: Sun, 30 Jun 2024 12:12:21 -0600 (MDT)
+
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems.rb:283:in `find_spec_for_exe': Could not find 'bundler' (2.4.19) required by your /Users/joshthompson/software_projects/strava_run_polylines_osm/Gemfile.lock. (Gem::GemNotFoundException)
+To update to the latest version installed on your system, run `bundle update --bundler`.
+To install the missing version, run `gem install bundler:2.4.19`
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems.rb:302:in `activate_bin_path'
+	from /usr/bin/bundle:23:in `<main>'
+
+```
+how relatable and believable. could not find the right version of `bundler`
+
+lets stop cron jobs for now. remove all cron jobs for existing user with `cron -r`. 
+
+OK, the logging was broken too, trying to see about updating bundler and better path to logs
+
+no more mail being printed, crontab looks right, no mail in a few minutes, maybe the logs are filling up?
+
+ok, still bundler issues. I'd like the system default to be newest bundler not old bundler:
+
+```
+ gem list bundler
+
+*** LOCAL GEMS ***
+
+bundler (2.5.14, default: 2.4.10)
+```
+
+so, did:
+
+```
+gem update --system
+gem install --default bundler
+# and all is good:
+gem list bundler
+
+*** LOCAL GEMS ***
+
+bundler (default: 2.5.14)
+```
+
+lets see if working now? no generated error messages
+
+OK, ignoring it for now, turns out Heroku has its own custom task runner...
+
+I think I was close to getting this working, 55 minutes in...
+
+switching to scheduled jobs, which use rake, so made this the default rake job. this is easier, now I can just do `rake` whenever I'm in the directory and all runs get updated. how nice.
+
+```ruby
+task default: %w[test]
+
+task :test do
+  ruby "test/unittest.rb"
+end
+```
 
 ## Saturday, June 15, 2024
 

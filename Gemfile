@@ -6,4 +6,5 @@ source "https://rubygems.org"
 
 gem "uri", "~> 0.13.0"
 
-gem 'whenever', require: false
+gem 'rake'
+

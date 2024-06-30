@@ -1,0 +1,5 @@
+task default: %w[get_strava_data]
+
+task :get_strava_data do
+  ruby "runner.rb"
+end
