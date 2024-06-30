@@ -1,13 +1,17 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    chronic (0.10.2)
     uri (0.13.0)
+    whenever (1.0.0)
+      chronic (>= 0.6.3)
 
 PLATFORMS
   x86_64-darwin-19
 
 DEPENDENCIES
   uri (~> 0.13.0)
+  whenever
 
 BUNDLED WITH
    2.4.19

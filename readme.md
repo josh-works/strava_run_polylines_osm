@@ -14,6 +14,90 @@ because I forget this thing so bad.
 3. in terminal, `python extra_runs.py`, watch auth request, query, new runs get saved, once it hits old runs, as visible in the output, hit `ctrl-c`. Done. 
 4. `python app.py`, visit localhost:5001 
 
+# Sunday, June 30, 2024
+
+Still sometimes making little changes. I _finally_ today wrapped the whole flow in a one-off ruby script, so I can either run `runner.rb` and have data update, or I can do:
+
+```ruby
+# irb -r ./strava_token.rb
+StravaToken.runner_script_because_i_am_lazy
+# get fresh auth token, use in python script to update runs.csv with any new strava activity
+# exit process when done, checks for duplicates, doesn't re-do stuff, has good-enough 'error handling' lol
+```
+
+then, decided to pop the `whenever` cron job scheduling gem, see if I can make this thing update daily on heroku. starting my stopwatch now.
+
+got something set:
+
+```ruby
+# config/schedule.rb
+every 1.day, at: ['11:30 am', '11:30 pm'] do
+  runner "StravaToken.runner_script_because_i_am_lazy"
+  # gets fresh token and updates runs.csv w/fresh strava activity data in theory
+end
+```
+
+Now I think I have to do something with my `crontab`  , whatever that is. (`tldr crontab`, now I know) and then I'll have to make that work on heroku.
+
+I'd first like to make sure it's working locally, so I'll set it to be a task that runs every minute, and I'll look for the output/evidence.
+
+```
+$ tldr crontab
+
+crontab
+
+Schedule cron jobs to run on a time interval for the current user.
+More information: <https://crontab.guru/>.
+
+- Edit the crontab file for the current user:
+    crontab -e
+
+- Edit the crontab file for a specific user:
+    sudo crontab -e -u user
+
+- Replace the current crontab with the contents of the given file:
+    crontab path/to/file
+
+- View a list of existing cron jobs for current user:
+    crontab -l
+
+- Remove all cron jobs for the current user:
+    crontab -r
+
+- Sample job which runs at 10:00 every day (* means any value):
+    0 10 * * * command_to_execute
+
+- Sample crontab entry, which runs a command every 10 minutes:
+    */10 * * * * command_to_execute
+
+- Sample crontab entry, which runs a certain script at 02:30 every Friday:
+    30 2 * * Fri /absolute/path/to/script.sh
+
+
+So next I run:
+$ crontab -l
+crontab: no crontab for joshthompson
+```
+
+great, lets write to that crontab thing, per whenever instructions, probably `whenever update-crontab`
+
+yep:
+
+```
+$ b whenever update crontab
+```
+but the last line of output is "your crontab wasn't updated" and when I check `crontab -l` it's still empty. ah, slightly different, 'more forceful' flag:
+
+```
+ b whenever --update-crontab
+[write] crontab file updated
+```
+
+looks right. now we wait. oh right, lets set up logging. the template file had something for logs, and while I might log on heroku, I could/should log locally?
+
+
+
+
 ## Saturday, June 15, 2024
 
 Dang this got messy. I'm adding notes to the top again, done lots of work on this without updating the readme.

@@ -4,7 +4,6 @@ require 'json'
 
 
 class StravaToken
-
   CLIENT_ID = ENV["STRAVA_CLIENT_ID"]
   CLIENT_SECRET = ENV["STRAVA_CLIENT_SECRET"]
   REFRESH_TOKEN = ENV["STRAVA_REFRESH_TOKEN"]
@@ -30,13 +29,15 @@ class StravaToken
     puts details
     puts "... returning: #{access_token}"
     return access_token
-  end  
+  end
+
+  def self.runner_script_because_i_am_lazy
+    # lazy me
+    access_token = StravaToken.new.update
+
+    # result = `python extra_runs.py access_token`
+    result = exec("python extra_runs.py #{access_token}")
+  end
 end
-
-# lazy me
-access_token = StravaToken.new.update
-
-# result = `python extra_runs.py access_token`
-result = exec("python extra_runs.py #{access_token}")
 
 
