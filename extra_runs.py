@@ -18,14 +18,16 @@ with open("runs.csv") as runs_file:
     csv_reader = csv.reader(runs_file, delimiter=',')
     for row in csv_reader:
         if row[0] not in runs_ids:
-            print("appending " + str(row[0]))
             runs_ids.append(row[0])
 
 print("there are " + str(len(runs_ids)) + "rows of data")
 
 
-token = "5ca62e11ca2670f8d6b24330f64b4d71c041c1a8"
-# token = os.environ["STRAVA_TOKEN"]
+token = sys.argv[1]
+print(sys.argv)
+print(token)
+# token = os.environ["STRAVA_AUTH_TOKEN"]
+
 headers = {'Authorization': "Bearer {0}".format(token)}
 print(headers)
 
@@ -34,12 +36,14 @@ with open("runs.csv", "a") as runs_file:
     print("token is: " + token)
     print("headers are: " + str(headers))
     writer = csv.writer(runs_file, delimiter=",")
-    writer.writerow(["id", "type", "polyline"])
+    
+    # writer.writerow(["id", "type", "polyline"]) only needed on first run when CSV is empty/blank.
 
     page = 1
+    more_runs_remaining = True
     # page = 9
     # page = 1
-    while True:
+    while more_runs_remaining:
         r = requests.get("https://www.strava.com/api/v3/athlete/activities?page={0}".format(page), headers = headers)
         print("we got a response from https://www.strava.com/api/v3/athlete/activities?page={0}".format(page))
         print("we were on page " + str(page))
@@ -59,7 +63,8 @@ with open("runs.csv", "a") as runs_file:
 
                 if str(id) in runs_ids:
                     print("id already found on page " + str(page)+ ", skipping")
-                    continue
+                    more_runs_remaining = False
+                    break
 
                 print("seems to be a new run on page " + str(page) + ", with an ID of " + str(id))
                 print(name, distance, start_time)
