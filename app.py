@@ -24,7 +24,6 @@ def my_runs():
         reader = csv.DictReader(runs_file)
 
         for row in reader:
-            print(row)
             runs.append([ 
                 row["type"],
                 row["polyline"] 

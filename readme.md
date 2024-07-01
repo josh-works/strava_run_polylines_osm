@@ -168,12 +168,23 @@ I think I was close to getting this working, 55 minutes in...
 switching to scheduled jobs, which use rake, so made this the default rake job. this is easier, now I can just do `rake` whenever I'm in the directory and all runs get updated. how nice.
 
 ```ruby
-task default: %w[test]
+# rakefile
+task default: %w[get_strava_data]
 
-task :test do
-  ruby "test/unittest.rb"
+task :get_strava_data do
+  ruby "runner.rb"
 end
 ```
+
+ok nvm cannot run a single server with both python and ruby installed on it. 
+
+I can ssh into the 'box' via `heroku exec`, can `ls -hartl`, run python processes, but cannot run the ruby scripts, there's no ruby environment available. That explains why my attemps to call `heroku run rake get_strava_data` wasn't working. Kept informing me about not having any ruby tooling available. 
+
+also, `heroku run bash` boots into a shell
+
+Doesn't seem possible/worth it to 'dual boot' python and ruby, at least not easily. cannot do `sudo apt-get install ruby-full`.
+
+Yet another point in favor of cutting this all over to a ruby script. Maybe I'll make it a Sinatra application for starters. That feels like the best starting point.  Maybe I'll do that in this repo, even.
 
 ## Saturday, June 15, 2024
 

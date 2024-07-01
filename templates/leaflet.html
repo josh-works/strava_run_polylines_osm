@@ -25,9 +25,18 @@
         </ul>
       </div>
     </div>
+
+    <div class="views_and_filtering">
+      <ul class="locations">
+        <li><a href="#" onclick="redrawLines()">re-add data</a></li>
+        <li><a href="#" onclick="justWalks()">show only where I've walked or run</a></li>
+      </ul>
+    </div>
   
     <div id="map" style="width: 100%; height: 100%"></div>
     <script>
+
+ 
 
       var bigBlueIcon = new L.Icon({
         iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
@@ -311,18 +320,23 @@
       shadowSize: [41, 41]
     });
 
-
-
-// L.marker([51.5, -0.09], {icon: greenIcon}).addTo(map);
-
     var encodedRoutes = {{ runs|safe }}
     var coords_param = [ {{ latlng }} ]
     var stepCounter = 0
+    const scooterPolylineList = L.layerGroup()
+    const walkPolylineList = L.layerGroup()
+    const bicyclePolylineList = L.layerGroup()
+    const runPolylineList = L.layerGroup()
+    
+    
+
     for (let encoded of encodedRoutes) {
+      
       polyline = encoded[1]
       activityType = encoded[0]
+
       var coordinates = L.Polyline.fromEncoded(polyline).getLatLngs();
-      var color = getColorForActivity(activityType) 
+      var color = getColorForActivity(activityType)
       var begin_latlong = coordinates[0]
       var end_latlong = coordinates[coordinates.length-1]
       stepCounter += 1
@@ -337,30 +351,36 @@
               lineJoin: 'round',
               smoothFactor: 3
           }
-      ).addTo(map);
-      // console.log('adding event listner to line')
-      // line.addEventListener('mouseover', mouseover(line))
-      // line.addEventListener('mouseout', mouseover1(line))
-      // line.addEventListener("mouseover", mouseover());
-      // line.addEventListener("mouseout", mouseover1());
+      )
+      
+      switch(activityMap[activityType]) {
+        case "Walk":
+          console.log("got a walk")
+          walkPolylineList.addLayer(line);
+        case "Scooter":
+          console.log("got a scooter")
+          scooterPolylineList.addLayer(line);
+          break;
+        case "Velomobile": 
+          console.log("got a velomo")
+          scooterPolylineList.addLayer(line);
+          break;
+        case "Bicycle": 
+          console.log("got a bike")
+          bicyclePolylineList.addLayer(line);
+          break;
+        case "Run":
+          console.log("got a run")
+          runPolylineList.addLayer(line);
+          break;
+        default:
+          console.log("no dice with " + activityType)
+      }
     }
-
-
-
-    function mouseover(e) {  
-      // not needed since item is already global, 
-      // I am assuming this is here just because it's sample code?
-      // var item = document.getElementById("button"); 
-      // self.setAttribute("style", "background-color:blue;")
-      if (!e) var e = window.event;
-      var relTarg = e.relatedTarget || e.fromElement;
-
-    }
-
-    function mouseover1(e)
-    {  
-      // self.setAttribute("style", "background-color:green;")
-    }
+    walkPolylineList.addTo(map)
+    scooterPolylineList.addTo(map)
+    runPolylineList.addTo(map)
+    bicyclePolylineList.addTo(map)
 
 
     /**
@@ -414,11 +434,22 @@ function rainbow(numOfSteps, step) {
 						var lng = coord[1].split(')');
             placelatlngzoominurl(lat[1] + "," + lng[0])
 					});
+    function justWalks(){
+      console.log(scooterPolylineList)
+      console.log(bicyclePolylineList)
+      console.log(walkPolylineList)
+      scooterPolylineList.removeFrom(map)
+      bicyclePolylineList.removeFrom(map)
+      walkPolylineList.removeFrom(map)
+      walkPolylineList.addTo(map)
+    }
 
-    // adding labels, will do this in a 'real' way sometime. store as another CSV, stream from python as [latlng|label title|detailed text]
-    // or something like that, same as the polylines?
-    
-      setView();
+    function redrawLines(){
+      walkPolylineList.addTo(map)
+      scooterPolylineList.addTo(map)
+      runPolylineList.addTo(map)
+      bicyclePolylineList.addTo(map)
+    }
     </script>
   </body>
 </html>
