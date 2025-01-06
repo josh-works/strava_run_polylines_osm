@@ -71,7 +71,7 @@ with open("runs.csv", "a") as runs_file:
                 r = requests.get("https://www.strava.com/api/v3/activities/{0}?include_all_efforts=true".format(activity["id"]), headers = headers)
                 polyline = r.json()["map"]["polyline"]
                 print(id)
-
+                print(polyline[0:100])
                 writer.writerow([id, type, polyline])
                 print("next activity...\n")
             page += 1
