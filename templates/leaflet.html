@@ -355,22 +355,17 @@
       
       switch(activityMap[activityType]) {
         case "Walk":
-          console.log("got a walk")
           walkPolylineList.addLayer(line);
         case "Scooter":
-          console.log("got a scooter")
           scooterPolylineList.addLayer(line);
           break;
         case "Velomobile": 
-          console.log("got a velomo")
           scooterPolylineList.addLayer(line);
           break;
         case "Bicycle": 
-          console.log("got a bike")
           bicyclePolylineList.addLayer(line);
           break;
         case "Run":
-          console.log("got a run")
           runPolylineList.addLayer(line);
           break;
         default:
@@ -435,9 +430,6 @@ function rainbow(numOfSteps, step) {
             placelatlngzoominurl(lat[1] + "," + lng[0])
 					});
     function justWalks(){
-      console.log(scooterPolylineList)
-      console.log(bicyclePolylineList)
-      console.log(walkPolylineList)
       scooterPolylineList.removeFrom(map)
       bicyclePolylineList.removeFrom(map)
       walkPolylineList.removeFrom(map)
@@ -450,6 +442,8 @@ function rainbow(numOfSteps, step) {
       runPolylineList.addTo(map)
       bicyclePolylineList.addTo(map)
     }
+
+    setView();
     </script>
   </body>
 </html>

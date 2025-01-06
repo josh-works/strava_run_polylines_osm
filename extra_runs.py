@@ -2,14 +2,12 @@ import requests
 import os
 import sys
 import csv
-#
 
 runs_ids = []
 with open("runs.csv") as runs_file:
     csv_reader = csv.reader(runs_file, delimiter=',')
     for row in csv_reader:
         if row[0] not in runs_ids:
-            print("appending " + str(row[0]))
             runs_ids.append(row[0])
 
 print("collected all ids to deduplicate...")
